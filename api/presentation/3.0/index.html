@@ -2801,10 +2801,10 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
     <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
 </div>
 
-<pre class="urltemplate"><code class="language-none">Content-Type: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"
+</code></pre></div></div>
 
-<p>If the <code class="language-plaintext highlighter-rouge">Content-Type</code> header <code class="language-plaintext highlighter-rouge">application/ld+json</code> cannot be generated due to server configuration details, then the <code class="language-plaintext highlighter-rouge">Content-Type</code> header <em class="rfc">should</em> instead be <code class="language-plaintext highlighter-rouge">application/json</code> (regular JSON), without a <code class="language-plaintext highlighter-rouge">profile</code> parameter.</p>
+<p class="urltemplate">If the <code class="language-plaintext highlighter-rouge">Content-Type</code> header <code class="language-plaintext highlighter-rouge">application/ld+json</code> cannot be generated due to server configuration details, then the <code class="language-plaintext highlighter-rouge">Content-Type</code> header <em class="rfc">should</em> instead be <code class="language-plaintext highlighter-rouge">application/json</code> (regular JSON), without a <code class="language-plaintext highlighter-rouge">profile</code> parameter.</p>
 
 <script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
 
@@ -2812,8 +2812,8 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
     <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
 </div>
 
-<pre class="urltemplate"><code class="language-none">Content-Type: application/json
-</code></pre>
+<div class="language-plaintext urltemplate highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/json
+</code></pre></div></div>
 
 <p>The HTTP server <em class="rfc">must</em> follow the <a href="https://www.w3.org/TR/cors/" title="Cross-Origin Resource Sharing">CORS requirements</a> to enable browser-based clients to retrieve the descriptions. If the server receives a request with one of the content types above in the Accept header, it <em class="rfc">should</em> respond with that content type following the rules of <a href="https://tools.ietf.org/html/rfc7231#section-5.3.2" title="HTTP 1.1, 5.3.2. Accept">content negotiation</a>. Recipes for enabling CORS and conditional Content-Type headers are provided in the <a href="/iiif-website/api/annex/notes/apache/" title="Apache HTTP Server Implementation Notes">Apache HTTP Server Implementation Notes</a>.</p>
 
@@ -3482,298 +3482,304 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
       </h3>
     
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "@context": "http://iiif.io/api/presentation/3/context.json",
-  "id": "https://example.org/iiif/book1/manifest",
-  "type": "Manifest",
-  "label": { "en": [ "Book 1" ] },
-  "metadata": [
-    {
-      "label": { "en": [ "Author" ] },
-      "value": { "none": [ "Anne Author" ] }
-    },
-    {
-      "label": { "en": [ "Published" ] },
-      "value": {
-        "en": [ "Paris, circa 1400" ],
-        "fr": [ "Paris, environ 1400" ]
-      }
-    },
-    {
-      "label": { "en": [ "Notes" ] },
-      "value": {
-        "en": [
-          "Text of note 1",
-          "Text of note 2"
-        ]
-      }
-    },
-    {
-      "label": { "en": [ "Source" ] },
-      "value": { "none": [ "&lt;span&gt;From: &lt;a href=\"https://example.org/db/1.html\"&gt;Some Collection&lt;/a&gt;&lt;/span&gt;" ] }
-    }
-  ],
-  "summary": { "en": [ "Book 1, written be Anne Author, published in Paris around 1400." ] },
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
 
-  "thumbnail": [
-    {
-      "id": "https://example.org/iiif/book1/page1/full/80,100/0/default.jpg",
-      "type": "Image",
-      "format": "image/jpeg",
-      "service": [
-        {
-          "id": "https://example.org/iiif/book1/page1",
-          "type": "ImageService3",
-          "profile": "level1"
-        }
-      ]
-    }
-  ],
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
-  "viewingDirection": "right-to-left",
-  "behavior": [ "paged" ],
-  "navDate": "1856-01-01T00:00:00Z",
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/manifest"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Book 1"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Author"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"none"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Anne Author"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Published"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Paris, circa 1400"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"fr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Paris, environ 1400"</span><span class="w"> </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Notes"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Text of note 1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Text of note 2"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Source"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"none"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"&lt;span&gt;From: &lt;a href=</span><span class="se">\"</span><span class="s2">https://example.org/db/1.html</span><span class="se">\"</span><span class="s2">&gt;Some Collection&lt;/a&gt;&lt;/span&gt;"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Book 1, written be Anne Author, published in Paris around 1400."</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
 
-  "rights": "https://creativecommons.org/licenses/by/4.0/",
-  "requiredStatement": {
-    "label": { "en": [ "Attribution" ] },
-    "value": { "en": [ "Provided by Example Organization" ] }
-  },
+  </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page1/full/80,100/0/default.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ImageService3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
 
-  "provider": [
-      {
-        "id": "https://example.org/about",
-        "type": "Agent",
-        "label": { "en": [ "Example Organization" ] },
-        "homepage": [
-          {
-            "id": "https://example.org/",
-            "type": "Text",
-            "label": { "en": [ "Example Organization Homepage" ] },
-            "format": "text/html"
-          }
-        ],
-        "logo": [
-          {
-            "id": "https://example.org/service/inst1/full/max/0/default.png",
-            "type": "Image",
-            "format": "image/png",
-            "service": [
-              {
-                "id": "https://example.org/service/inst1",
-                "type": "ImageService3",
-                "profile": "level2"
-              }
-            ]
-          }
-        ],
-        "seeAlso": [
-          {
-            "id": "https://data.example.org/about/us.jsonld",
-            "type": "Dataset",
-            "format": "application/ld+json",
-            "profile": "https://schema.org/"
-          }
-        ]
-      }
-    ],
-  "homepage": [
-    {
-      "id": "https://example.org/info/book1/",
-      "type": "Text",
-      "label": { "en": [ "Home page for Book 1" ] },
-      "format": "text/html"
-    }
-  ],
-  "service": [
-    {
-      "id": "https://example.org/service/example",
-      "type": "ExampleExtensionService",
-      "profile": "https://example.org/docs/example-service.html"
-    }
-  ],
-  "seeAlso": [
-    {
-      "id": "https://example.org/library/catalog/book1.xml",
-      "type": "Dataset",
-      "format": "text/xml",
-      "profile": "https://example.org/profiles/bibliographic"
-    }
-  ],
-  "rendering": [
-    {
-      "id": "https://example.org/iiif/book1.pdf",
-      "type": "Text",
-      "label": { "en": [ "Download as PDF" ] },
-      "format": "application/pdf"
-    }
-  ],
-  "partOf": [
-    {
-      "id": "https://example.org/collections/books/",
-      "type": "Collection"
-    }
-  ],
-  "start": {
-    "id": "https://example.org/iiif/book1/canvas/p2",
-    "type": "Canvas"
-  },
+  </span><span class="nl">"viewingDirection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"right-to-left"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"behavior"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"paged"</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"navDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1856-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
 
-  "services": [
-    {
-      "@id": "https://example.org/iiif/auth/login",
-      "@type": "AuthCookieService1",
-      "profile": "http://iiif.io/api/auth/1/login",
-      "label": "Login to Example Institution",
-      "service": [
-        {
-          "@id": "https://example.org/iiif/auth/token",
-          "@type": "AuthTokenService1",
-          "profile": "http://iiif.io/api/auth/1/token"          
-        }
-      ]
-    }
-  ],
+  </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://creativecommons.org/licenses/by/4.0/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredStatement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Attribution"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Provided by Example Organization"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
 
-  "items": [
-    {
-      "id": "https://example.org/iiif/book1/canvas/p1",
-      "type": "Canvas",
-      "label": { "none": [ "p. 1" ] },
-      "height": 1000,
-      "width": 750,
-      "items": [
-        {
-          "id": "https://example.org/iiif/book1/page/p1/1",
-          "type": "AnnotationPage",
-          "items": [
-            {
-              "id": "https://example.org/iiif/book1/annotation/p0001-image",
-              "type": "Annotation",
-              "motivation": "painting",
-              "body": {
-                "id": "https://example.org/iiif/book1/page1/full/max/0/default.jpg",
-                "type": "Image",
-                "format": "image/jpeg",
-                "service": [
-                  {
-                    "id": "https://example.org/iiif/book1/page1",
-                    "type": "ImageService3",
-                    "profile": "level2",
-                    "service": [
-                      {
-                        "@id": "https://example.org/iiif/auth/login",
-                        "@type": "AuthCookieService1"
-                      }
-                    ]
-                  }
-                ],
-                "height": 2000,
-                "width": 1500
-              },
-              "target": "https://example.org/iiif/book1/canvas/p1"
-            }
-          ]
-        }
-      ],
-      "annotations": [
-        {
-          "id": "https://example.org/iiif/book1/comments/p1/1",
-          "type": "AnnotationPage"
-        }
-      ]
-    },
-    {
-      "id": "https://example.org/iiif/book1/canvas/p2",
-      "type": "Canvas",
-      "label": { "none": [ "p. 2" ] },
-      "height": 1000,
-      "width": 750,
-      "items": [
-        {
-          "id": "https://example.org/iiif/book1/page/p2/1",
-          "type": "AnnotationPage",
-          "items": [
-            {
-              "id": "https://example.org/iiif/book1/annotation/p0002-image",
-              "type": "Annotation",
-              "motivation": "painting",
-              "body": {
-                "id": "https://example.org/iiif/book1/page2/full/max/0/default.jpg",
-                "type": "Image",
-                "format": "image/jpeg",
-                "service": [
-                  {
-                    "id": "https://example.org/iiif/book1/page2",
-                    "type": "ImageService3",
-                    "profile": "level2"
-                  }
-                ],
-                "height": 2000,
-                "width": 1500
-              },
-              "target": "https://example.org/iiif/book1/canvas/p2"
-            }
-          ]
-        }
-      ]
-    }
-  ],
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/about"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Example Organization"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Example Organization Homepage"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/service/inst1/full/max/0/default.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/service/inst1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ImageService3"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level2"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"seeAlso"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://data.example.org/about/us.jsonld"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dataset"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/ld+json"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://schema.org/"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/info/book1/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Home page for Book 1"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/service/example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleExtensionService"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/docs/example-service.html"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"seeAlso"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/library/catalog/book1.xml"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dataset"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/xml"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/profiles/bibliographic"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"rendering"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1.pdf"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Download as PDF"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/collections/books/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
 
-  "structures": [
-    {
-      "id": "https://example.org/iiif/book1/range/r0",
-      "type": "Range",
-      "label": { "en": [ "Table of Contents" ] },
-      "items": [
-        {
-          "id": "https://example.org/iiif/book1/range/r1",
-          "type": "Range",
-          "label": { "en": [ "Introduction" ] },
-          "supplementary": {
-            "id": "https://example.org/iiif/book1/annocoll/introTexts",
-            "type": "AnnotationCollection"
-          },
-          "items": [
-            {
-              "id": "https://example.org/iiif/book1/canvas/p1",
-              "type": "Canvas"
-            },
-            {
-              "type": "SpecificResource",
-              "source": "https://example.org/iiif/book1/canvas/p2",
-              "selector": {
-                "type": "FragmentSelector",
-                "value": "xywh=0,0,750,300"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ],
+  </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/auth/login"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AuthCookieService1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/auth/1/login"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login to Example Institution"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/auth/token"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AuthTokenService1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/auth/1/token"</span><span class="w">          
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
 
-  "annotations": [
-    {
-      "id": "https://example.org/iiif/book1/page/manifest/1",
-      "type": "AnnotationPage",
-      "items": [
-        {
-          "id": "https://example.org/iiif/book1/page/manifest/a1",
-          "type": "Annotation",
-          "motivation": "commenting",
-          "body": {
-            "type": "TextualBody",
-            "language": "en",
-            "value": "I love this manifest!"
-          },
-          "target": "https://example.org/iiif/book1/manifest"
-        }
-      ]
-    }
-  ]
-}
-</code></pre></div></div>
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"none"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"p. 1"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page/p1/1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AnnotationPage"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/annotation/p0001-image"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"painting"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page1/full/max/0/default.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ImageService3"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/auth/login"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AuthCookieService1"</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p1"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"annotations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/comments/p1/1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AnnotationPage"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"none"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"p. 2"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page/p2/1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AnnotationPage"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/annotation/p0002-image"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"painting"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page2/full/max/0/default.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ImageService3"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level2"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p2"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+
+  </span><span class="nl">"structures"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/range/r0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Table of Contents"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/range/r1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Introduction"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"supplementary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/annocoll/introTexts"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AnnotationCollection"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SpecificResource"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p2"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"selector"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FragmentSelector"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xywh=0,0,750,300"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+
+  </span><span class="nl">"annotations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page/manifest/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AnnotationPage"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/page/manifest/a1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commenting"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TextualBody"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I love this manifest!"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/manifest"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
       <h3 id="c-versioning">
         
         
