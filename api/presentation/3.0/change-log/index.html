@@ -76,10 +76,20 @@
   
   
 
-<div class="hero-body">
+<div class="hero-body container">
+  
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="#">Get Started</a></li>
+      <li><a href="#">Documentation</a></li>
+    </ul>
+  </nav>
+  
   <div class="container has-text-centered">
+    
     <h2 class="title">Presentation API 3.0 Change Log</h2>
-    <p class="subtitle"></p>
+    
+    <p class="subtitle is-size-6 is-size-5-desktop"></p>
     
   </div>
 </div>
@@ -87,29 +97,16 @@
   
 </section>
 <section id="main">
-      <style>
-  table {
-    table-layout: fixed;
-    word-wrap: break-word;
-  }
-  .rfc {
-    color: #d55;
-    font-variant: small-caps;
-    font-style: normal;
-    font-size: 1.2em;
-    line-height: 0.8333;
-  }
-</style>
-
+      
 <div class="container-block is-max-widescreen">
   <div class="columns container">
-    <aside class="column is-one-quarter" markdown="1">
-      <div class="box toc-sidebar menu sticky">
-        <ul><li><a href="#1-breaking-changes">1. Breaking Changes</a><ul><li><a href="#11-external-specifications">1.1. External Specifications</a></li><li><a href="#12-property-naming-and-semantics-changes">1.2. Property Naming and Semantics Changes</a></li><li><a href="#13-property-value-changes">1.3. Property Value Changes</a></li><li><a href="#14-classes-changes">1.4. Classes Changes</a></li><li><a href="#15-requirements-changes">1.5. Requirements Changes</a></li></ul></li><li><a href="#2-non-breaking-changes">2. Non-Breaking Changes</a><ul><li><a href="#21-enable-audio-and-video-content">2.1. Enable Audio and Video Content</a></li><li><a href="#22-additional-features">2.2. Additional Features</a></li><li><a href="#23-protocol-features">2.3. Protocol Features</a></li></ul></li><li><a href="#3-editorial-changes">3. Editorial Changes</a><ul><li><a href="#31-clarifications">3.1. Clarifications</a></li><li><a href="#32-style">3.2. Style</a></li></ul></li></ul>
+    <aside class="column is-one-third" markdown="1">
+      <div class="box toc-sidebar sticky">
+        <ul class="menu" id="toc-menu"><li><a href="#1-breaking-changes">1. Breaking Changes</a><ul class="menu-list toc-submenu-2"><li><a href="#11-external-specifications">1.1. External Specifications</a></li><li><a href="#12-property-naming-and-semantics-changes">1.2. Property Naming and Semantics Changes</a></li><li><a href="#13-property-value-changes">1.3. Property Value Changes</a></li><li><a href="#14-classes-changes">1.4. Classes Changes</a></li><li><a href="#15-requirements-changes">1.5. Requirements Changes</a></li></ul></li><li><a href="#2-non-breaking-changes">2. Non-Breaking Changes</a><ul class="menu-list toc-submenu-2"><li><a href="#21-enable-audio-and-video-content">2.1. Enable Audio and Video Content</a></li><li><a href="#22-additional-features">2.2. Additional Features</a></li><li><a href="#23-protocol-features">2.3. Protocol Features</a></li></ul></li><li><a href="#3-editorial-changes">3. Editorial Changes</a><ul class="menu-list toc-submenu-2"><li><a href="#31-clarifications">3.1. Clarifications</a></li><li><a href="#32-style">3.2. Style</a></li></ul></li></ul>
 
       </div>
     </aside>
-    <div class="column content is-three-quarters" markdown="1">
+    <div class="column content is-two-thirds api-content" markdown="1">
       <p>This document is a companion to the [IIIF Presentation API Specification, Version 3.0][prezi30]. It describes the changes to the API specification made in this major release, including ones that are backwards incompatible with [version 2.1.1][prezi21], the previous version.</p>
       <h2 class="no_toc" id="table-of-contents">
         

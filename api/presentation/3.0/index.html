@@ -76,10 +76,20 @@
   
   
 
-<div class="hero-body">
+<div class="hero-body container">
+  
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="#">Get Started</a></li>
+      <li><a href="#">Documentation</a></li>
+    </ul>
+  </nav>
+  
   <div class="container has-text-centered">
+    
     <h2 class="title">Presentation API 3.0 Documentation</h2>
-    <p class="subtitle">Retrieve images from anywhere in the world and allows the user to select an area of the image and to resize, rotate, and edit the  quality.</p>
+    
+    <p class="subtitle is-size-6 is-size-5-desktop">Retrieve images from anywhere in the world and allows the user to select an area of the image and to resize, rotate, and edit the  quality.</p>
     
   </div>
 </div>
@@ -87,29 +97,16 @@
   
 </section>
 <section id="main">
-      <style>
-  table {
-    table-layout: fixed;
-    word-wrap: break-word;
-  }
-  .rfc {
-    color: #d55;
-    font-variant: small-caps;
-    font-style: normal;
-    font-size: 1.2em;
-    line-height: 0.8333;
-  }
-</style>
-
+      
 <div class="container-block is-max-widescreen">
   <div class="columns container">
-    <aside class="column is-one-quarter" markdown="1">
-      <div class="box toc-sidebar menu sticky">
-        <ul><li><a href="#status-of-this-document">Status of this Document</a></li><li><a href="#1-introduction">1. Introduction</a><ul><li><a href="#11-objectives-and-scope">1.1. Objectives and Scope</a></li><li><a href="#12-terminology">1.2. Terminology</a></li></ul></li><li><a href="#2-resource-type-overview">2. Resource Type Overview</a><ul><li><a href="#21-defined-types">2.1. Defined Types</a></li><li><a href="#22-additional-types">2.2. Additional Types</a></li></ul></li><li><a href="#3-resource-properties">3. Resource Properties</a><ul><li><a href="#31-descriptive-properties">3.1. Descriptive Properties</a></li><li><a href="#32-technical-properties">3.2. Technical Properties</a></li><li><a href="#33-linking-properties">3.3. Linking Properties</a></li><li><a href="#34-structural-properties">3.4. Structural Properties</a></li><li><a href="#35-values">3.5. Values</a></li></ul></li><li><a href="#4-json-ld-considerations">4. JSON-LD Considerations</a><ul><li><a href="#41-case-sensitivity">4.1. Case Sensitivity</a></li><li><a href="#42-resource-representations">4.2. Resource Representations</a></li><li><a href="#43-properties-with-multiple-values">4.3. Properties with Multiple Values</a></li><li><a href="#44-language-of-property-values">4.4. Language of Property Values</a></li><li><a href="#45-html-markup-in-property-values">4.5. HTML Markup in Property Values</a></li><li><a href="#46-linked-data-context-and-extensions">4.6. Linked Data Context and Extensions</a></li><li><a href="#47-term-collisions-between-contexts">4.7. Term Collisions between Contexts</a></li><li><a href="#48-keyword-mappings">4.8. Keyword Mappings</a></li></ul></li><li><a href="#5-resource-structure">5. Resource Structure</a><ul><li><a href="#51-collection">5.1. Collection</a></li><li><a href="#52-manifest">5.2. Manifest</a></li><li><a href="#53-canvas">5.3. Canvas</a></li><li><a href="#54-range">5.4. Range</a></li><li><a href="#55-annotation-page">5.5. Annotation Page</a></li><li><a href="#56-annotation">5.6. Annotation</a></li><li><a href="#57-content-resources">5.7. Content Resources</a></li><li><a href="#58-annotation-collection">5.8. Annotation Collection</a></li></ul></li><li><a href="#6-http-requests-and-responses">6. HTTP Requests and Responses</a><ul><li><a href="#61-uri-recommendations">6.1. URI Recommendations</a></li><li><a href="#62-requests">6.2. Requests</a></li><li><a href="#63-responses">6.3. Responses</a></li></ul></li><li><a href="#7-authentication">7. Authentication</a></li><li><a href="#appendices">Appendices</a><ul><li><a href="#a-summary-of-property-requirements">A. Summary of Property Requirements</a></li><li><a href="#b-example-manifest-response">B. Example Manifest Response</a></li><li><a href="#c-versioning">C. Versioning</a></li><li><a href="#d-acknowledgements">D. Acknowledgements</a></li><li><a href="#e-change-log">E. Change Log</a></li></ul></li></ul>
+    <aside class="column is-one-third" markdown="1">
+      <div class="box toc-sidebar sticky">
+        <ul class="menu" id="toc-menu"><li><a href="#status-of-this-document">Status of this Document</a></li><li><a href="#1-introduction">1. Introduction</a><ul class="menu-list toc-submenu-2"><li><a href="#11-objectives-and-scope">1.1. Objectives and Scope</a></li><li><a href="#12-terminology">1.2. Terminology</a></li></ul></li><li><a href="#2-resource-type-overview">2. Resource Type Overview</a><ul class="menu-list toc-submenu-2"><li><a href="#21-defined-types">2.1. Defined Types</a></li><li><a href="#22-additional-types">2.2. Additional Types</a></li></ul></li><li><a href="#3-resource-properties">3. Resource Properties</a><ul class="menu-list toc-submenu-2"><li><a href="#31-descriptive-properties">3.1. Descriptive Properties</a></li><li><a href="#32-technical-properties">3.2. Technical Properties</a></li><li><a href="#33-linking-properties">3.3. Linking Properties</a></li><li><a href="#34-structural-properties">3.4. Structural Properties</a></li><li><a href="#35-values">3.5. Values</a></li></ul></li><li><a href="#4-json-ld-considerations">4. JSON-LD Considerations</a><ul class="menu-list toc-submenu-2"><li><a href="#41-case-sensitivity">4.1. Case Sensitivity</a></li><li><a href="#42-resource-representations">4.2. Resource Representations</a></li><li><a href="#43-properties-with-multiple-values">4.3. Properties with Multiple Values</a></li><li><a href="#44-language-of-property-values">4.4. Language of Property Values</a></li><li><a href="#45-html-markup-in-property-values">4.5. HTML Markup in Property Values</a></li><li><a href="#46-linked-data-context-and-extensions">4.6. Linked Data Context and Extensions</a></li><li><a href="#47-term-collisions-between-contexts">4.7. Term Collisions between Contexts</a></li><li><a href="#48-keyword-mappings">4.8. Keyword Mappings</a></li></ul></li><li><a href="#5-resource-structure">5. Resource Structure</a><ul class="menu-list toc-submenu-2"><li><a href="#51-collection">5.1. Collection</a></li><li><a href="#52-manifest">5.2. Manifest</a></li><li><a href="#53-canvas">5.3. Canvas</a></li><li><a href="#54-range">5.4. Range</a></li><li><a href="#55-annotation-page">5.5. Annotation Page</a></li><li><a href="#56-annotation">5.6. Annotation</a></li><li><a href="#57-content-resources">5.7. Content Resources</a></li><li><a href="#58-annotation-collection">5.8. Annotation Collection</a></li></ul></li><li><a href="#6-http-requests-and-responses">6. HTTP Requests and Responses</a><ul class="menu-list toc-submenu-2"><li><a href="#61-uri-recommendations">6.1. URI Recommendations</a></li><li><a href="#62-requests">6.2. Requests</a></li><li><a href="#63-responses">6.3. Responses</a></li></ul></li><li><a href="#7-authentication">7. Authentication</a></li><li><a href="#appendices">Appendices</a><ul class="menu-list toc-submenu-2"><li><a href="#a-summary-of-property-requirements">A. Summary of Property Requirements</a></li><li><a href="#b-example-manifest-response">B. Example Manifest Response</a></li><li><a href="#c-versioning">C. Versioning</a></li><li><a href="#d-acknowledgements">D. Acknowledgements</a></li><li><a href="#e-change-log">E. Change Log</a></li></ul></li></ul>
 
       </div>
     </aside>
-    <div class="column content is-three-quarters" markdown="1">
+    <div class="column content is-two-thirds api-content" markdown="1">
       <h2 id="status-of-this-document">
         
         
@@ -382,6 +379,12 @@ Clients <em class="rfc">should</em> render <code class="language-plaintext highl
 Clients <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">label</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Example Object Title"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="metadata">
@@ -409,6 +412,12 @@ Clients <em class="rfc">may</em> render <code class="language-plaintext highligh
 </ul>
 
 <p>Clients <em class="rfc">should</em> display the entries in the order provided. Clients <em class="rfc">should</em> expect to encounter long texts in the <code class="language-plaintext highlighter-rouge">value</code> property, and render them appropriately, such as with an expand button, or in a tabbed interface.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -443,6 +452,12 @@ Clients <em class="rfc">should</em> render <code class="language-plaintext highl
 Clients <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">summary</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"This is a summary of the object."</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="requiredstatement">
@@ -462,6 +477,12 @@ Clients <em class="rfc">may</em> render <code class="language-plaintext highligh
   <li>Any resource type <em class="rfc">may</em> have the <code class="language-plaintext highlighter-rouge">requiredStatement</code> property.<br />
 Clients <em class="rfc">must</em> render <code class="language-plaintext highlighter-rouge">requiredStatement</code> on every resource type.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"requiredStatement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -489,6 +510,12 @@ Clients <em class="rfc">must</em> render <code class="language-plaintext highlig
   <li>Any resource type <em class="rfc">may</em> have the <code class="language-plaintext highlighter-rouge">rights</code> property.<br />
 Clients <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">rights</code> on any resource type.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://creativecommons.org/licenses/by/4.0/"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -527,6 +554,12 @@ Clients <em class="rfc">must</em> render <code class="language-plaintext highlig
   <li>Other types of resource <em class="rfc">may</em> have the <code class="language-plaintext highlighter-rouge">provider</code> property with at least one item. <br />
 Clients <em class="rfc">should</em> render <code class="language-plaintext highlighter-rouge">provider</code> on other types of resource.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -589,6 +622,12 @@ Clients <em class="rfc">should</em> render <code class="language-plaintext highl
 Clients <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">thumbnail</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -627,6 +666,12 @@ Clients <em class="rfc">may</em> render <code class="language-plaintext highligh
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">navDate</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"navDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010-01-01T00:00:00Z"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="placeholdercanvas">
@@ -656,6 +701,12 @@ Clients <em class="rfc">may</em> render <code class="language-plaintext highligh
   <li>Other types of resource <em class="rfc">must not</em> have the <code class="language-plaintext highlighter-rouge">placeholderCanvas</code> property.<br />
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">placeholderCanvas</code> on other types of resource.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"placeholderCanvas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -694,6 +745,12 @@ Clients <em class="rfc">may</em> render <code class="language-plaintext highligh
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">accompanyingCanvas</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"accompanyingCanvas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/1/canvas/accompany"</span><span class="p">,</span><span class="w">
@@ -731,6 +788,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
   <li>All resource types <em class="rfc">must</em> have the <code class="language-plaintext highlighter-rouge">id</code> property.<br />
 Clients <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">id</code> on any resource type, and <em class="rfc">should</em> render <code class="language-plaintext highlighter-rouge">id</code> on Collections, Manifests and Canvases.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/1/manifest"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -793,6 +856,12 @@ Clients <em class="rfc">must</em> process, and <em class="rfc">may</em> render, 
   </table>
 </blockquote>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="format">
@@ -817,6 +886,12 @@ Clients <em class="rfc">may</em> render the <code class="language-plaintext high
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">format</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/xml"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="language">
@@ -839,6 +914,12 @@ Clients <em class="rfc">should</em> process the <code class="language-plaintext 
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">language</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"en"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="profile">
@@ -860,6 +941,12 @@ Clients <em class="rfc">should</em> process the <code class="language-plaintext 
   <li>Other types of resource <em class="rfc">may</em> have the <code class="language-plaintext highlighter-rouge">profile</code> property.<br />
 Clients <em class="rfc">may</em> process the <code class="language-plaintext highlighter-rouge">profile</code> of other types of resource.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/profile/statuary"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -885,6 +972,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">height</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="width">
@@ -909,6 +1002,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">width</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="duration">
@@ -932,6 +1031,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
   <li>Other types of resource <em class="rfc">must not</em> have a <code class="language-plaintext highlighter-rouge">duration</code>.<br />
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">duration</code> on other types of resource.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">125.0</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -987,6 +1092,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
     </tbody>
   </table>
 </blockquote>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"viewingDirection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"left-to-right"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1120,6 +1231,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
   </table>
 </blockquote>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"behavior"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"auto-advance"</span><span class="p">,</span><span class="w"> </span><span class="s2">"individuals"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="timemode">
@@ -1165,6 +1282,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
   </table>
 </blockquote>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"timeMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trim"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h3 id="33-linking-properties">
@@ -1206,6 +1329,12 @@ Clients <em class="rfc">should</em> render <code class="language-plaintext highl
 <p class="note"><strong>Model Alignment</strong><br />
 Please note that this specification has stricter requirements about the JSON pattern used for the <code class="language-plaintext highlighter-rouge">homepage</code> property than the <a href="http://w3.org/TR/annotation-model/" title="Web Annotation Model">Web Annotation Data Model</a>. The IIIF requirements are compatible, but the home page of an Agent found might have only a URI, or might be a JSON object with other properties. See the section on <a href="/iiif-website/api/presentation/3.0/#47-term-collisions-between-contexts">collisions between contexts</a> for more information.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1238,6 +1367,12 @@ Please note that this specification has stricter requirements about the JSON pat
 Clients <em class="rfc">must</em> render <code class="language-plaintext highlighter-rouge">logo</code> on Agent resources.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1268,6 +1403,12 @@ Clients <em class="rfc">must</em> render <code class="language-plaintext highlig
 Clients <em class="rfc">should</em> render <code class="language-plaintext highlighter-rouge">rendering</code> on a Collection, Manifest or Canvas, and <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">rendering</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"rendering"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1296,6 +1437,12 @@ Clients <em class="rfc">should</em> render <code class="language-plaintext highl
   <li>Any resource type <em class="rfc">may</em> have the <code class="language-plaintext highlighter-rouge">service</code> property with at least one item.<br />
 Clients <em class="rfc">may</em> process <code class="language-plaintext highlighter-rouge">service</code> on any resource type, and <em class="rfc">should</em> process the IIIF Image API service.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1351,6 +1498,12 @@ Clients <em class="rfc">may</em> process <code class="language-plaintext highlig
 
 <p>Implementations <em class="rfc">should</em> be prepared to recognize the <code class="language-plaintext highlighter-rouge">@id</code> and <code class="language-plaintext highlighter-rouge">@type</code> property names used by older specifications, as well as <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">type</code>. Note that the <code class="language-plaintext highlighter-rouge">@context</code> key <em class="rfc">should not</em> be present within the <code class="language-plaintext highlighter-rouge">service</code>, but instead included at the beginning of the document. The example below includes both version 2 and version 3 IIIF Image API services.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1388,6 +1541,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
 Clients <em class="rfc">should</em> process <code class="language-plaintext highlighter-rouge">services</code> on a Manifest.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1423,6 +1582,12 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
   <li>Any resource type <em class="rfc">may</em> have the <code class="language-plaintext highlighter-rouge">seeAlso</code> property with at least one item.<br />
 Clients <em class="rfc">may</em> process <code class="language-plaintext highlighter-rouge">seeAlso</code> on any resource type.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"seeAlso"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1462,6 +1627,12 @@ Clients <em class="rfc">may</em> process <code class="language-plaintext highlig
 Clients <em class="rfc">may</em> render <code class="language-plaintext highlighter-rouge">partOf</code> on any resource type.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h5 id="start">
@@ -1486,8 +1657,20 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">start</code> on other types of resource.</li>
 </ul>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/1/canvas/1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1520,6 +1703,12 @@ Clients <em class="rfc">may</em> process <code class="language-plaintext highlig
   <li>Other types of resource <em class="rfc">must not</em> have the <code class="language-plaintext highlighter-rouge">supplementary</code> property.<br />
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">supplementary</code> on other types of resource.</li>
 </ul>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"supplementary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/1/annos/1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AnnotationCollection"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1717,6 +1906,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 
 <p>Resource descriptions <em class="rfc">should</em> be <a href="/iiif-website/api/presentation/3.0/#12-terminology">embedded</a> within the JSON description of parent resources, and <em class="rfc">may</em> also be available via separate requests from the HTTP(S) URI given in the resource’s <code class="language-plaintext highlighter-rouge">id</code> property. Links to resources <em class="rfc">must</em> be given as a JSON object with the <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">type</code> properties and <em class="rfc">should</em> have <code class="language-plaintext highlighter-rouge">format</code> or <code class="language-plaintext highlighter-rouge">profile</code> to give a hint as to what sort of resource is being referred to.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"rendering"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1738,6 +1933,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
     
 
 <p>Any of the properties in the API that can have multiple values <em class="rfc">must</em> always be given as an array of values, even if there is only a single item in that array.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1761,6 +1962,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 <p>Language <em class="rfc">may</em> be associated with strings that are intended to be displayed to the user for the <code class="language-plaintext highlighter-rouge">label</code> and <code class="language-plaintext highlighter-rouge">summary</code> properties, plus the <code class="language-plaintext highlighter-rouge">label</code> and <code class="language-plaintext highlighter-rouge">value</code> properties of the <code class="language-plaintext highlighter-rouge">metadata</code> and <code class="language-plaintext highlighter-rouge">requiredStatement</code> objects.</p>
 
 <p>The values of these properties <em class="rfc">must</em> be JSON objects, with the keys being the <a href="https://tools.ietf.org/html/bcp47" title="Tags for Identifying Languages">BCP 47</a> language code for the language, or if the language is either not known or the string does not have a language, then the key <em class="rfc">must</em> be the string <code class="language-plaintext highlighter-rouge">none</code>. The associated values <em class="rfc">must</em> be arrays of strings, where each item is the content in the given language.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1818,6 +2025,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 
 <p>Clients <em class="rfc">should</em> allow only <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">b</code>, <code class="language-plaintext highlighter-rouge">br</code>, <code class="language-plaintext highlighter-rouge">i</code>, <code class="language-plaintext highlighter-rouge">img</code>, <code class="language-plaintext highlighter-rouge">p</code>, <code class="language-plaintext highlighter-rouge">small</code>, <code class="language-plaintext highlighter-rouge">span</code>, <code class="language-plaintext highlighter-rouge">sub</code> and <code class="language-plaintext highlighter-rouge">sup</code> tags. Clients <em class="rfc">may</em> choose to remove any and all tags, therefore it <em class="rfc">should not</em> be assumed that the formatting will always be rendered.  Note that publishers <em class="rfc">may</em> include arbitrary HTML content for processing using customized or experimental applications, and the requirements for clients assume an untrusted or unknown publisher.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"en-latn"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"&lt;p&gt;Short &lt;b&gt;summary&lt;/b&gt; of the resource.&lt;/p&gt;"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
       <h3 id="46-linked-data-context-and-extensions">
@@ -1833,12 +2046,24 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 
 <p>The value of the <code class="language-plaintext highlighter-rouge">@context</code> property <em class="rfc">must</em> be either the URI <code class="language-plaintext highlighter-rouge">http://iiif.io/api/presentation/3/context.json</code> or a JSON array with the URI <code class="language-plaintext highlighter-rouge">http://iiif.io/api/presentation/3/context.json</code> as the last item. Further contexts, such as those for local or <a href="/iiif-website/api/registry/" title="IIIF Extension Registry">registered extensions</a>, <em class="rfc">must</em> be added at the beginning of the array.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p>Any additional properties beyond those defined in this specification or the Web Annotation Data Model <em class="rfc">should</em> be mapped to RDF predicates using further context documents. These extensions <em class="rfc">should</em> be added to the top level <code class="language-plaintext highlighter-rouge">@context</code> property, and <em class="rfc">must</em> be added before the above context. The JSON-LD 1.1 functionality of predicate specific context definitions, known as <a href="https://json-ld.org/spec/latest/json-ld/#scoped-contexts" title="JSON-LD Scoped Contexts">scoped contexts</a>, <em class="rfc">must</em> be used to minimize cross-extension collisions. Extensions intended for community use <em class="rfc">should</em> be <a href="/iiif-website/api/registry/" title="IIIF Extension Registry">registered in the extensions registry</a>, but registration is not mandatory.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1923,6 +2148,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 
 <p>An example Collection document:</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/collection/top"</span><span class="p">,</span><span class="w">
@@ -1966,6 +2197,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 <p>The identifier in <code class="language-plaintext highlighter-rouge">id</code> <em class="rfc">must</em> be able to be dereferenced to retrieve the JSON description of the Manifest, and thus <em class="rfc">must</em> use the HTTP(S) URI scheme.</p>
 
 <p>The Manifest <em class="rfc">must</em> have an <code class="language-plaintext highlighter-rouge">items</code> property, which is an array of JSON-LD objects. Each object is a Canvas, with requirements as described in the next section. The Manifest <em class="rfc">may</em> also have a <code class="language-plaintext highlighter-rouge">structures</code> property listing one or more <a href="/iiif-website/api/presentation/3.0/#54-range">Ranges</a> which describe additional structure of the content, such as might be rendered as a table of contents. The Manifest <em class="rfc">may</em> have an <code class="language-plaintext highlighter-rouge">annotations</code> property, which includes Annotation Page resources where the Annotations have the Manifest as their <code class="language-plaintext highlighter-rouge">target</code>. These will typically be comment style Annotations, and <em class="rfc">must not</em> have <code class="language-plaintext highlighter-rouge">painting</code> as their <code class="language-plaintext highlighter-rouge">motivation</code>.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="c1">// Metadata about this manifest file</span><span class="w">
@@ -2186,6 +2423,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 
 <p>Renderers <em class="rfc">must</em> scale content into the space represented by the Canvas, and <em class="rfc">should</em> follow any <code class="language-plaintext highlighter-rouge">timeMode</code> value provided for time-based media. If the Canvas represents a view of a physical object, the spatial dimensions of the Canvas <em class="rfc">should</em> be the same scale as that physical object, and content <em class="rfc">should</em> represent only the object.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="c1">// Metadata about this canvas</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/canvas/p1"</span><span class="p">,</span><span class="w">
@@ -2238,6 +2481,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 <p>The Canvases and parts of Canvases need not be contiguous or in the same order as in the Manifest’s <code class="language-plaintext highlighter-rouge">items</code> property or any other Range. Examples include newspaper articles that are continued in different sections, a chapter that starts half way through a page, or time segments of a single canvas that represent different sections of a piece of music.</p>
 
 <p>Ranges <em class="rfc">may</em> link to an Annotation Collection that has the content of the Range using the <code class="language-plaintext highlighter-rouge">supplementary</code> property. The <a href="/iiif-website/api/presentation/3.0/#12-terminology">referenced</a> Annotation Collection will contain Annotations that target areas of Canvases within the Range and link content resources to those Canvases.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
@@ -2313,6 +2562,12 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 <p class="warning"><strong>Incompatibility Warning</strong><br />
 The definition of <code class="language-plaintext highlighter-rouge">label</code> in the Web Annotation specification does not produce JSON conformant with the structure defined in this specification for languages. Given the absolute requirement for internationalized labels and the strong desire for consistently handling properties, the <code class="language-plaintext highlighter-rouge">label</code> property on Annotation model classes does not conform to the string requirement of the Web Annotation Data Model.  This <a href="https://github.com/w3c/web-annotation/issues/437">issue has been filed with the W3C</a> and will hopefully be addressed in a future version of the standard.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/annopage/p1"</span><span class="p">,</span><span class="w">
@@ -2353,6 +2608,12 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
 
 <p>The IIIF community has defined <a href="/iiif-website/api/annex/openannotation/" title="Open Annotation Extensions">additional Selector classes</a> for use with SpecificResources, especially for cases when it is not possible to use the official FragmentSelector. See the additional documentation for details.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/annotation/p0001-image"</span><span class="p">,</span><span class="w">
@@ -2387,6 +2648,12 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
 <p>If there is a need to distinguish between content resources, then the resource <em class="rfc">should</em> have the <code class="language-plaintext highlighter-rouge">label</code> property.</p>
 
 <p>A Canvas <em class="rfc">may</em> be treated as a content resource for the purposes of annotating it on to other Canvases. In this situation, the Canvas <em class="rfc">may</em> be <a href="/iiif-website/api/presentation/3.0/#12-terminology">embedded</a> within the Annotation, or require dereferencing to obtain its description.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
@@ -2430,6 +2697,12 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
 
 <p>Annotation Collections <em class="rfc">must</em> have a URI, and it <em class="rfc">should</em> be an HTTP(S) URI. They <em class="rfc">should</em> have a <code class="language-plaintext highlighter-rouge">label</code> and <em class="rfc">may</em> have any of the other descriptive, linking or rights properties.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/book1/annocoll/transcription"</span><span class="p">,</span><span class="w">
@@ -2442,6 +2715,12 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
 </span></code></pre></div></div>
 
 <p>For Annotation Collections with many Annotations, there will be many pages. The Annotation Collection refers to the first and last page, and then the pages refer to the previous and next pages in the ordered list.  Each page is part of the Annotation Collection.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
@@ -2516,10 +2795,22 @@ The definition of <code class="language-plaintext highlighter-rouge">label</code
 
 <p>If the request does not include an <code class="language-plaintext highlighter-rouge">Accept</code> header, the HTTP <code class="language-plaintext highlighter-rouge">Content-Type</code> header of the response <em class="rfc">should</em> have the value <code class="language-plaintext highlighter-rouge">application/ld+json</code> (JSON-LD) with the <code class="language-plaintext highlighter-rouge">profile</code> parameter given as the context document: <code class="language-plaintext highlighter-rouge">http://iiif.io/api/presentation/3/context.json</code>.</p>
 
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
 <pre class="urltemplate"><code class="language-none">Content-Type: application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"
 </code></pre>
 
 <p>If the <code class="language-plaintext highlighter-rouge">Content-Type</code> header <code class="language-plaintext highlighter-rouge">application/ld+json</code> cannot be generated due to server configuration details, then the <code class="language-plaintext highlighter-rouge">Content-Type</code> header <em class="rfc">should</em> instead be <code class="language-plaintext highlighter-rouge">application/json</code> (regular JSON), without a <code class="language-plaintext highlighter-rouge">profile</code> parameter.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
 
 <pre class="urltemplate"><code class="language-none">Content-Type: application/json
 </code></pre>
