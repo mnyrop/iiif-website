@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <title>
+    IIIF Content State API 0.3 &mdash; IIIF | International Image Interoperability Framework
+  </title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="/iiif-website/assets/images/logo-sm.png">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/iiif-website/assets/css/style.css"></head>
+<body><section class="hero is-primary " style="">
+  <div class="hero-head">
+    <nav id="navbar" class="navbar is-transparent is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/iiif-website/">
+        <img src="/iiif-website/assets/images/logo-sm.png" alt="International Image Interoperability Framework logo" height="28">
+        <span class="brand-title">International Image Interoperability Framework</span>
+      </a>
+      <div class="navbar-burger" data-target="navbar" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+            <a class="navbar-item" href="/iiif-website/">Home</a>
+          
+            <a class="navbar-item" href="/iiif-website/demos">Demos</a>
+          
+            <a class="navbar-item" href="/iiif-website/news-and-events">News & Events</a>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"href="/iiif-website/get-involved">
+                Get Involved
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                
+              </div>
+            </div>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"href="/iiif-website/get-started">
+                Get Started
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                
+                  <a class="navbar-item" href="/iiif-website">APIs & Documentation</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Training</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+  </div>
+  
+  
+
+<div class="hero-body container">
+  
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="#">Get Started</a></li>
+      <li><a href="#">Documentation</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container has-text-centered">
+    
+    <h2 class="title">IIIF Content State API 0.3</h2>
+    
+    <p class="subtitle is-size-6 is-size-5-desktop"></p>
+    
+  </div>
+</div>
+
+  
+</section>
+<section id="main">
+      
+
+<div class="container-block is-max-widescreen">
+  <div class="columns container">
+    <aside class="column is-one-third" markdown="1">
+      <div class="box toc-sidebar sticky">
+        <ul class="menu" id="toc-menu"><li><a href="#introduction">1. Introduction</a><ul class="menu-list toc-submenu-2"><li><a href="#objectives-and-scope">1.1. Objectives and Scope</a></li><li><a href="#terminology">1.2. Terminology</a></li></ul></li><li><a href="#content-state">2. Content State</a><ul class="menu-list toc-submenu-2"><li><a href="#21-annotation-model-for-content-state">2.1. Annotation Model for Content State</a></li><li><a href="#22-form-of-annotation">2.2 Form of Annotation</a></li><li><a href="#23-protocol-and-encoding-requirements">2.3 Protocol and encoding requirements</a></li></ul></li><li><a href="#initialization">3. Initialization</a><ul class="menu-list toc-submenu-2"><li><a href="#initialization-mechanisms">3.1. Initialization mechanisms (protocol)</a></li><li><a href="#316-load-by-reference">3.1.6 Load by reference</a></li><li><a href="#317-common-initialization-parameter">3.1.7 Common initialization parameter</a></li><li><a href="#32-exporting-state">3.2 Exporting state</a></li></ul></li><li><a href="#4-examples-of-content-states">4. Examples of content states</a><ul class="menu-list toc-submenu-2"><li><a href="#41-a-region-of-a-canvas-in-a-manifest">4.1. A region of a canvas in a manifest</a></li><li><a href="#42-start-playing-at-a-point-in-a-recording">4.2. Start playing at a point in a recording</a></li><li><a href="#43-multiple-targets-for-a-comparison-view">4.3. Multiple targets for a comparison view</a></li><li><a href="#44-search-results">4.4. Search Results</a></li></ul></li><li><a href="#appendices">Appendices</a><ul class="menu-list toc-submenu-2"><li><a href="#acknowledgements">A. Acknowledgements</a></li><li><a href="#change-log">B. Change Log</a></li></ul></li></ul>
+
+      </div>
+    </aside>
+    <div class="column content is-two-thirds api-content" markdown="1">
+      <h2 class="no_toc" id="status-of-this-document">
+        
+        
+          Status of this Document <a href="#status-of-this-document">#</a>
+        
+        
+      </h2>
+    
+<p><strong>This Version:</strong> 0.3.0</p>
+
+<p><strong>Latest Stable Version:</strong> None</p>
+
+<p><strong>Previous Version:</strong> None</p>
+
+<p><strong>Editors</strong></p>
+
+<ul>
+  <li>
+    <p><strong><a href="https://orcid.org/0000-0002-1266-298X">Michael Appleby</a></strong>, Yale University</p>
+  </li>
+  <li>
+    <p><strong><a href="https://orcid.org/0000-0003-1881-243X">Tom Crane</a></strong>, Digirati</p>
+  </li>
+  <li>
+    <p><strong><a href="https://orcid.org/0000-0003-4441-6852">Robert Sanderson</a></strong>, J. Paul Getty Trust</p>
+  </li>
+  <li>
+    <p><strong><a href="https://orcid.org/0000-0002-0367-1243">Jon Stroop</a></strong>, Princeton University Library</p>
+  </li>
+  <li>
+    <p><strong><a href="https://orcid.org/0000-0002-7970-7855">Simeon Warner</a></strong>, Cornell University</p>
+  </li>
+</ul>
+
+<p><em>Copyright © 2012-2021 Editors and contributors. Published by the IIIF Consortium under the <a href="http://creativecommons.org/licenses/by/4.0/" title="Creative Commons &mdash; Attribution 4.0 International">CC-BY</a> license, see <a href="/iiif-website/api/annex/notes/disclaimer/">disclaimer</a>.</em></p>
+
+<p class="warning"><strong>Status Warning</strong>
+This is a work in progress and may change without notice. Implementers should be aware that this document is not stable. Implementers are likely to find the specification changing in incompatible ways. Those interested in implementing this document before it reaches beta or release stages should join the IIIF <a href="mailto:iiif-discuss@googlegroups.com" title="Email Discussion List">mailing list</a> and the <a href="/iiif-website/community/groups/discovery/">Discovery Specification Group</a>, take part in the discussions, and follow the <a href="https://github.com/IIIF/discovery/issues">emerging issues</a> on Github.</p>
+      <h2 id="introduction">
+        
+        
+          1. Introduction <a href="#introduction">#</a>
+        
+        
+      </h2>
+    
+
+<p>This specification provides a way of describing a <a href="/iiif-website/api/presentation/" title="IIIF Presentation API">IIIF Presentation API</a> resource, or a part of a resource, in a compact format that can be used to initialize the view of that resource in any client that implements this specification. This description is the <em>content state</em>. This specification provides the format of the <em>content state</em>, and mechanisms for passing it between applications regardless of their different user interfaces and capabilities.</p>
+      <h3 id="objectives-and-scope">
+        
+        
+          1.1. Objectives and Scope <a href="#objectives-and-scope">#</a>
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>A user follows a link from a search result, which opens a IIIF viewer. The viewer focuses on the relevant part of the object, such as a particular line of text that contains the searched-for term.</li>
+  <li>A user opens several IIIF Manifests to compare paintings, then wishes to share this set of views with a colleague.</li>
+</ul>
+
+<p>These are examples of sharing a resource, or a particular view of a resource. Other examples include bookmarks, citations, playlists and deep linking into digital objects.</p>
+
+<p>The objective of the IIIF Content State API is to provide a standardized format for sharing of a particular view of one or more <a href="/iiif-website/api/presentation/" title="IIIF Presentation API">IIIF Presentation API</a> resources, such as a Collection, a Manifest, or a particular part of a Manifest.</p>
+
+<p>This specification also describes how a content state is passed into a viewer or other client application from another system or application, so that the viewer can show the intended part of the resource (or resources) to the user. A simple example would be a content state that tells a viewer to load a IIIF Manifest.</p>
+
+<p>A viewer can also <em>export</em> a content state, for example to enable a user to share a particular view with another user, or publish it as a reference or citation. Different IIIF clients will have different user interfaces and audiences, and may choose which of these mechanisms to support. Further detailed examples may be found in the <a href="/iiif-website/api/cookbook/" title="IIIF Cookbook">IIIF Cookbook</a>.</p>
+
+<p>The <em>content state</em> is distinct from the state of any particular viewer’s user interface. A viewer state is likely to be client-specific and would concern which panels are open, which options are selected and similar user interface details. Viewers with very different user interfaces can all implement support for the Content State API.</p>
+
+<p>The intended audience of this document is developers of applications that implement the Presentation API, although other communities may benefit as well.</p>
+      <h4 id="111-relationship-with-change-discovery-api">
+        
+        
+          1.1.1. Relationship with Change Discovery API <a href="#111-relationship-with-change-discovery-api">#</a>
+        
+        
+      </h4>
+    
+
+<p>The resources made available via the <a href="/iiif-website/api/presentation/" title="IIIF Presentation API">IIIF Presentation API</a> are useful only if they can be found. While the <a href="/iiif-website/api/discovery/" title="IIIF Change Discovery API">Change Discovery API</a> is for implementing systems that allow these resources to be found, the Content State API is for opening the found resource in a compatible environment, such as a viewer, annotation tool or other IIIF-compatible software.</p>
+      <h3 id="terminology">
+        
+        
+          1.2. Terminology <a href="#terminology">#</a>
+        
+        
+      </h3>
+    
+
+<p>The specification uses the following terms:</p>
+
+<ul>
+  <li>
+    <p><strong>HTTP(S)</strong>: The HTTP or HTTPS URI scheme and internet protocol.</p>
+  </li>
+  <li>
+    <p><strong>array</strong>, <strong>JSON object</strong>, <strong>number</strong>, and <strong>string</strong> in this document are to be interpreted as defined by the <a href="https://tools.ietf.org/html/rfc8259" title="JSON RFC">Javascript Object Notation (JSON)</a> specification.</p>
+  </li>
+  <li>
+    <p><strong>Annotation</strong> is to be interpreted as defined in the <a href="http://w3.org/TR/annotation-model/" title="Web Annotation Model">W3C Web Annotation Data Model</a> specification.</p>
+  </li>
+</ul>
+
+<p>The key words <em class="rfc">must</em>, <em class="rfc">must not</em>, <em class="rfc">required</em>, <em class="rfc">shall</em>, <em class="rfc">shall not</em>, <em class="rfc">should</em>, <em class="rfc">should not</em>, <em class="rfc">recommended</em>, <em class="rfc">may</em>, and <em class="rfc">optional</em> in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/rfc2119" title="RFC Keywords">RFC 2119</a>.</p>
+      <h2 id="content-state">
+        
+        
+          2. Content State <a href="#content-state">#</a>
+        
+        
+      </h2>
+    
+
+<p>A content state is a JSON-LD data structure that uses the models described by the <a href="/iiif-website/api/presentation/" title="IIIF Presentation API">IIIF Presentation API</a> and <a href="http://w3.org/TR/annotation-model/" title="Web Annotation Model">W3C Web Annotation Data Model</a> specifications. The data structure is a description of a resource, or part of a resource. This data structure must allow the client to load the resource required, and present a particular part of the resource to the user. The state might be very simple: for example, a link to a Manifest. A more complex content state would provide more detail about the intended target. The following are all behaviors a passed-in content state might produce in a compatible client:</p>
+
+<ul>
+  <li><em>load Manifest M</em></li>
+  <li><em>load Manifest M, navigate to Canvas C, and zoom in to the region defined by xywh=X,Y,W,H</em></li>
+  <li><em>load Manifest M, navigate such that Range R is selected, and start playing the time-based canvas C within Range R at time t=T</em></li>
+</ul>
+
+<p>These intentions can be expressed formally as an Annotation that targets the intended resource, or part of the resource. This content state Annotation must be easily <em>passed</em> into web applications, for example, as a query string parameter, or an HTML <code class="language-plaintext highlighter-rouge">data-</code> attribute.</p>
+      <h3 id="21-annotation-model-for-content-state">
+        
+        
+          2.1. Annotation Model for Content State <a href="#21-annotation-model-for-content-state">#</a>
+        
+        
+      </h3>
+    
+
+<p>The target of the Annotation is the IIIF resource, using exactly the same patterns as any other IIIF-targeting Annotation that a IIIF viewer might encounter.</p>
+
+<p>The target could be any resource described by the Presentation API, for example, a:</p>
+
+<ul>
+  <li>Manifest</li>
+  <li>Range</li>
+  <li>Canvas</li>
+  <li>spatial or temporal fragment of a Canvas</li>
+  <li>spatial or temporal point on a Canvas</li>
+</ul>
+
+<p>The Annotation must contain enough information about de-referenceable resources to show the content in context. For example, a Canvas is often not enough information for a viewer to show the intended view; the Manifest the Canvas is part of needs to be declared so that the client can load that Manifest first, and then find the Canvas within it.</p>
+      <h3 id="22-form-of-annotation">
+        
+        
+          2.2 Form of Annotation <a href="#22-form-of-annotation">#</a>
+        
+        
+      </h3>
+    
+
+<p>Any Annotation may have one or more <a href="https://www.w3.org/TR/annotation-model/#motivation-and-purpose" title="Web Annotation Model - Motivation">motivations</a>, that provide the reason(s) why it was created. For example, <code class="language-plaintext highlighter-rouge">bookmarking</code>.</p>
+
+<p>A content state Annotation always has the motivation <code class="language-plaintext highlighter-rouge">contentState</code>. This motivation is not defined by either the <a href="http://w3.org/TR/annotation-model/" title="Web Annotation Model">W3C Web Annotation Data Model</a> or the IIIF Presentation API, and is chosen to avoid potential ambiguity when the target of the content state Annotation is itself an Annotation. The content state annotation may also have additional motivations such as <code class="language-plaintext highlighter-rouge">bookmarking</code>, <code class="language-plaintext highlighter-rouge">identifying</code> and so on, as defined by the W3C Web Annotation Model, but it is its particular <code class="language-plaintext highlighter-rouge">contentState</code> motivation that produces the required behavior in compatible software.</p>
+
+<p>A content state annotation can take several formats. All of the four examples below are equivalent to the following annotation, which is the simplest content state: a reference to a IIIF Manifest.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/Annotation-server/bookmarks/b1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contentState"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/item1/manifest"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Publishers <em class="rfc">should</em> provide the content state annotation in one of the following forms.
+A client <em class="rfc">should</em> be able to accept and process the content state in all of these forms.</p>
+      <h4 id="221-full-annotation">
+        
+        
+          2.2.1 Full Annotation <a href="#221-full-annotation">#</a>
+        
+        
+      </h4>
+    
+
+<p>The content state <em class="rfc">may</em> be supplied as JSON-LD, as a full Annotation with the motivation <code class="language-plaintext highlighter-rouge">contentState</code>, as in the example above.</p>
+
+<p>The target of the annotation is in this case a complete IIIF resource (here, a Manifest) but in more complex cases, the target could be a part of a IIIF resource.</p>
+      <h4 id="222-annotation-uri">
+        
+        
+          2.2.2 Annotation URI <a href="#222-annotation-uri">#</a>
+        
+        
+      </h4>
+    
+
+<p>The content state <em class="rfc">may</em> be supplied as a string whose value is the URI of an Annotation with the motivation <code class="language-plaintext highlighter-rouge">contentState</code>, that the client must de-reference and process. For the example above, this would be the URI <code class="language-plaintext highlighter-rouge">https://example.org/Annotation-server/bookmarks/b1</code>. The response from that URI would be the JSON above.</p>
+      <h4 id="223-target-body">
+        
+        
+          2.2.3 Target body <a href="#223-target-body">#</a>
+        
+        
+      </h4>
+    
+
+<p>The content state <em class="rfc">may</em> be supplied as JSON-LD, as the value of the <code class="language-plaintext highlighter-rouge">target</code> property of an implied Annotation with the motivation <code class="language-plaintext highlighter-rouge">contentState</code>. For the example above, this would be:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/item1/manifest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This form is better suited to scenarios where compactness is important, for example a query string parameter, where it will be combined with base64url encoding as described in Section 2.3.</p>
+      <h4 id="224-target-uri">
+        
+        
+          2.2.4 Target URI <a href="#224-target-uri">#</a>
+        
+        
+      </h4>
+    
+
+<p>The content state <em class="rfc">may</em> be supplied as a string whose value is the <code class="language-plaintext highlighter-rouge">id</code> (the dereferenceable URI) of the <code class="language-plaintext highlighter-rouge">target</code> property only. This is the simplest form and is just the URI of a resource. For the example above, this would be the URI <code class="language-plaintext highlighter-rouge">https://example.org/iiif/item1/manifest</code>. The client would simply load this Manifest and display it.</p>
+
+<p>Examples 2.2.2 and 2.2.4 are both URIs. It is up to the client to recognise that 2.2.4 is a Manifest, whereas 2.2.2 is an Annotation that points to a Manifest. The client inspects the <code class="language-plaintext highlighter-rouge">type</code> property to determine what the de-referenced resource is.</p>
+      <h4 id="225-limitations-of-simple-uris">
+        
+        
+          2.2.5 Limitations of simple URIs <a href="#225-limitations-of-simple-uris">#</a>
+        
+        
+      </h4>
+    
+
+<p>While supporting many requirements for sharing resources and initializing a client application, the 2.2.4 form is not capable of expressing content states that are part of a IIIF resource, such as a region of a Canvas, or a Canvas URI that is not itself de-referenceable. One of the other forms must be used for these purposes.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/import/1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contentState"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/canvas7#xywh=1000,2000,1000,2000"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/manifest"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+     </span><span class="p">}]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This description cannot be conveyed by just a Canvas URI or a Manifest URI; it needs the structure provided by a content state Annotation. It can be reduced to <em>Target body</em> form, but no further:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/canvas7#xywh=1000,2000,1000,2000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/manifest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+      <h3 id="23-protocol-and-encoding-requirements">
+        
+        
+          2.3 Protocol and encoding requirements <a href="#23-protocol-and-encoding-requirements">#</a>
+        
+        
+      </h3>
+    
+
+<p>There are many ways in which the content state data shown in Section 2.2 could be passed to, or exported from, IIIF compatible software such as a viewer. For interoperability, agreeing on the model is not enough. This section defines <em>Protocols</em> for the transfer of this data, so that implementing software can receive or pass a content state without specific knowledge of other participating software. These protocols make use of widely supported features of modern browsers:</p>
+
+<ul>
+  <li>Passing a content state as a query string parameter in an HTTP GET request</li>
+  <li>Passing a content state as a parameter in an HTTP POST request</li>
+  <li>Reacting to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event" title="Element: paste event">Paste</a> event, where the pasted data is the URI of a content state</li>
+  <li>Reacting to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event" title="Element: paste event">Paste</a> event, where the pasted data is a full content state</li>
+  <li>Using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" title="HTML Drag and Drop API">Drag and Drop API</a> to expose and accept content states</li>
+  <li>Uploading content state from the client machine via the <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" title="FileReader">FileReader</a> interface</li>
+  <li>Initialising a client via an HTML5 <code class="language-plaintext highlighter-rouge">data-*</code> attribute</li>
+</ul>
+
+<p>Examples of these protocols are given in Section 3, <a href="/iiif-website/api/content-state/0.3/#initialization" title="Initialization mechanisms (protocol)">Initialization mechanisms</a>.</p>
+      <h4 id="231-base-64-encoding-with-url-and-filename-safe-alphabet">
+        
+        
+          2.3.1 Base 64 Encoding with URL and Filename Safe Alphabet <a href="#231-base-64-encoding-with-url-and-filename-safe-alphabet">#</a>
+        
+        
+      </h4>
+    
+
+<p>Any content state that is in JSON-LD form, rather than a simple URI string, <em class="rfc">must</em> be encoded as <a href="https://tools.ietf.org/html/rfc4648#section-5" title="Base 64 Encoding with URL and Filename Safe Alphabet">Base 64 Encoding with URL and Filename Safe Alphabet</a> (“base64url”) when declared inline in an HTML document or passed as an HTTP request parameter (e.g., GET or POST), and a client <em class="rfc">must</em> accept it in that form. Note that “base64url” is not the same encoding as “base64”, and is used to ensure the integrity of content states passed between web applications.</p>
+
+<p>The destination character set when encoding <em class="rfc">must</em> be UTF-8. For example, when passing the content state as JSON-LD in a query string parameter, base64url is used, as unencoded JSON is vulnerable to corruption. Simple URI forms <em class="rfc">should</em> be plain strings.</p>
+
+<p>When published as inline, base64url-encoded JSON-LD in the full form given in 2.2, the content state Annotation <em class="rfc">may</em> omit the <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">@context</code> properties.</p>
+      <h5 id="232-example-of-base64url-encoding">
+        
+        
+          2.3.2 Example of base64url encoding <a href="#232-example-of-base64url-encoding">#</a>
+        
+        
+      </h5>
+    
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/canvas7#xywh=1000,2000,1000,2000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/manifest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The above annotation JSON can be condensed to remove unecessary whitespace:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"id":"https://example.org/object1/canvas7#xywh=1000,2000,1000,2000","type":"Canvas","partOf":[{"id":"https://example.org/object1/manifest","type":"Manifest"}]}
+</code></pre></div></div>
+
+<p>The condensed form is then encoded (this example in Python):</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">base64</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="n">urlsafe_b64encode</span><span class="p">(</span><span class="sa">b</span><span class="s">'{"id":"https://example.org/object1/canvas7#xywh=1000,2000,1000,2000","type":"Canvas","partOf":[{"id":"https://example.org/object1/manifest","type":"Manifest"}]}'</span><span class="p">)</span>
+
+<span class="sa">b</span><span class="s">'eyJpZCI6ICJodHRwczovL2V4YW1wbGUub3JnL29iamVjdDEvY2FudmFzNyN4eXdoPTEwMDAsMjAwMCwxMDAwLDIwMDAiLCJ0eXBlIjoiQ2FudmFzIiwicGFydE9mIjpbeyJpZCI6Imh0dHBzOi8vZXhhbXBsZS5vcmcvb2JqZWN0MS9tYW5pZmVzdCIsInR5cGUiOiJNYW5pZmVzdCJ9XX0='</span>
+</code></pre></div></div>
+
+<p>The string “eyJp…XX0=” is the now URI-safe, encoded form of the content state, suitable for passing to and from web applications.</p>
+
+<p>Not all use cases for providing a content state to a client require base64url encoding, because not all of them are susceptible to HTTP transmission issues. For example, a user interface could allow the user to paste or even type content state JSON-LD directly. Examples are given in section 3. In these scenarios, the client should accept unencoded JSON, too.</p>
+      <h4 id="234-uri-encoding">
+        
+        
+          2.3.4 URI-Encoding <a href="#234-uri-encoding">#</a>
+        
+        
+      </h4>
+    
+
+<p>If the content state is a simple URI, it <em class="rfc">must not</em> be base64url encoded. It <em class="rfc">may</em> be uri-encoded (percent encoding, as defined by [org-rfc-3986][Generic URI Syntax, RFC 3986]), and a client <em class="rfc">must</em> accept it in that form.</p>
+      <h4 id="234-protocol">
+        
+        
+          2.3.4 Protocol <a href="#234-protocol">#</a>
+        
+        
+      </h4>
+    
+
+<p>Values are passed into web applications via request parameters, or attributes on HTML elements.</p>
+
+<p>If a client is capable of reading the content state from the value of an HTTP GET or POST request parameter, it <em class="rfc">must</em> look for the content state in a request parameter called <code class="language-plaintext highlighter-rouge">iiif-content</code>.</p>
+
+<p>If a client is capable of reading the content state from the value of an attribute on an HTML element that instantiates the client, it <em class="rfc">should</em> look for the content state in an attribute called <code class="language-plaintext highlighter-rouge">data-iiif-content</code>.</p>
+
+<p>A content state Annotation may be published inline as part of an HTML document, as in the preceding <code class="language-plaintext highlighter-rouge">data-iiif-content</code> example, or as a query string parameter forming part of the <code class="language-plaintext highlighter-rouge">href</code> property of an HTML anchor tag.</p>
+
+<p>If the content state is a simple URI, the client <em class="rfc">must</em> load the resource at that URI and process it. The resource at that URI <em class="rfc">must</em> be the full Annotation as in 2.2.2. above, or a IIIF Resource as in 2.2.4. That is, the de-referenced response <em class="rfc">must</em> be JSON-LD, and <em class="rfc">should</em> have a value of <code class="language-plaintext highlighter-rouge">type</code> taken from <code class="language-plaintext highlighter-rouge">Annotation</code>, <code class="language-plaintext highlighter-rouge">Collection</code>, <code class="language-plaintext highlighter-rouge">Manifest</code>, <code class="language-plaintext highlighter-rouge">Canvas</code> and <code class="language-plaintext highlighter-rouge">Range</code>. The response <em class="rfc">must</em> use UTF-8 encoding.</p>
+
+<p>If the <code class="language-plaintext highlighter-rouge">type</code> property of the dereferenced resource is <code class="language-plaintext highlighter-rouge">Canvas</code> or <code class="language-plaintext highlighter-rouge">Range</code>, the resource <em class="rfc">must</em> include the Manifest URI that the Canvas or Range is to be found in, using the <code class="language-plaintext highlighter-rouge">partOf</code> property, as in example 2.3.2 above.</p>
+
+<p>If the content state is JSON-LD the client <em class="rfc">must</em> inspect the <code class="language-plaintext highlighter-rouge">type</code> property to decide whether the value is the full content state Annotation (indicated by the additional presence of the <code class="language-plaintext highlighter-rouge">contentState</code> motivation) (as in example 2.2.1), or the value of the <code class="language-plaintext highlighter-rouge">target</code> property of an implied content state Annotation (example 2.2.3).</p>
+      <h2 id="initialization">
+        
+        
+          3. Initialization <a href="#initialization">#</a>
+        
+        
+      </h2>
+    
+
+<p>This specification provides mechanisms that IIIF compatible software can use to expose, share and transfer content state descriptions, but does not specify what form IIIF compatible software itself may take (e.g., a web page, a JavaScript web application, a native mobile application, a desktop application, or display kiosk hardware). Please see the <a href="/iiif-website/api/cookbook/" title="IIIF Cookbook">IIIF Cookbook</a> for further examples of the patterns listed below.</p>
+      <h3 id="initialization-mechanisms">
+        
+        
+          3.1. Initialization mechanisms (protocol) <a href="#initialization-mechanisms">#</a>
+        
+        
+      </h3>
+    
+
+<p>The data structure <em class="rfc">may</em> be made available to the client using the following mechanisms. Other mechanisms are possible, but outside the scope of the specification.</p>
+      <h4 id="initialization-mechanisms-link">
+        
+        
+          3.1.1 Linking: HTTP GET (query string) parameter <a href="#initialization-mechanisms-link">#</a>
+        
+        
+      </h4>
+    
+
+<p>If the intention is that the linked-to client loads an entire IIIF resource without focusing on any particular part, the simplest form of the content state <em class="rfc">should</em> be used:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.org/viewer?iiif-content=http://dams.llgc.org.uk/iiif/2.0/4389767/manifest.json"</span><span class="nt">&gt;</span>Link to Viewer<span class="nt">&lt;/a&gt;</span>
+
+</code></pre></div></div>
+
+<p>In this case the client at <code class="language-plaintext highlighter-rouge">https://example.org/viewer</code> would load the resource provided, determine that it is a Manifest (rather than, say, a Collection), and process accordingly.</p>
+
+<p>When the intention is to initialize the viewer at a particular part of the resource, more options are available.</p>
+
+<p>In the following examples, the same Annotation is used each time. As JSON:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contentState"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dams.llgc.org.uk/iiif/2.0/4389767/canvas/4389772.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dams.llgc.org.uk/iiif/2.0/4389767/manifest.json"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>An example of this usage would be a link from search results to a particular page of a digitized book, or a stored bookmark of a particular page (i.e., Canvas).</p>
+
+<p>Without encoding, the link to the viewer would look like this:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">'https://example.org/viewer?iiif-content={"type":"Annotation","motivation":"contentState","target":{"id":"http://dams.llgc.org.uk/iiif/2.0/4389767/canvas/4389772.json","type":"Canvas","partOf":[{"id":"http://dams.llgc.org.uk/iiif/2.0/4389767/manifest.json","type":"Manifest"}]}}'</span><span class="nt">&gt;</span>Link to Viewer<span class="nt">&lt;/a&gt;</span>
+
+</code></pre></div></div>
+
+<p>However, as JSON-LD, this <em class="rfc">must</em> be base64url encoded UTF-8:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.org/viewer?iiif-content=aHR0cHM6Ly9leGFtcGxlLm9yZy92aWV3ZXI_aWlpZi1jb250ZW50PXsidHlwZSI6IkFubm90YXRpb24iLCJtb3RpdmF0aW9uIjoiY29udGVudFN0YXRlIiwidGFyZ2V0Ijp7ImlkIjoiaHR0cDovL2RhbXMubGxnYy5vcmcudWsvaWlpZi8yLjAvNDM4OTc2Ny9jYW52YXMvNDM4OTc3Mi5qc29uIiwidHlwZSI6IkNhbnZhcyIsInBhcnRPZiI6W3siaWQiOiJodHRwOi8vZGFtcy5sbGdjLm9yZy51ay9paWlmLzIuMC80Mzg5NzY3L21hbmlmZXN0Lmpzb24iLCJ0eXBlIjoiTWFuaWZlc3QifV19fQ=="</span><span class="nt">&gt;</span>Link to Viewer<span class="nt">&lt;/a&gt;</span>
+
+</code></pre></div></div>
+
+<p>The content state may be passed as just the <code class="language-plaintext highlighter-rouge">target</code> property of an implied Annotation with motivation <code class="language-plaintext highlighter-rouge">contentState</code>, that is:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dams.llgc.org.uk/iiif/2.0/4389767/canvas/4389772.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dams.llgc.org.uk/iiif/2.0/4389767/manifest.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This results in a more compact form. If unencoded, this would be:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">'https://example.org/viewer?iiif-content={"id":"http://dams.llgc.org.uk/iiif/2.0/4389767/canvas/4389772.json","type":"Canvas","partOf":[{"id":"http://dams.llgc.org.uk/iiif/2.0/4389767/manifest.json","type":"Manifest"}]}'</span><span class="nt">&gt;</span>Link to Viewer<span class="nt">&lt;/a&gt;</span>
+
+</code></pre></div></div>
+
+<p>However, as JSON-LD again, this <em class="rfc">must</em> be base64url encoded UTF-8:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.org/viewer?iiif-content=aHR0cHM6Ly9leGFtcGxlLm9yZy92aWV3ZXI_aWlpZi1jb250ZW50PXsiaWQiOiJodHRwOi8vZGFtcy5sbGdjLm9yZy51ay9paWlmLzIuMC80Mzg5NzY3L2NhbnZhcy80Mzg5NzcyLmpzb24iLCJ0eXBlIjoiQ2FudmFzIiwicGFydE9mIjpbeyJpZCI6Imh0dHA6Ly9kYW1zLmxsZ2Mub3JnLnVrL2lpaWYvMi4wLzQzODk3NjcvbWFuaWZlc3QuanNvbiIsInR5cGUiOiJNYW5pZmVzdCJ9XX0="</span><span class="nt">&gt;</span>Link to Viewer<span class="nt">&lt;/a&gt;</span>
+
+</code></pre></div></div>
+      <h4 id="initialization-mechanisms-post">
+        
+        
+          3.1.2 HTTP POST (form) parameter <a href="#initialization-mechanisms-post">#</a>
+        
+        
+      </h4>
+    
+
+<p>The same data structure, in the same formats, may instead be passed to a server in an HTTP POST. This is suited to server-side web applications, such as a web page rendering citations or a view initialized on the server. It is not suitable for initialising a standalone JavaScript application, as the POST data is typically unavailable.</p>
+
+<p>The data should be sent with the <code class="language-plaintext highlighter-rouge">Content-Type</code> header value <code class="language-plaintext highlighter-rouge">application/x-www-form-urlencoded</code>, with the parameter name <code class="language-plaintext highlighter-rouge">iiif-content</code>, as in the following example. This allows content states to be submitted from simple HTML forms (for example, pasting a citation). Curl uses form-urlencoded by default for POST:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -d 'iiif-content=aHR0cHM6Ly9leGFtcGxlLm9yZy92aWV3ZXI_aWlpZi1jb250ZW50PXsiaWQiOiJodHRwOi8vZGFtcy5sbGdjLm9yZy51ay9paWlmLzIuMC80Mzg5NzY3L2NhbnZhcy80Mzg5NzcyLmpzb24iLCJ0eXBlIjoiQ2FudmFzIiwicGFydE9mIjpbeyJpZCI6Imh0dHA6Ly9kYW1zLmxsZ2Mub3JnLnVrL2lpaWYvMi4wLzQzODk3NjcvbWFuaWZlc3QuanNvbiIsInR5cGUiOiJNYW5pZmVzdCJ9XX0=' -X POST https://example.org/citation-renderer
+</code></pre></div></div>
+
+<p>In this example, the server at <code class="language-plaintext highlighter-rouge">https://example.org/citation-renderer</code> should expect to process the content state in the same forms and variants as above.</p>
+      <h4 id="initialization-mechanisms-paste">
+        
+        
+          3.1.3 Accepting the content state as a paste operation <a href="#initialization-mechanisms-paste">#</a>
+        
+        
+      </h4>
+    
+
+<p>The client allows the content state URI or data to be pasted into part of its UI (e.g., from a “Load…” option exposing a <code class="language-plaintext highlighter-rouge">textarea</code> element for the user to manually paste into). A client can also accept a paste operation transparently, by reading from the clipboard:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">paste</span><span class="dl">'</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">clipboardData</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="dl">'</span><span class="s1">text/plain</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">Annotation</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="c1">//... process Annotation</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>In that scenario the user can paste the content state directly into the view. If supporting this scenario, the client <em class="rfc">should</em> accept unencoded JSON as well as base64url encoded JSON, and <em class="rfc">should</em> accept resource URIs directly, such as a manifest URI.</p>
+
+<p>Refer to Section 3.2 below for methods of exporting data, including the <em>Copy to clipboard</em> pattern, a natural pairing with a paste operation, from one viewer to another.</p>
+      <h4 id="initialization-mechanisms-dragdrop">
+        
+        
+          3.1.4 Drag and Drop <a href="#initialization-mechanisms-dragdrop">#</a>
+        
+        
+      </h4>
+    
+
+<p>In this scenario, one client provides a <em>draggable</em> element:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://iiif.io/img/logo-iiif-34x30.png"</span> <span class="na">draggable=</span><span class="s">"true"</span> <span class="na">ondragstart=</span><span class="s">"drag(event)"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">function</span> <span class="nx">getContentStateAnnotation</span><span class="p">(){</span>
+        <span class="c1">// return a stringified representation of the required content state</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">drag</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">getContentStateAnnotation</span><span class="p">();</span>
+        <span class="nx">ev</span><span class="p">.</span><span class="nx">dataTransfer</span><span class="p">.</span><span class="nx">setData</span><span class="p">(</span><span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">,</span> <span class="nx">json</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>And another client provides an element capable of receiving a <code class="language-plaintext highlighter-rouge">drop</code> event:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"dropbox"</span> <span class="na">ondrop=</span><span class="s">"drop(event)"</span> <span class="na">ondragover=</span><span class="s">"allowDrop(event)"</span> <span class="na">ondragexit=</span><span class="s">"deselect(event)"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- this could be the viewport --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+
+        <span class="kd">function</span> <span class="nx">drop</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">dropDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">dropbox</span><span class="dl">"</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">dataTransfer</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+            <span class="c1">// process the Annotation</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">allowDrop</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="c1">// indicate visually that the drop area is ready to receive a drop</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">deselect</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// remove visual indication that drop is possible</span>
+        <span class="p">}</span>
+
+    <span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>This technique can also be used within the same client, to drag a content state from one part to another.</p>
+
+<p>The first parameter to <code class="language-plaintext highlighter-rouge">setData</code> and <code class="language-plaintext highlighter-rouge">getData</code> is the content type, and for maximum interoperability within the scope of this specification this <em class="rfc">must</em> be “text/plain”. Applications can assert multiple additional content types for their own custom behavior, such as dragging from the application to the desktop and saving as a file, but this is outside the scope of the current Content State API. In the above example, the content of the drag and drop operation could be a plain URI, or JSON-LD. If JSON-LD, clients receiving the data (by calling <code class="language-plaintext highlighter-rouge">getData</code>) <em class="rfc">should</em> accept the data in both unencoded and base64url encoded forms.</p>
+      <h4 id="315--upload-file">
+        
+        
+          3.1.5  “Upload” file <a href="#315--upload-file">#</a>
+        
+        
+      </h4>
+    
+
+<p>A JavaScript client can accept content state from the client machine via the <code class="language-plaintext highlighter-rouge">FileReader</code> interface:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"selectFiles"</span> <span class="na">value=</span><span class="s">"Import"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"import"</span> <span class="na">onclick=</span><span class="s">"return loadAnnotation()"</span><span class="nt">&gt;</span>Import<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>    
+
+<span class="nt">&lt;script&gt;</span>
+
+    <span class="kd">function</span> <span class="nx">loadAnnotation</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">selectFiles</span><span class="dl">'</span><span class="p">).</span><span class="nx">files</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">fr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileReader</span><span class="p">();</span>
+        <span class="nx">fr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">loadJson</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">fr</span><span class="p">.</span><span class="nx">readAsText</span><span class="p">(</span><span class="nx">files</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">loadJson</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">contentState</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="c1">// process contentState</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+      <h3 id="316-load-by-reference">
+        
+        
+          3.1.6 Load by reference <a href="#316-load-by-reference">#</a>
+        
+        
+      </h3>
+    
+
+<p>This is a variant of 3.1.1, with the parameter value a URI rather than the content itself.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.org/viewer?iiif-content=https://publisher.org/fragment123.json"</span><span class="nt">&gt;</span>Link to Viewer<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>The same rules apply; the viewer <em class="rfc">must</em> dereference and process the Annotation at that URI.</p>
+      <h3 id="317-common-initialization-parameter">
+        
+        
+          3.1.7 Common initialization parameter <a href="#317-common-initialization-parameter">#</a>
+        
+        
+      </h3>
+    
+
+<p>If a IIIF client can accept a content state via a custom HTML attribute, then it <em class="rfc">should</em> use the attribute <code class="language-plaintext highlighter-rouge">data-iiif-content</code> for this purpose, to assist page developers using that client in understanding what the attribute is for. A viewer that accepts content state <em class="rfc">should</em> process an Annotation in any of the forms described in the GET parameter section.</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;p&gt;</span>Loading a whole manifest<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span>
+    <span class="na">id=</span><span class="s">"iiif-viewer"</span>
+    <span class="na">data-iiif-content=</span><span class="s">"http://dams.llgc.org.uk/iiif/2.0/4389767/manifest.json"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>Loading a manifest to show a particular Canvas<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span>
+    <span class="na">id=</span><span class="s">"iiif-viewer"</span>
+    <span class="na">data-iiif-content=</span><span class="s">"aHR0cHM6Ly9leGFtcGxlLm9yZy92aWV3ZXI_aWlpZi1jb250ZW50PXsiaWQiOiJodHRwOi8vZGFtcy5sbGdjLm9yZy51ay9paWlmLzIuMC80Mzg5NzY3L2NhbnZhcy80Mzg5NzcyLmpzb24iLCJ0eXBlIjoiQ2FudmFzIiwicGFydE9mIjpbeyJpZCI6Imh0dHA6Ly9kYW1zLmxsZ2Mub3JnLnVrL2lpaWYvMi4wLzQzODk3NjcvbWFuaWZlc3QuanNvbiIsInR5cGUiOiJNYW5pZmVzdCJ9XX0="</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+      <h3 id="32-exporting-state">
+        
+        
+          3.2 Exporting state <a href="#32-exporting-state">#</a>
+        
+        
+      </h3>
+    
+
+<p>There are further ways in which a client can <em>export</em> state, beyond populating a drag and drop operation as in example 3.1.4. While interoperability concerns require this specification to describe the ways in which a client can <em>accept</em> state, the ways in which a content state might have arrived on a user’s clipboard are out of scope here, and are covered in the Cookbook. These include:</p>
+
+<ul>
+  <li>Copy to clipboard</li>
+  <li>Download file</li>
+  <li>Display for copying</li>
+  <li>Send external (to citation-accepting service)</li>
+</ul>
+      <h2 id="4-examples-of-content-states">
+        
+        
+          4. Examples of content states <a href="#4-examples-of-content-states">#</a>
+        
+        
+      </h2>
+    
+
+<p>The following examples demonstrate the use of the existing IIIF Presentation API and W3C Web Annotation Data Model to describe parts of resources. Any IIIF resource that can be expressed in the Presentation model can be used in a content state. The full form of the Annotation (as if it were available at the URI given in the <code class="language-plaintext highlighter-rouge">id</code> property) has been used in each case.  Further examples can be found in the <a href="/iiif-website/api/cookbook/" title="IIIF Cookbook">IIIF Cookbook</a>.</p>
+
+<p>Publishers should strive to provide the simplest JSON-LD representation, and not assume that any client can handle arbitrarily complex content states.</p>
+      <h3 id="41-a-region-of-a-canvas-in-a-manifest">
+        
+        
+          4.1. A region of a canvas in a manifest <a href="#41-a-region-of-a-canvas-in-a-manifest">#</a>
+        
+        
+      </h3>
+    
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/import/1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contentState"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/canvas7#xywh=1000,2000,1000,2000"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/object1/manifest"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+     </span><span class="p">}]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>When processed by a viewer, the user should see the rectangle <code class="language-plaintext highlighter-rouge">1000,2000,1000,2000</code> highlighted on the Canvas given in the <code class="language-plaintext highlighter-rouge">id</code> parameter; the viewer loads the manifest linked to in the <code class="language-plaintext highlighter-rouge">partOf</code> property and navigates to that canvas, and then fills the viewport with that rectangle or otherwise draws attention to it.</p>
+      <h3 id="42-start-playing-at-a-point-in-a-recording">
+        
+        
+          4.2. Start playing at a point in a recording <a href="#42-start-playing-at-a-point-in-a-recording">#</a>
+        
+        
+      </h3>
+    
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/import/2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contentState"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SpecificResource"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/id1/canvas1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/id1/manifest"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"selector"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PointSelector"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"t"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.5</span><span class="w">
+	  </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This example should cause a viewer to open Manifest https://example.org/iiif/id1/manifest, navigate to Canvas https://example.org/iiif/id1/canvas1, and start playing at 14.5 seconds into that canvas.</p>
+      <h3 id="43-multiple-targets-for-a-comparison-view">
+        
+        
+          4.3. Multiple targets for a comparison view <a href="#43-multiple-targets-for-a-comparison-view">#</a>
+        
+        
+      </h3>
+    
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iiif.io/api/presentation/3/context.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/import/3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annotation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"motivation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contentState"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/item1/canvas37"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/item1/manifest"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/item2/canvas99"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canvas"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/iiif/item2/manifest"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manifest"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Here the viewer should open two manifests at once (if it is capable of such a view).</p>
+      <h3 id="44-search-results">
+        
+        
+          4.4. Search Results <a href="#44-search-results">#</a>
+        
+        
+      </h3>
+    
+
+<p>The following example uses the compact, query string form of the content state to demonstrate what HTML search results linking to a particular viewer might look like.</p>
+
+<p>Firstly, in non-valid, unencoded form to show the annotation:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>Results for "cats"<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ol&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h3&gt;&lt;a</span> <span class="na">href=</span><span class="s">'viewer.html?iiif-content={"id":"https://example.org/alice/canvas77#xywh=1000,2000,1000,2000","type":"Canvas","partOf":[{"id":"https://example.org/alice/manifest","type":"Manifest"}]}'</span><span class="nt">&gt;</span>Alice in Wonderland<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...she has often seen a <span class="nt">&lt;b&gt;</span>cat<span class="nt">&lt;/b&gt;</span> without a grin but never a grin without a <span class="nt">&lt;b&gt;</span>cat<span class="nt">&lt;/b&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="c">&lt;!-- ... more results --&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</code></pre></div></div>
+
+<p>…and then in encoded form:</p>
+
+<script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
+
+<div class="code-header">
+    <button class="copy-button button is-small is-primary" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>Results for "cats"<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ol&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h3&gt;&lt;a</span> <span class="na">href=</span><span class="s">"viewer.html?iiif-content=eyJpZCI6Imh0dHBzOi8vZXhhbXBsZS5vcmcvYWxpY2UvY2FudmFzNzcjeHl3aD0xMDAwLDIwMDAsMTAwMCwyMDAwIiwidHlwZSI6IkNhbnZhcyIsInBhcnRPZiI6W3siaWQiOiJodHRwczovL2V4YW1wbGUub3JnL2FsaWNlL21hbmlmZXN0IiwidHlwZSI6Ik1hbmlmZXN0In1dfQ=="</span><span class="nt">&gt;</span>Alice in Wonderland<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...she has often seen a <span class="nt">&lt;b&gt;</span>cat<span class="nt">&lt;/b&gt;</span> without a grin but never a grin without a <span class="nt">&lt;b&gt;</span>cat<span class="nt">&lt;/b&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="c">&lt;!-- ... more results --&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</code></pre></div></div>
+      <h2 id="appendices">
+        
+        
+          Appendices <a href="#appendices">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="acknowledgements">
+        
+        
+          A. Acknowledgements <a href="#acknowledgements">#</a>
+        
+        
+      </h3>
+    
+
+<p>Many thanks to the members of the <a href="/community/" title="IIIF Community">IIIF community</a> for their continuous engagement, innovative ideas, and feedback.</p>
+
+<p>Many of the changes in this version are due to the work of the <a href="/iiif-website/community/groups/discovery/">IIIF Discovery Technical Specification Group</a>, chaired by Antoine Isaac (Europeana), Matthew McGrattan (Digirati) and Rob Sanderson (J. Paul Getty Trust). The IIIF Community thanks them for their leadership, and the members of the group for their tireless work.</p>
+      <h3 id="change-log">
+        
+        
+          B. Change Log <a href="#change-log">#</a>
+        
+        
+      </h3>
+    
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2020-11-22</td>
+      <td>Version 0.3 (unnamed)</td>
+    </tr>
+    <tr>
+      <td>2019-02-04</td>
+      <td>Version 0.2 (unnamed)</td>
+    </tr>
+    <tr>
+      <td>2018-10-31</td>
+      <td>Version 0.1 (unnamed)</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Keep two spaces at the top of this file -->
+
+    </div>
+  </div>
+</div>
+
+    </section>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+
+      <div class="navbar-brand column is-half">
+        <a class="navbar-item" href="/iiif-website/">
+          <img src="/iiif-website/assets/images/logo-sm.png" alt="International Image Interoperability Framework logo" height="28">
+          <span class="brand-title blue-text">International Image Interoperability Framework</span>
+        </a>
+        <p>International Image Interoperability Framework: A community driven image framework with well defined APIs for making the world’s image repositories interoperable and accessible</p>
+      </div>
+      <div class="column"></div>
+      
+      <div class="column menu-column">
+        <h4>About</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">How It Works</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Documentation</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Demos</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Tutorials</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+      <div class="column menu-column">
+        <h4>Stay Connected</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">Events & News</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Join Newsletter</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Community Groups</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Consortium</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+    </columns>
+  </div>
+</footer>
+</body>
+</html>

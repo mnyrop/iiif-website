@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <title>
+    Image API 3.0 Implementation Notes &mdash; IIIF | International Image Interoperability Framework
+  </title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="/iiif-website/assets/images/logo-sm.png">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/iiif-website/assets/css/style.css"></head>
+<body><section class="hero is-primary " style="">
+  <div class="hero-head">
+    <nav id="navbar" class="navbar is-transparent is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/iiif-website/">
+        <img src="/iiif-website/assets/images/logo-sm.png" alt="International Image Interoperability Framework logo" height="28">
+        <span class="brand-title">International Image Interoperability Framework</span>
+      </a>
+      <div class="navbar-burger" data-target="navbar" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+            <a class="navbar-item" href="/iiif-website/">Home</a>
+          
+            <a class="navbar-item" href="/iiif-website/demos">Demos</a>
+          
+            <a class="navbar-item" href="/iiif-website/news-and-events">News & Events</a>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"href="/iiif-website/get-involved">
+                Get Involved
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                
+              </div>
+            </div>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"href="/iiif-website/get-started">
+                Get Started
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                
+                  <a class="navbar-item" href="/iiif-website">APIs & Documentation</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Training</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+  </div>
+  
+  
+
+<div class="hero-body container">
+  
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="#">Get Started</a></li>
+      <li><a href="#">Documentation</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container has-text-centered">
+    
+    <h2 class="title">Image API 3.0 Implementation Notes</h2>
+    
+    <p class="subtitle is-size-6 is-size-5-desktop"></p>
+    
+  </div>
+</div>
+
+  
+</section>
+<section id="main">
+      
+
+<div class="container-block is-max-widescreen">
+  <div class="columns container">
+    <aside class="column is-one-third" markdown="1">
+      <div class="box toc-sidebar sticky">
+        <ul class="menu" id="toc-menu"><li><a href="#1-http-implementation">1. HTTP implementation</a></li><li><a href="#2-linked-data-implementation">2. Linked data implementation</a></li><li><a href="#3-tile-region-parameter-calculation">3. Tile region parameter calculation</a></li><li><a href="#4-maximum-size-calculation">4. Maximum size calculation</a></li><li><a href="#5-image-size-calculation-for-rotated-images">5. Image size calculation for rotated images</a></li><li><a href="#appendices">Appendices</a><ul class="menu-list toc-submenu-2"><li><a href="#a-change-log">A. Change Log</a></li></ul></li></ul>
+
+      </div>
+    </aside>
+    <div class="column content is-two-thirds api-content" markdown="1">
+      <h2 class="no_toc" id="table-of-contents">
+        
+        
+          Table of Contents <a href="#table-of-contents">#</a>
+        
+        
+      </h2>
+    
+
+<ul id="markdown-toc">
+  <li><a href="#1-http-implementation" id="markdown-toc-1-http-implementation">1. HTTP implementation</a></li>
+  <li><a href="#2-linked-data-implementation" id="markdown-toc-2-linked-data-implementation">2. Linked data implementation</a></li>
+  <li><a href="#3-tile-region-parameter-calculation" id="markdown-toc-3-tile-region-parameter-calculation">3. Tile region parameter calculation</a></li>
+  <li><a href="#4-maximum-size-calculation" id="markdown-toc-4-maximum-size-calculation">4. Maximum size calculation</a></li>
+  <li><a href="#5-image-size-calculation-for-rotated-images" id="markdown-toc-5-image-size-calculation-for-rotated-images">5. Image size calculation for rotated images</a></li>
+  <li><a href="#appendices" id="markdown-toc-appendices">Appendices</a>    <ul>
+      <li><a href="#a-change-log" id="markdown-toc-a-change-log">A. Change Log</a></li>
+    </ul>
+  </li>
+</ul>
+      <h2 id="1-http-implementation">
+        
+        
+          1. HTTP implementation <a href="#1-http-implementation">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>For use cases that enable the saving of the image, use the HTTP <code class="language-plaintext highlighter-rouge">Content-Disposition</code> header (<a href="https://tools.ietf.org/html/rfc6266" title="Use of the Content-Disposition Header Field in the Hypertext Transfer Protocol (HTTP)">RFC6266</a>) to provide a convenient filename that distinguishes the image, based on the identifier and parameters provided.</li>
+  <li>Server implementations may rely on components or frameworks that unescape the URI path, such as Python’s <a href="https://www.python.org/dev/peps/pep-0333/" title="PEP 0333">WSGI</a>. In such situations, the requested URI may be parsed from the right in order to handle identifiers possibly containing slashes, given the knowledge of the API parameters and the prefix for which the server handles requests.</li>
+  <li>See also <a href="/iiif-website/api/annex/notes/apache/" title="Apache HTTP Server Implementation Notes">Apache HTTP Server implementation notes</a> that are relevant to the Image API and other IIIF specifications.</li>
+</ul>
+      <h2 id="2-linked-data-implementation">
+        
+        
+          2. Linked data implementation <a href="#2-linked-data-implementation">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>Linked data implementations may construct the <code class="language-plaintext highlighter-rouge">info.json</code> response using the frame supplied in the <a href="/iiif-website/api/annex/notes/jsonld/" title="JSON-LD Frames Implementation Notes">JSON-LD framing implementation note</a>.</li>
+</ul>
+      <h2 id="3-tile-region-parameter-calculation">
+        
+        
+          3. Tile region parameter calculation <a href="#3-tile-region-parameter-calculation">#</a>
+        
+        
+      </h2>
+    
+
+<p>When requesting image tiles, the <a href="/iiif-website/api/image/3./#41-region" title="4.1. Region">Region</a> and <a href="/iiif-website/api/image/3./#42-size" title="4.2. Size">Size</a> parameters must be calculated to take account of partial tiles along the right and lower edges for a full image that is not an exact multiple of the scaled tile size. The algorithm below is shown as Python code and assumes integer inputs and integer arithmetic throughout (ie. remainder discarded on division). Inputs are: size of full image content <code class="language-plaintext highlighter-rouge">(width,height)</code>, scale factor <code class="language-plaintext highlighter-rouge">s</code>, tile size <code class="language-plaintext highlighter-rouge">(tw,th)</code>, and tile coordinate <code class="language-plaintext highlighter-rouge">(n,m)</code> counting from <code class="language-plaintext highlighter-rouge">(0,0)</code> in the upper-left corner. Note that the rounding method is implementation dependent.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># Calculate region parameters /xr,yr,wr,hr/
+</span>    <span class="n">xr</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">tw</span> <span class="o">*</span> <span class="n">s</span>
+    <span class="n">yr</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">th</span> <span class="o">*</span> <span class="n">s</span>
+    <span class="n">wr</span> <span class="o">=</span> <span class="n">tw</span> <span class="o">*</span> <span class="n">s</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">xr</span> <span class="o">+</span> <span class="n">wr</span> <span class="o">&gt;</span> <span class="n">width</span><span class="p">):</span>
+        <span class="n">wr</span> <span class="o">=</span> <span class="n">width</span> <span class="o">-</span> <span class="n">xr</span>
+    <span class="n">hr</span> <span class="o">=</span> <span class="n">th</span> <span class="o">*</span> <span class="n">s</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">yr</span> <span class="o">+</span> <span class="n">hr</span> <span class="o">&gt;</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">hr</span> <span class="o">=</span> <span class="n">height</span> <span class="o">-</span> <span class="n">yr</span>
+    <span class="c1"># Calculate size parameters /ws,hs/
+</span>    <span class="n">ws</span> <span class="o">=</span> <span class="n">tw</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">xr</span> <span class="o">+</span> <span class="n">tw</span><span class="o">*</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">width</span><span class="p">):</span>
+        <span class="n">ws</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">xr</span> <span class="o">+</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span>  <span class="c1"># +s-1 in numerator to round up
+</span>    <span class="n">hs</span> <span class="o">=</span> <span class="n">th</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">yr</span> <span class="o">+</span> <span class="n">th</span><span class="o">*</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">hs</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">yr</span> <span class="o">+</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span>
+</code></pre></div></div>
+      <h2 id="4-maximum-size-calculation">
+        
+        
+          4. Maximum size calculation <a href="#4-maximum-size-calculation">#</a>
+        
+        
+      </h2>
+    
+
+<p>If a server implementation constrains maximum sizes with <code class="language-plaintext highlighter-rouge">maxWidth</code>, <code class="language-plaintext highlighter-rouge">maxHeight</code> and/or <code class="language-plaintext highlighter-rouge">maxArea</code> (defined in <a href="/iiif-website/api/image/3./#52-technical-properties" title="5.2 Technical Properties">Technical Properties</a>) then the implementation must check the size of the extracted region when handling the <a href="/iiif-website/api/image/3./#42-size" title="4.2. Size">Size</a> parameter:</p>
+
+<ul>
+  <li>If the <code class="language-plaintext highlighter-rouge">max</code> size parameter is specified then the implementation must check the default or full size of the extracted region against the constraints. If the size is constrained, the extracted region is scaled to a smaller size.</li>
+  <li>If another size parameter is used then the implementation must check the size of the resulting scaled image content against the constraints. If the size is constrained, the extracted and scaled region is further scaled to a smaller size.</li>
+</ul>
+
+<p>The <a href="/iiif-website/api/image/3./#52-technical-properties" title="5.2 Technical Properties">specification</a> does not define the algorithm by which a constrained image is scaled to fit within the constraints. Image servers may implement algorithms that scale images to match the constraints as closely as possible, or may implement algorithms that scale images with a focus on preserving the aspect ratio which might result in smaller dimensions.</p>
+
+<p>The following Python code takes image content dimensions <code class="language-plaintext highlighter-rouge">width,height</code> and optional constraints <code class="language-plaintext highlighter-rouge">maxWidth</code>, <code class="language-plaintext highlighter-rouge">maxWidth</code>, <code class="language-plaintext highlighter-rouge">maxHeight</code>. It returns a image content size <code class="language-plaintext highlighter-rouge">w,h</code> that is within, but close to the constraints.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># default without constraints
+</span>    <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="c1"># use size constraints if present, else full
+</span>    <span class="k">if</span> <span class="n">maxArea</span> <span class="ow">and</span> <span class="n">maxArea</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">):</span>
+        <span class="c1"># approximate area limit, rounds down to avoid possibility of
+</span>        <span class="c1"># slightly exceeding maxArea
+</span>        <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">maxArea</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">maxWidth</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">maxHeight</span><span class="p">:</span>
+            <span class="n">maxHeight</span> <span class="o">=</span> <span class="n">maxWidth</span>
+        <span class="k">if</span> <span class="n">maxWidth</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">:</span>
+            <span class="c1"># calculate wrt original width, height rather than
+</span>            <span class="c1"># w, h to avoid compounding rounding issues
+</span>            <span class="n">w</span> <span class="o">=</span> <span class="n">maxWidth</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">height</span> <span class="o">*</span> <span class="n">maxWidth</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">width</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">maxHeight</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">:</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">maxHeight</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">maxHeight</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">height</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+</code></pre></div></div>
+      <h2 id="5-image-size-calculation-for-rotated-images">
+        
+        
+          5. Image size calculation for rotated images <a href="#5-image-size-calculation-for-rotated-images">#</a>
+        
+        
+      </h2>
+    
+
+<p>As described in <a href="/iiif-website/api/image/3./#43-rotation" title="4.3. Rotation">Rotation</a>, in order to retain the size of the requested image contents, rotation will change the width and height dimensions of the image returned. A formula for calculating the dimensions of the image returned for a given starting size and rotation is given below. Note that the rounding method is implementation dependent and that some languages require conversion of the angle from degrees to radians.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># (w,h) are size parameters, n is rotation angle
+</span>    <span class="n">w_returned</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">h_returned</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+      <h2 id="appendices">
+        
+        
+          Appendices <a href="#appendices">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="a-change-log">
+        
+        
+          A. Change Log <a href="#a-change-log">#</a>
+        
+        
+      </h3>
+    
+
+<table class="api-table first-col-normal">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2018-02-20</td>
+      <td>Extracted from Image API and updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Keep two spaces at the top of this file -->
+
+    </div>
+  </div>
+</div>
+
+    </section>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+
+      <div class="navbar-brand column is-half">
+        <a class="navbar-item" href="/iiif-website/">
+          <img src="/iiif-website/assets/images/logo-sm.png" alt="International Image Interoperability Framework logo" height="28">
+          <span class="brand-title blue-text">International Image Interoperability Framework</span>
+        </a>
+        <p>International Image Interoperability Framework: A community driven image framework with well defined APIs for making the world’s image repositories interoperable and accessible</p>
+      </div>
+      <div class="column"></div>
+      
+      <div class="column menu-column">
+        <h4>About</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">How It Works</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Documentation</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Demos</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Tutorials</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+      <div class="column menu-column">
+        <h4>Stay Connected</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">Events & News</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Join Newsletter</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Community Groups</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Consortium</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+    </columns>
+  </div>
+</footer>
+</body>
+</html>
