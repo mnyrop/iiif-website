@@ -819,42 +819,40 @@ Clients <em class="rfc">may</em> render <code class="language-plaintext highligh
 Clients <em class="rfc">must</em> process, and <em class="rfc">may</em> render, <code class="language-plaintext highlighter-rouge">type</code> on any resource type.</li>
 </ul>
 
-<blockquote class="api-table" id="table-type">
-  <table>
-    <thead>
-      <tr>
-        <th>Class</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">Dataset</code></td>
-        <td>Data not intended to be rendered to humans directly</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">Image</code></td>
-        <td>Two dimensional visual resources primarily intended to be seen, such as might be rendered with an &lt;img&gt; HTML tag</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">Model</code></td>
-        <td>A three (or more) dimensional model intended to be interacted with by humans</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">Sound</code></td>
-        <td>Auditory resources primarily intended to be heard, such as might be rendered with an &lt;audio&gt; HTML tag</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">Text</code></td>
-        <td>Resources primarily intended to be read</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">Video</code></td>
-        <td>Moving images, with or without accompanying audio, such as might be rendered with a &lt;video&gt; HTML tag</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
+<table class="api-table" id="table-type">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Dataset</code></td>
+      <td>Data not intended to be rendered to humans directly</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Image</code></td>
+      <td>Two dimensional visual resources primarily intended to be seen, such as might be rendered with an &lt;img&gt; HTML tag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Model</code></td>
+      <td>A three (or more) dimensional model intended to be interacted with by humans</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Sound</code></td>
+      <td>Auditory resources primarily intended to be heard, such as might be rendered with an &lt;audio&gt; HTML tag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Text</code></td>
+      <td>Resources primarily intended to be read</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Video</code></td>
+      <td>Moving images, with or without accompanying audio, such as might be rendered with a &lt;video&gt; HTML tag</td>
+    </tr>
+  </tbody>
+</table>
 
 <script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
 
@@ -1064,34 +1062,32 @@ Clients <em class="rfc">may</em> process <code class="language-plaintext highlig
 Clients <em class="rfc">should</em> ignore <code class="language-plaintext highlighter-rouge">viewingDirection</code> on other types of resource.</li>
 </ul>
 
-<blockquote class="api-table" id="table-direction">
-  <table>
-    <thead>
-      <tr>
-        <th>Value</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">left-to-right</code></td>
-        <td>The object is displayed from left to right. The default if not specified.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">right-to-left</code></td>
-        <td>The object is displayed from right to left.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">top-to-bottom</code></td>
-        <td>The object is displayed from the top to the bottom.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">bottom-to-top</code></td>
-        <td>The object is displayed from the bottom to the top.</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
+<table class="api-table" id="table-direction">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">left-to-right</code></td>
+      <td>The object is displayed from left to right. The default if not specified.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">right-to-left</code></td>
+      <td>The object is displayed from right to left.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">top-to-bottom</code></td>
+      <td>The object is displayed from the top to the bottom.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bottom-to-top</code></td>
+      <td>The object is displayed from the bottom to the top.</td>
+    </tr>
+  </tbody>
+</table>
 
 <script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
 
@@ -1134,102 +1130,100 @@ Further clarifications about the implications of interactions between behavior v
 Clients <em class="rfc">should</em> process <code class="language-plaintext highlighter-rouge">behavior</code> on any resource type.</li>
 </ul>
 
-<blockquote class="api-table" id="table-behavior">
-  <table>
-    <thead>
-      <tr>
-        <th>Value</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td> </td>
-        <td><strong>Temporal Behaviors</strong></td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">auto-advance</code></td>
-        <td>Valid on Collections, Manifests, Canvases, and Ranges that include or are Canvases with at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of a Canvas, or segment thereof as specified in a Range, with a duration dimension that has this behavior, it <em class="rfc">should</em> immediately proceed to the next Canvas or segment and render it. If there is no subsequent Canvas in the current context, then this behavior should be ignored. When applied to a Collection, the client should treat the first Canvas of the next Manifest as following the last Canvas of the previous Manifest, respecting any <code class="language-plaintext highlighter-rouge">start</code> property specified. Disjoint with <code class="language-plaintext highlighter-rouge">no-auto-advance</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">no-auto-advance</code></td>
-        <td>Valid on Collections, Manifests, Canvases, and Ranges that include or are Canvases with at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of a Canvas or segment with a duration dimension that has this behavior, it <em class="rfc">must not</em> proceed to the next Canvas, if any. This is a default temporal behavior if not specified. Disjoint with <code class="language-plaintext highlighter-rouge">auto-advance</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">repeat</code></td>
-        <td>Valid on Collections and Manifests, that include Canvases that have at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of the duration of the final Canvas in the resource, and the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">auto-advance</code> is also in effect, then the client <em class="rfc">should</em> return to the first Canvas, or segment of Canvas, in the resource that has the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">repeat</code> and start playing again. If the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">auto-advance</code> is not in effect, then the client <em class="rfc">should</em> render a navigation control for the user to manually return to the first Canvas or segment. Disjoint with <code class="language-plaintext highlighter-rouge">no-repeat</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">no-repeat</code></td>
-        <td>Valid on Collections and Manifests, that include Canvases that have at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of the duration of the final Canvas in the resource, the client <em class="rfc">must not</em> return to the first Canvas, or segment of Canvas. This is a default temporal behavior if not specified. Disjoint with <code class="language-plaintext highlighter-rouge">repeat</code>.</td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td><strong>Layout Behaviors</strong></td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">unordered</code></td>
-        <td>Valid on Collections, Manifests and Ranges. The Canvases included in resources that have this behavior have no inherent order, and user interfaces <em class="rfc">should</em> avoid implying an order to the user. Disjoint with <code class="language-plaintext highlighter-rouge">individuals</code>, <code class="language-plaintext highlighter-rouge">continuous</code>, and <code class="language-plaintext highlighter-rouge">paged</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">individuals</code></td>
-        <td>Valid on Collections, Manifests, and Ranges. For Collections that have this behavior, each of the included Manifests are distinct objects in the given order. For Manifests and Ranges, the included Canvases are distinct views, and <em class="rfc">should not</em> be presented in a page-turning interface. This is the default layout behavior if not specified. Disjoint with <code class="language-plaintext highlighter-rouge">unordered</code>, <code class="language-plaintext highlighter-rouge">continuous</code>, and <code class="language-plaintext highlighter-rouge">paged</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">continuous</code></td>
-        <td>Valid on Collections, Manifests and Ranges, which include Canvases that have at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases included in resources that have this behavior are partial views and an appropriate rendering might display all of the Canvases virtually stitched together, such as a long scroll split into sections. This behavior has no implication for audio resources. The <code class="language-plaintext highlighter-rouge">viewingDirection</code> of the Manifest will determine the appropriate arrangement of the Canvases. Disjoint with <code class="language-plaintext highlighter-rouge">unordered</code>, <code class="language-plaintext highlighter-rouge">individuals</code> and <code class="language-plaintext highlighter-rouge">paged</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">paged</code></td>
-        <td>Valid on Collections, Manifests and Ranges, which include Canvases that have at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases included in resources that have this behavior represent views that <em class="rfc">should</em> be presented in a page-turning interface if one is available. The first canvas is a single view (the first recto) and thus the second canvas likely represents the back of the object in the first canvas. If this is not the case, see the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">non-paged</code>. Disjoint with <code class="language-plaintext highlighter-rouge">unordered</code>, <code class="language-plaintext highlighter-rouge">individuals</code>, <code class="language-plaintext highlighter-rouge">continuous</code>, <code class="language-plaintext highlighter-rouge">facing-pages</code> and <code class="language-plaintext highlighter-rouge">non-paged</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">facing-pages</code></td>
-        <td>Valid only on Canvases, where the Canvas has at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases that have this behavior, in a Manifest that has the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">paged</code>, <em class="rfc">must</em> be displayed by themselves, as they depict both parts of the opening. If all of the Canvases are like this, then page turning is not possible, so simply use <code class="language-plaintext highlighter-rouge">individuals</code> instead. Disjoint with <code class="language-plaintext highlighter-rouge">paged</code> and <code class="language-plaintext highlighter-rouge">non-paged</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">non-paged</code></td>
-        <td>Valid only on Canvases, where the Canvas has at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases that have this behavior <em class="rfc">must not</em> be presented in a page turning interface, and <em class="rfc">must</em> be skipped over when determining the page order. This behavior <em class="rfc">must</em> be ignored if the current Manifest does not have the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">paged</code>. Disjoint with <code class="language-plaintext highlighter-rouge">paged</code> and <code class="language-plaintext highlighter-rouge">facing-pages</code>.</td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td><strong>Collection Behaviors</strong></td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">multi-part</code></td>
-        <td>Valid only on Collections. Collections that have this behavior consist of multiple Manifests or Collections which together form part of a logical whole or a contiguous set, such as multi-volume books or a set of journal issues. Clients might render these Collections as a table of contents rather than with thumbnails, or provide viewing interfaces that can easily advance from one member to the next. Disjoint with <code class="language-plaintext highlighter-rouge">together</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">together</code></td>
-        <td>Valid only on Collections. A client <em class="rfc">should</em> present all of the child Manifests to the user at once in a separate viewing area with its own controls. Clients <em class="rfc">should</em> catch attempts to create too many viewing areas. This behavior <em class="rfc">should not</em> be interpreted as applying to the members of any child resources. Disjoint with <code class="language-plaintext highlighter-rouge">multi-part</code>.</td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td><strong>Range Behaviors</strong></td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">sequence</code></td>
-        <td>Valid only on Ranges, where the Range is <a href="/iiif-website/api/presentation/3.0/#12-terminology">referenced</a> in the <code class="language-plaintext highlighter-rouge">structures</code> property of a Manifest. Ranges that have this behavior represent different orderings of the Canvases listed in the <code class="language-plaintext highlighter-rouge">items</code> property of the Manifest, and user interfaces that interact with this order <em class="rfc">should</em> use the order within the selected Range, rather than the default order of <code class="language-plaintext highlighter-rouge">items</code>. Disjoint with <code class="language-plaintext highlighter-rouge">thumbnail-nav</code> and <code class="language-plaintext highlighter-rouge">no-nav</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">thumbnail-nav</code></td>
-        <td>Valid only on Ranges. Ranges that have this behavior <em class="rfc">may</em> be used by the client to present an alternative navigation or overview based on thumbnails, such as regular keyframes along a timeline for a video, or sections of a long scroll. Clients <em class="rfc">should not</em> use them to generate a conventional table of contents. Child Ranges of a Range with this behavior <em class="rfc">must</em> have a suitable <code class="language-plaintext highlighter-rouge">thumbnail</code> property. Disjoint with <code class="language-plaintext highlighter-rouge">sequence</code> and <code class="language-plaintext highlighter-rouge">no-nav</code>.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">no-nav</code></td>
-        <td>Valid only on Ranges. Ranges that have this behavior <em class="rfc">must not</em> be displayed to the user in a navigation hierarchy. This allows for Ranges to be present that capture unnamed regions with no interesting content, such as the set of blank pages at the beginning of a book, or dead air between parts of a performance, that are still part of the Manifest but do not need to be navigated to directly. Disjoint with <code class="language-plaintext highlighter-rouge">sequence</code> and <code class="language-plaintext highlighter-rouge">thumbnail-nav</code>.</td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td><strong>Miscellaneous Behaviors</strong></td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">hidden</code></td>
-        <td>Valid on Annotation Collections, Annotation Pages, Annotations, Specific Resources and Choices. If this behavior is provided, then the client <em class="rfc">should not</em> render the resource by default, but allow the user to turn it on and off. This behavior does not inherit, as it is not valid on Collections, Manifests, Ranges or Canvases.</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
+<table class="api-table" id="table-behavior">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><strong>Temporal Behaviors</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">auto-advance</code></td>
+      <td>Valid on Collections, Manifests, Canvases, and Ranges that include or are Canvases with at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of a Canvas, or segment thereof as specified in a Range, with a duration dimension that has this behavior, it <em class="rfc">should</em> immediately proceed to the next Canvas or segment and render it. If there is no subsequent Canvas in the current context, then this behavior should be ignored. When applied to a Collection, the client should treat the first Canvas of the next Manifest as following the last Canvas of the previous Manifest, respecting any <code class="language-plaintext highlighter-rouge">start</code> property specified. Disjoint with <code class="language-plaintext highlighter-rouge">no-auto-advance</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">no-auto-advance</code></td>
+      <td>Valid on Collections, Manifests, Canvases, and Ranges that include or are Canvases with at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of a Canvas or segment with a duration dimension that has this behavior, it <em class="rfc">must not</em> proceed to the next Canvas, if any. This is a default temporal behavior if not specified. Disjoint with <code class="language-plaintext highlighter-rouge">auto-advance</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">repeat</code></td>
+      <td>Valid on Collections and Manifests, that include Canvases that have at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of the duration of the final Canvas in the resource, and the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">auto-advance</code> is also in effect, then the client <em class="rfc">should</em> return to the first Canvas, or segment of Canvas, in the resource that has the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">repeat</code> and start playing again. If the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">auto-advance</code> is not in effect, then the client <em class="rfc">should</em> render a navigation control for the user to manually return to the first Canvas or segment. Disjoint with <code class="language-plaintext highlighter-rouge">no-repeat</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">no-repeat</code></td>
+      <td>Valid on Collections and Manifests, that include Canvases that have at least the <code class="language-plaintext highlighter-rouge">duration</code> dimension. When the client reaches the end of the duration of the final Canvas in the resource, the client <em class="rfc">must not</em> return to the first Canvas, or segment of Canvas. This is a default temporal behavior if not specified. Disjoint with <code class="language-plaintext highlighter-rouge">repeat</code>.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Layout Behaviors</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">unordered</code></td>
+      <td>Valid on Collections, Manifests and Ranges. The Canvases included in resources that have this behavior have no inherent order, and user interfaces <em class="rfc">should</em> avoid implying an order to the user. Disjoint with <code class="language-plaintext highlighter-rouge">individuals</code>, <code class="language-plaintext highlighter-rouge">continuous</code>, and <code class="language-plaintext highlighter-rouge">paged</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">individuals</code></td>
+      <td>Valid on Collections, Manifests, and Ranges. For Collections that have this behavior, each of the included Manifests are distinct objects in the given order. For Manifests and Ranges, the included Canvases are distinct views, and <em class="rfc">should not</em> be presented in a page-turning interface. This is the default layout behavior if not specified. Disjoint with <code class="language-plaintext highlighter-rouge">unordered</code>, <code class="language-plaintext highlighter-rouge">continuous</code>, and <code class="language-plaintext highlighter-rouge">paged</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">continuous</code></td>
+      <td>Valid on Collections, Manifests and Ranges, which include Canvases that have at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases included in resources that have this behavior are partial views and an appropriate rendering might display all of the Canvases virtually stitched together, such as a long scroll split into sections. This behavior has no implication for audio resources. The <code class="language-plaintext highlighter-rouge">viewingDirection</code> of the Manifest will determine the appropriate arrangement of the Canvases. Disjoint with <code class="language-plaintext highlighter-rouge">unordered</code>, <code class="language-plaintext highlighter-rouge">individuals</code> and <code class="language-plaintext highlighter-rouge">paged</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">paged</code></td>
+      <td>Valid on Collections, Manifests and Ranges, which include Canvases that have at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases included in resources that have this behavior represent views that <em class="rfc">should</em> be presented in a page-turning interface if one is available. The first canvas is a single view (the first recto) and thus the second canvas likely represents the back of the object in the first canvas. If this is not the case, see the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">non-paged</code>. Disjoint with <code class="language-plaintext highlighter-rouge">unordered</code>, <code class="language-plaintext highlighter-rouge">individuals</code>, <code class="language-plaintext highlighter-rouge">continuous</code>, <code class="language-plaintext highlighter-rouge">facing-pages</code> and <code class="language-plaintext highlighter-rouge">non-paged</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">facing-pages</code></td>
+      <td>Valid only on Canvases, where the Canvas has at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases that have this behavior, in a Manifest that has the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">paged</code>, <em class="rfc">must</em> be displayed by themselves, as they depict both parts of the opening. If all of the Canvases are like this, then page turning is not possible, so simply use <code class="language-plaintext highlighter-rouge">individuals</code> instead. Disjoint with <code class="language-plaintext highlighter-rouge">paged</code> and <code class="language-plaintext highlighter-rouge">non-paged</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">non-paged</code></td>
+      <td>Valid only on Canvases, where the Canvas has at least <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> dimensions. Canvases that have this behavior <em class="rfc">must not</em> be presented in a page turning interface, and <em class="rfc">must</em> be skipped over when determining the page order. This behavior <em class="rfc">must</em> be ignored if the current Manifest does not have the <code class="language-plaintext highlighter-rouge">behavior</code> value <code class="language-plaintext highlighter-rouge">paged</code>. Disjoint with <code class="language-plaintext highlighter-rouge">paged</code> and <code class="language-plaintext highlighter-rouge">facing-pages</code>.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Collection Behaviors</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">multi-part</code></td>
+      <td>Valid only on Collections. Collections that have this behavior consist of multiple Manifests or Collections which together form part of a logical whole or a contiguous set, such as multi-volume books or a set of journal issues. Clients might render these Collections as a table of contents rather than with thumbnails, or provide viewing interfaces that can easily advance from one member to the next. Disjoint with <code class="language-plaintext highlighter-rouge">together</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">together</code></td>
+      <td>Valid only on Collections. A client <em class="rfc">should</em> present all of the child Manifests to the user at once in a separate viewing area with its own controls. Clients <em class="rfc">should</em> catch attempts to create too many viewing areas. This behavior <em class="rfc">should not</em> be interpreted as applying to the members of any child resources. Disjoint with <code class="language-plaintext highlighter-rouge">multi-part</code>.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Range Behaviors</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sequence</code></td>
+      <td>Valid only on Ranges, where the Range is <a href="/iiif-website/api/presentation/3.0/#12-terminology">referenced</a> in the <code class="language-plaintext highlighter-rouge">structures</code> property of a Manifest. Ranges that have this behavior represent different orderings of the Canvases listed in the <code class="language-plaintext highlighter-rouge">items</code> property of the Manifest, and user interfaces that interact with this order <em class="rfc">should</em> use the order within the selected Range, rather than the default order of <code class="language-plaintext highlighter-rouge">items</code>. Disjoint with <code class="language-plaintext highlighter-rouge">thumbnail-nav</code> and <code class="language-plaintext highlighter-rouge">no-nav</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">thumbnail-nav</code></td>
+      <td>Valid only on Ranges. Ranges that have this behavior <em class="rfc">may</em> be used by the client to present an alternative navigation or overview based on thumbnails, such as regular keyframes along a timeline for a video, or sections of a long scroll. Clients <em class="rfc">should not</em> use them to generate a conventional table of contents. Child Ranges of a Range with this behavior <em class="rfc">must</em> have a suitable <code class="language-plaintext highlighter-rouge">thumbnail</code> property. Disjoint with <code class="language-plaintext highlighter-rouge">sequence</code> and <code class="language-plaintext highlighter-rouge">no-nav</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">no-nav</code></td>
+      <td>Valid only on Ranges. Ranges that have this behavior <em class="rfc">must not</em> be displayed to the user in a navigation hierarchy. This allows for Ranges to be present that capture unnamed regions with no interesting content, such as the set of blank pages at the beginning of a book, or dead air between parts of a performance, that are still part of the Manifest but do not need to be navigated to directly. Disjoint with <code class="language-plaintext highlighter-rouge">sequence</code> and <code class="language-plaintext highlighter-rouge">thumbnail-nav</code>.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Miscellaneous Behaviors</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hidden</code></td>
+      <td>Valid on Annotation Collections, Annotation Pages, Annotations, Specific Resources and Choices. If this behavior is provided, then the client <em class="rfc">should not</em> render the resource by default, but allow the user to turn it on and off. This behavior does not inherit, as it is not valid on Collections, Manifests, Ranges or Canvases.</td>
+    </tr>
+  </tbody>
+</table>
 
 <script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
 
@@ -1257,30 +1251,28 @@ Clients <em class="rfc">should</em> process <code class="language-plaintext high
 Clients <em class="rfc">should</em> process <code class="language-plaintext highlighter-rouge">timeMode</code> on an Annotation.</li>
 </ul>
 
-<blockquote class="api-table" id="table-timemode">
-  <table>
-    <thead>
-      <tr>
-        <th>Value</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">trim</code></td>
-        <td>(default, if not supplied) If the content resource has a longer duration than the duration of portion of the Canvas it is associated with, then at the end of the Canvas’s duration, the playback of the content resource <em class="rfc">must</em> also end. If the content resource has a shorter duration than the duration of the portion of the Canvas it is associated with, then, for video resources, the last frame <em class="rfc">should</em> persist on-screen until the end of the Canvas portion’s duration. For example, a video of 120 seconds annotated to a Canvas with a duration of 100 seconds would play only the first 100 seconds and drop the last 20 second.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">scale</code></td>
-        <td>Fit the duration of content resource to the duration of the portion of the Canvas it is associated with by scaling. For example, a video of 120 seconds annotated to a Canvas with a duration of 60 seconds would be played at double-speed.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">loop</code></td>
-        <td>If the content resource is shorter than the <code class="language-plaintext highlighter-rouge">duration</code> of the Canvas, it <em class="rfc">must</em> be repeated to fill the entire duration. Resources longer than the <code class="language-plaintext highlighter-rouge">duration</code> <em class="rfc">must</em> be trimmed as described above. For example, if a 20 second duration audio stream is annotated onto a Canvas with duration 30 seconds, it will be played one and a half times.</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
+<table class="api-table" id="table-timemode">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">trim</code></td>
+      <td>(default, if not supplied) If the content resource has a longer duration than the duration of portion of the Canvas it is associated with, then at the end of the Canvas’s duration, the playback of the content resource <em class="rfc">must</em> also end. If the content resource has a shorter duration than the duration of the portion of the Canvas it is associated with, then, for video resources, the last frame <em class="rfc">should</em> persist on-screen until the end of the Canvas portion’s duration. For example, a video of 120 seconds annotated to a Canvas with a duration of 100 seconds would play only the first 100 seconds and drop the last 20 second.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">scale</code></td>
+      <td>Fit the duration of content resource to the duration of the portion of the Canvas it is associated with by scaling. For example, a video of 120 seconds annotated to a Canvas with a duration of 60 seconds would be played at double-speed.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">loop</code></td>
+      <td>If the content resource is shorter than the <code class="language-plaintext highlighter-rouge">duration</code> of the Canvas, it <em class="rfc">must</em> be repeated to fill the entire duration. Resources longer than the <code class="language-plaintext highlighter-rouge">duration</code> <em class="rfc">must</em> be trimmed as described above. For example, if a 20 second duration audio stream is annotated onto a Canvas with duration 30 seconds, it will be played one and a half times.</td>
+    </tr>
+  </tbody>
+</table>
 
 <script src="/iiif-website/assets/js/copyCodeBlock.js"></script>
 
@@ -1855,26 +1847,24 @@ Clients <em class="rfc">should</em> ignore <code class="language-plaintext highl
 
 <p>Additional motivations may be added to the Annotation to further clarify the intent, drawn from <a href="/iiif-website/api/presentation/3.0/#46-linked-data-context-and-extensions" title="Linked Data Context and Extensions">extensions</a> or other sources. Clients <em class="rfc">must</em> ignore motivation values that they do not understand. Other motivation values given in the Web Annotation specification <em class="rfc">should</em> be used where appropriate, and examples are given in the <a href="/iiif-website/api/cookbook/" title="IIIF Cookbook">Presentation API Cookbook</a>.</p>
 
-<blockquote class="api-table" id="table-motivations">
-  <table>
-    <thead>
-      <tr>
-        <th>Value</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">painting</code></td>
-        <td>Resources associated with a Canvas by an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">painting</code>  <em class="rfc">must</em> be presented to the user as the representation of the Canvas. The content can be thought of as being <em>of</em> the Canvas. The use of this motivation with target resources other than Canvases is undefined. For example, an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">painting</code>, a body of an Image and the target of the Canvas is an instruction to present that Image as (part of) the visual representation of the Canvas. Similarly, a textual body is to be presented as (part of) the visual representation of the Canvas and not positioned in some other part of the user interface.</td>
-      </tr>
-      <tr>
-        <td><code class="language-plaintext highlighter-rouge">supplementing</code></td>
-        <td>Resources associated with a Canvas by an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">supplementing</code>  <em class="rfc">may</em> be presented to the user as part of the representation of the Canvas, or <em class="rfc">may</em> be presented in a different part of the user interface. The content can be thought of as being <em>from</em> the Canvas. The use of this motivation with target resources other than Canvases is undefined. For example, an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">supplementing</code>, a body of an Image and the target of part of the Canvas is an instruction to present that Image to the user either in the Canvas’s rendering area or somewhere associated with it, and could be used to present an easier to read representation of a diagram. Similarly, a textual body is to be presented either in the targeted region of the Canvas or otherwise associated with it, and might be OCR, a manual transcription or a translation of handwritten text, or captions for what is being said in a Canvas with audio content.</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
+<table class="api-table" id="table-motivations">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">painting</code></td>
+      <td>Resources associated with a Canvas by an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">painting</code>  <em class="rfc">must</em> be presented to the user as the representation of the Canvas. The content can be thought of as being <em>of</em> the Canvas. The use of this motivation with target resources other than Canvases is undefined. For example, an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">painting</code>, a body of an Image and the target of the Canvas is an instruction to present that Image as (part of) the visual representation of the Canvas. Similarly, a textual body is to be presented as (part of) the visual representation of the Canvas and not positioned in some other part of the user interface.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">supplementing</code></td>
+      <td>Resources associated with a Canvas by an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">supplementing</code>  <em class="rfc">may</em> be presented to the user as part of the representation of the Canvas, or <em class="rfc">may</em> be presented in a different part of the user interface. The content can be thought of as being <em>from</em> the Canvas. The use of this motivation with target resources other than Canvases is undefined. For example, an Annotation that has the <code class="language-plaintext highlighter-rouge">motivation</code> value <code class="language-plaintext highlighter-rouge">supplementing</code>, a body of an Image and the target of part of the Canvas is an instruction to present that Image to the user either in the Canvas’s rendering area or somewhere associated with it, and could be used to present an easier to read representation of a diagram. Similarly, a textual body is to be presented either in the targeted region of the Canvas or otherwise associated with it, and might be OCR, a manual transcription or a translation of handwritten text, or captions for what is being said in a Canvas with audio content.</td>
+    </tr>
+  </tbody>
+</table>
       <h2 id="4-json-ld-considerations">
         
         
