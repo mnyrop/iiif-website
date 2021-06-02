@@ -17,9 +17,10 @@
 
 
 
-<section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.56) 65%, rgba(0, 25, 39, 0) 103%), url('/iiif-website/assets/images/possible_header_images/Under_the_Wave_off_Kanagawa.jpg');
+
+<section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.68), rgba(0, 25, 39, 0.68)), url('/iiif-website/assets/images/possible_header_images/Under_the_Wave_off_Kanagawa.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: bottom center;
   background-attachment: fixed;">
   
   <div class="hero-head">
@@ -94,7 +95,7 @@
       
       <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">Gain richer access to the world's image and audio/visual files</h1>
       
-      <p class="subtitle is-size-6">IIIF is an open standard for delivering high-quality, attributed digital objects online at scale. It’s also an international community developing and implementing the IIIF APIs. IIIF is stewarded by a consortium.</p>
+      <p class="subtitle is-size-5">IIIF is an open standard for delivering high-quality, attributed digital objects online at scale. It’s also an international community developing and implementing the IIIF APIs. IIIF is stewarded by a consortium.</p>
 
       
         
@@ -184,113 +185,131 @@
     <h2 id="start-building-with-open-apis">Start building with open APIs</h2>
     <p>The six IIIF APIs fit together to deliver endless possibilities.</p>
 
-    <div class="block columns is-multiline is-vcentered">
+    <div class="block columns is-multiline">
   
-    <div class="column is-one-third">
-      <div class="box hover-box api-card">
-        <img src="/iiif-website/assets/images/icon-image.png" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3>Image API</h3>
-        <p class="has-text-left">Retrieves images from anywhere in the world and allows the user to select an area of the image and to resize, rotate, and edit the quality.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/icon-image.png" />
+        
+
+        <h3 class="title">Image API</h3>
+        <p class="subtitle has-text-left">Retrieves images from anywhere in the world and allows the user to select an area of the image and to resize, rotate, and edit the quality.</p>
+        <footer class="columns">
           <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
+            <p class="has-text-left">
               <a href="/iiif-website/api/image">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;">Prod v3.0</p>
+            <p class="has-text-right">Prod v3.0</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box api-card">
-        <img src="/iiif-website/assets/images/icon-presentation.png" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3>Presentation API</h3>
-        <p class="has-text-left">Packages each image with its metadata so users know the origin, title of the image, and even what page of a book the image was from.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/icon-presentation.png" />
+        
+
+        <h3 class="title">Presentation API</h3>
+        <p class="subtitle has-text-left">Packages each image with its metadata so users know the origin, title of the image, and even what page of a book the image was from.</p>
+        <footer class="columns">
           <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
+            <p class="has-text-left">
               <a href="/iiif-website/api/presentation">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;">Prod v3.0</p>
+            <p class="has-text-right">Prod v3.0</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box api-card">
-        <img src="/iiif-website/assets/images/icon-auth.png" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3>Authentication API</h3>
-        <p class="has-text-left">Control and restrict access by creating a link to a user interface for logging in and services that provide credentials.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/icon-auth.png" />
+        
+
+        <h3 class="title">Authentication API</h3>
+        <p class="subtitle has-text-left">Control and restrict access by creating a link to a user interface for logging in and services that provide credentials.</p>
+        <footer class="columns">
           <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
+            <p class="has-text-left">
               <a href="/iiif-website/api/auth">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;">Prod v3.0</p>
+            <p class="has-text-right">Prod v3.0</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box api-card">
-        <img src="/iiif-website/assets/images/icon-search.png" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3>Search API</h3>
-        <p class="has-text-left">Access high-quality images, examine them closely, and share your work with collaborators to aid research and presentation.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/icon-search.png" />
+        
+
+        <h3 class="title">Search API</h3>
+        <p class="subtitle has-text-left">Access high-quality images, examine them closely, and share your work with collaborators to aid research and presentation.</p>
+        <footer class="columns">
           <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
+            <p class="has-text-left">
               <a href="/iiif-website/api/search">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;">Beta v1.0</p>
+            <p class="has-text-right">Beta v1.0</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box api-card">
-        <img src="/iiif-website/assets/images/icon-change.png" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3>Change Discovery API</h3>
-        <p class="has-text-left">Harvest any changes published by organizations that deliver digital objects.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/icon-change.png" />
+        
+
+        <h3 class="title">Change Discovery API</h3>
+        <p class="subtitle has-text-left">Harvest any changes published by organizations that deliver digital objects.</p>
+        <footer class="columns">
           <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
+            <p class="has-text-left">
               <a href="/iiif-website/api/discovery">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;">Beta v0.09</p>
+            <p class="has-text-right">Beta v0.09</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box api-card">
-        <img src="/iiif-website/assets/images/icon-state.png" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3>Content State API</h3>
-        <p class="has-text-left">Generate a very specific link to a particular view of an object, like a specific area on a particulat page rotated at a certain angle.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/icon-state.png" />
+        
+
+        <h3 class="title">Content State API</h3>
+        <p class="subtitle has-text-left">Generate a very specific link to a particular view of an object, like a specific area on a particulat page rotated at a certain angle.</p>
+        <footer class="columns">
           <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
+            <p class="has-text-left">
               <a href="/iiif-website/api/content-state">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;">Beta v0.03</p>
+            <p class="has-text-right">Beta v0.03</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   
@@ -298,9 +317,9 @@
 
   </div></div>
 
-<section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.56) 65%, rgba(0, 25, 39, 0) 103%), url('/iiif-website/assets/community.jpg');
+<section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.68), rgba(0, 25, 39, 0.68)), url('/iiif-website/assets/community.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: bottom center;
   background-attachment: fixed;">
   
 
@@ -312,7 +331,7 @@
       
       <h2 class="title">Join the community</h2>
       
-      <p class="subtitle is-size-6">Over 10 community groups (and counting) tackle a diverse range of topics relating to the Framework—from crafting new technical specifications and implementing IIIF in specific communities, to conducting outreach.</p>
+      <p class="subtitle is-size-5">Over 10 community groups (and counting) tackle a diverse range of topics relating to the Framework—from crafting new technical specifications and implementing IIIF in specific communities, to conducting outreach.</p>
 
       
         
@@ -505,60 +524,53 @@
 
     <h2 id="get-involved-and-stay-connected">Get involved and stay connected</h2>
     <p>Anyone can participate in the IIIF community. Find the way that’s right for you!</p>
+    <div class="block columns is-multiline">
+  
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
 
-    <div class="block columns is-multiline is-vcentered">
-  
-    <div class="column is-one-third">
-      <div class="box hover-box">
-        <img src="" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3 class="has-text-left">Attend an event</h3>
-        <p class="has-text-left">The IIIF community hosts many virtual and in-person trainings, conferences, and other events each year.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
-          <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="/iiif-website/get-involved">Learn more &gt;</a>
-            </p>
-          </div>
-          <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;"></p>
-          </div>
-        </div>
+        <h3 class="title  has-text-left">Attend an event</h3>
+        <p class="has-text-left subtitle">The IIIF community hosts many virtual and in-person trainings, conferences, and other events each year.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website/get-involved">Learn more &gt;</a>
+          </p>
+        </footer>
+        
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box">
-        <img src="" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3 class="has-text-left">Join a community group call</h3>
-        <p class="has-text-left">Connect with and learn from your peers by joining a community group, or by proposing a new one! Calls are open to everyone.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
-          <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="/iiif-website/get-involved">Learn more &gt;</a>
-            </p>
-          </div>
-          <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;"></p>
-          </div>
-        </div>
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+
+        <h3 class="title  has-text-left">Join a community group call</h3>
+        <p class="has-text-left subtitle">Connect with and learn from your peers by joining a community group, or by proposing a new one! Calls are open to everyone.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website/get-involved">Learn more &gt;</a>
+          </p>
+        </footer>
+        
       </div>
     </div>
   
-    <div class="column is-one-third">
-      <div class="box hover-box">
-        <img src="" style="display:block;margin-left:auto;margin-right:auto;" />
-        <h3 class="has-text-left">Become a member</h3>
-        <p class="has-text-left">Join leading global organizations large and small in supporting the IIIF community’s work by becoming a member of the Consortium.</p>
-        <div class="columns" style="font-family:'Playfair Display';">
-          <div class="column">
-            <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="/iiif-website/get-involved">Learn more &gt;</a>
-            </p>
-          </div>
-          <div class="column">
-            <p style="text-align:right;margin:0 auto;font-weight:bold;"></p>
-          </div>
-        </div>
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+
+        <h3 class="title  has-text-left">Become a member</h3>
+        <p class="has-text-left subtitle">Join leading global organizations large and small in supporting the IIIF community’s work by becoming a member of the Consortium.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website/get-involved">Learn more &gt;</a>
+          </p>
+        </footer>
+        
       </div>
     </div>
   
