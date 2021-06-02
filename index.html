@@ -10,12 +10,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/iiif-website/assets/css/style.css"></head>
-<body><section class="hero is-primary is-fullheight" style="
-  background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.56) 65%, rgba(0, 25, 39, 0) 103%), url('/iiif-website/assets/images/possible_header_images/Under_the_Wave_off_Kanagawa.jpg');
+<body>
+
+
+
+
+
+
+<section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.56) 65%, rgba(0, 25, 39, 0) 103%), url('/iiif-website/assets/images/possible_header_images/Under_the_Wave_off_Kanagawa.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
-  ">
+  background-attachment: fixed;">
+  
   <div class="hero-head">
     <nav id="navbar" class="navbar is-transparent is-spaced">
   <div class="container">
@@ -64,7 +70,7 @@
                 
                   <a class="navbar-item" href="/iiif-website">How It Works</a>
                 
-                  <a class="navbar-item" href="/iiif-website">APIs & Documentation</a>
+                  <a class="navbar-item" href="/iiif-website/api">APIs & Documentation</a>
                 
                   <a class="navbar-item" href="/iiif-website">Cookbooks</a>
                 
@@ -79,23 +85,24 @@
 
   </div>
   
-  
 
-<div class="hero-body container">
-  
-  <div class="container has-text-centered">
-    <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">Gain richer access to the world's image and audio/visual files</h1>
+  <div class="hero-body container">
+
     
-    <p class="subtitle is-size-6 is-size-5-desktop">IIIF is an open standard for delivering high-quality, attributed digital objects online at scale. It’s also an international community developing and implementing the IIIF APIs. IIIF is stewarded by a consortium.</p>
-    
+
+    <div class="container has-text-centered">
       
+      <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">Gain richer access to the world's image and audio/visual files</h1>
+      
+      <p class="subtitle is-size-6">IIIF is an open standard for delivering high-quality, attributed digital objects online at scale. It’s also an international community developing and implementing the IIIF APIs. IIIF is stewarded by a consortium.</p>
+
+      
+        
 <a class="button is-primary is-normal" href="/iiif-website/get-started">Get Started</a>
 
-    
+      
+    </div>
   </div>
-</div>
-
-  
 </section>
 <section id="main">
       <div class="container-block is-max-widescreen has-text-centered"><div class="container">
@@ -187,7 +194,7 @@
         <div class="columns" style="font-family:'Playfair Display';">
           <div class="column">
             <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="">View Docs &gt;</a>
+              <a href="/iiif-website/api/image">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
@@ -205,7 +212,7 @@
         <div class="columns" style="font-family:'Playfair Display';">
           <div class="column">
             <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="">View Docs &gt;</a>
+              <a href="/iiif-website/api/presentation">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
@@ -223,7 +230,7 @@
         <div class="columns" style="font-family:'Playfair Display';">
           <div class="column">
             <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="">View Docs &gt;</a>
+              <a href="/iiif-website/api/auth">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
@@ -241,7 +248,7 @@
         <div class="columns" style="font-family:'Playfair Display';">
           <div class="column">
             <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="">View Docs &gt;</a>
+              <a href="/iiif-website/api/search">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
@@ -259,7 +266,7 @@
         <div class="columns" style="font-family:'Playfair Display';">
           <div class="column">
             <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="">View Docs &gt;</a>
+              <a href="/iiif-website/api/discovery">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
@@ -277,7 +284,7 @@
         <div class="columns" style="font-family:'Playfair Display';">
           <div class="column">
             <p style="text-align:left;margin:0 auto;font-weight:bold;">
-              <a href="">View Docs &gt;</a>
+              <a href="/iiif-website/api/content-state">View Docs &gt;</a>
             </p>
           </div>
           <div class="column">
@@ -291,36 +298,29 @@
 
   </div></div>
 
-<section class="hero is-primary is-medium" style="
-  background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.56) 65%, rgba(0, 25, 39, 0) 103%), url('/iiif-website/assets/community.jpg');
+<section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.56) 65%, rgba(0, 25, 39, 0) 103%), url('/iiif-website/assets/community.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
-  ">
+  background-attachment: fixed;">
   
 
-<div class="hero-body container">
-  
-  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="#">Get Started</a></li>
-      <li><a href="#">Documentation</a></li>
-    </ul>
-  </nav>
-  
-  <div class="container has-text-centered">
+  <div class="hero-body container">
+
     
-    <h2 class="title">Join the community</h2>
-    
-    <p class="subtitle is-size-6 is-size-5-desktop">Over 10 community groups (and counting) tackle a diverse range of topics relating to the Framework—from crafting new technical specifications and implementing IIIF in specific communities, to conducting outreach.</p>
-    
+
+    <div class="container has-text-centered">
       
+      <h2 class="title">Join the community</h2>
+      
+      <p class="subtitle is-size-6">Over 10 community groups (and counting) tackle a diverse range of topics relating to the Framework—from crafting new technical specifications and implementing IIIF in specific communities, to conducting outreach.</p>
+
+      
+        
 <a class="button is-primary is-normal" href="/iiif-website/get-involved">Learn More</a>
 
-    
+      
+    </div>
   </div>
-</div>
-
 </section>
 
 <div class="container-block is-max-widescreen has-text-centered"><div class="container">
@@ -589,7 +589,7 @@
           </li>
         
           <li>
-            <a href="/iiif-website">Documentation</a>
+            <a href="/iiif-website/api">Documentation</a>
           </li>
         
           <li>
