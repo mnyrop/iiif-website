@@ -19,8 +19,6 @@
 
 
 
-
-
 <section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.68), rgba(0, 25, 39, 0.68)), url('/iiif-website');
   background-size: cover;
   background-position: bottom center;
@@ -98,7 +96,7 @@
       
       <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">Get Started</h1>
       
-      <p class="subtitle is-size-5">There are two main ways to get started with IIIF. As an implementer or developer, you can make digital resources available on the web using IIIF. As an end user, you may be working with materials already hosted on the Web by someone else.
+      <p class="subtitle is-size-5">Access a robust set of resources for implementers and end users of IIIF.
 </p>
 
       
@@ -110,21 +108,51 @@
 
     <h2 id="implement-a-custom-experience">Implement A Custom Experience</h2>
 
-    <h3 id="integrate-a-core-api">1. Integrate a Core API</h3>
+    <script src="/iiif-website/assets/js/tabSwitch.js"></script>
 
+    <nav class="tabs is-fullwidth is-large">
+  <div class="container">
+    <ul>
+      
+      <li class="tab is-active" onclick="openTab(event,'1-integrate-a-core-api')">
+        <h3><a>1. Integrate a Core API</a></h3>
+      </li>
+      
+      <li class="tab " onclick="openTab(event,'2-integrate-viewers')">
+        <h3><a>2. Integrate Viewers</a></h3>
+      </li>
+      
+      <li class="tab " onclick="openTab(event,'3-enable-other-features')">
+        <h3><a>3. Enable Other Features</a></h3>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="container">
+  
+  <div id="1-integrate-a-core-api" class="content-tab">
     <p>Image and Presentation are the core APIs you can  install first. Choose to retrieve images with the Image API or the image’s metadata with the Presentation API.</p>
+  </div>
+  
+  <div id="2-integrate-viewers" class="content-tab" style="display:none;">
+    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+  </div>
+  
+  <div id="3-enable-other-features" class="content-tab" style="display:none;">
+    <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+  
+</div>
 
-    <h3 id="integrate-viewers">2. Integrate Viewers</h3>
-
-    <h3 id="enable-other-features">3. Enable Other Features</h3>
-
-    <p><a class="button is-primary is-normal" href="/iiif-website/api/">View All Docs</a></p>
+    <p><a class="button is-primary is-normal" href="https://iiif.io/api/">View All Docs</a></p>
 
   </div></div>
 
 <div class="container-block is-max-widescreen"><div class="container has-text-centered">
 
-    <h2 id="developer-resources">Developer Resources</h2>
+    <h2 id="end-users">End Users</h2>
 
     <div class="block columns is-multiline">
   
@@ -134,12 +162,12 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
         
 
-        <h3 class="title ">Image Viewers</h3>
-        <p class="has-text-left subtitle margin-unset">There are several popular viewers, each with different capabilities.</p>
+        <h3 class="title ">Find IIIF resources</h3>
+        <p class="has-text-left subtitle margin-unset">Discover IIIF-enabled materials from institutions around the world.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
+            <a href="/iiif-website">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -152,12 +180,12 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
         
 
-        <h3 class="title ">Image Servers</h3>
-        <p class="has-text-left subtitle margin-unset">See the most commonly used IIIF-compliant image servers.</p>
+        <h3 class="title ">Use IIIF resources</h3>
+        <p class="has-text-left subtitle margin-unset">Use preexisting IIIF-enabled materials for teaching and research across sites and tools.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
+            <a href="/iiif-website">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -170,66 +198,12 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
         
 
-        <h3 class="title ">IIIF Tools</h3>
-        <p class="has-text-left subtitle margin-unset">Review the community-maintained Awesome IIIF list.</p>
+        <h3 class="title ">Learn how it works</h3>
+        <p class="has-text-left subtitle margin-unset">Access our open training materials to learn the basics of how resources are made available via IIIF.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
-          </p>
-        </footer>
-        
-      </div>
-    </div>
-  
-    <div class="column is-one-third same-height-column">
-      <div class="box hover-box iiif-card">
-        
-          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
-        
-
-        <h3 class="title ">IIIF Validators</h3>
-        <p class="has-text-left subtitle margin-unset">Try out the IIIF Validators for the Image API or the Presentation API.</p>
-        
-        <footer>
-          <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
-          </p>
-        </footer>
-        
-      </div>
-    </div>
-  
-    <div class="column is-one-third same-height-column">
-      <div class="box hover-box iiif-card">
-        
-          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
-        
-
-        <h3 class="title ">Find Recipes</h3>
-        <p class="has-text-left subtitle margin-unset">Browse the Cookbook, a community initiative to string together commonly used functions into “recipes” that can be reused easily.</p>
-        
-        <footer>
-          <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
-          </p>
-        </footer>
-        
-      </div>
-    </div>
-  
-    <div class="column is-one-third same-height-column">
-      <div class="box hover-box iiif-card">
-        
-          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
-        
-
-        <h3 class="title ">More Resources</h3>
-        <p class="has-text-left subtitle margin-unset">Read guides to pre-implementation requirements, interoperability best practices, UX best practices, and more.</p>
-        
-        <footer>
-          <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
+            <a href="/iiif-website">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -242,9 +216,7 @@
 
 <div class="container-block is-max-widescreen"><div class="container has-text-centered">
 
-    <h2 id="end-users">End Users</h2>
-
-    <p>There are two main ways to get started with IIIF. As an implementer or developer, you can make digital resources available on the web using IIIF. As an end user, you may be working with materials already hosted on the Web by someone else.</p>
+    <h2 id="implementers">Implementers</h2>
 
     <div class="block columns is-multiline">
   
@@ -254,12 +226,12 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
         
 
-        <h3 class="title ">Finding IIIF Resources</h3>
-        <p class="has-text-left subtitle margin-unset">How to find IIIF materials from dozens of institutions around the world.</p>
+        <h3 class="title ">Learn about image viewers</h3>
+        <p class="has-text-left subtitle margin-unset">There are several popular viewers, each with different capabilities.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
+            <a href="/iiif-website">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -272,12 +244,12 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
         
 
-        <h3 class="title ">Using IIIF Resources</h3>
-        <p class="has-text-left subtitle margin-unset">How to use preexisting IIIF materials for teaching and research.</p>
+        <h3 class="title ">Learn about image servers</h3>
+        <p class="has-text-left subtitle margin-unset">See the most commonly used IIIF-compliant image servers.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
+            <a href="/iiif-website">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -290,12 +262,66 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
         
 
-        <h3 class="title ">Implementation Basics</h3>
-        <p class="has-text-left subtitle margin-unset">Access our open training materials to learn the basics of implementing IIIF.</p>
+        <h3 class="title ">Learn about IIIF tools</h3>
+        <p class="has-text-left subtitle margin-unset">Review the community-maintained “Awesome IIIF” list and see what’s available to you.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn more &gt;</a>
+            <a href="/iiif-website">Learn More &gt;</a>
+          </p>
+        </footer>
+        
+      </div>
+    </div>
+  
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
+        
+
+        <h3 class="title ">Test an implementation</h3>
+        <p class="has-text-left subtitle margin-unset">Try out the IIIF validators for the Image API or the Presentation API.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website">Learn More &gt;</a>
+          </p>
+        </footer>
+        
+      </div>
+    </div>
+  
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
+        
+
+        <h3 class="title ">Find recipes</h3>
+        <p class="has-text-left subtitle margin-unset">Browse the Cookbook, a community initiative to string together commonly used functions into code “recipes” that can be easily reused.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website">Learn More &gt;</a>
+          </p>
+        </footer>
+        
+      </div>
+    </div>
+  
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" />
+        
+
+        <h3 class="title ">Read guides</h3>
+        <p class="has-text-left subtitle margin-unset">Topics include pre-implementation requirements, interoperability best practices, UX best practices, and more.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website">Learn More &gt;</a>
           </p>
         </footer>
         
