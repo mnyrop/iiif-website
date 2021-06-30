@@ -55,6 +55,9 @@
 <loc>/iiif-website/community/groups/framework/</loc>
 </url>
 <url>
+<loc>/iiif-website/event/host-your-own-IIIF-event/</loc>
+</url>
+<url>
 <loc>/iiif-website/community/trc/</loc>
 </url>
 <url>
@@ -160,7 +163,7 @@
 <loc>/iiif-website/newsletter/</loc>
 </url>
 <url>
-<loc>/iiif-website/get-started/training/online_training/</loc>
+<loc>/iiif-website/get-started/training/online-training/</loc>
 </url>
 <url>
 <loc>/iiif-website/get-started/training/outreach-materials/</loc>
@@ -170,6 +173,9 @@
 </url>
 <url>
 <loc>/iiif-website/community/consortium/staff/</loc>
+</url>
+<url>
+<loc>/iiif-website/get-started/talks/</loc>
 </url>
 <url>
 <loc>/iiif-website/community/groups/av/tsg-charter/</loc>
