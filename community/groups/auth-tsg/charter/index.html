@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset="utf-8">
+  <title>
+     IIIF Authentication TSG Charter —  IIIF | International Image Interoperability Framework
+  </title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/iiif-website/assets/css/style.css">
+  <link rel="canonical" href="/iiif-website/community/groups/auth-tsg/charter/" />
+  <link rel="shortcut icon" type="image/jpg" href="/iiif-website/assets/favicon.ico"/>
+</head>
+<body><script src="/iiif-website/assets/js/deleteButton.js"></script>
+
+<div class="iiif-notification message">
+  <div class="message-header">
+    <div class="container">
+      <button class="delete"></button>
+      <p class="title">This website design is in pre-beta.</p>
+      <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      
+        <a href="/iiif-website/">This is a test link</a>
+      
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="hero is-primary" style="">
+  
+  <div class="hero-head">
+    <nav id="navbar" class="navbar is-transparent is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/iiif-website/">
+        <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+        <span class="brand-title">International Image Interoperability Framework</span>
+      </a>
+      <div class="navbar-burger" data-target="navbar" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+            <a class="navbar-item" href="/iiif-website/">Home</a>
+          
+            <a class="navbar-item" href="/iiif-website/demos">Demos</a>
+          
+            <a class="navbar-item" href="/iiif-website">News & Events</a>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-involved">
+                Get Involved
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                
+              </div>
+            </div>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-started">
+                Get Started
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                
+                  <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Training</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+  </div>
+  
+
+  <div class="hero-body container">
+
+    
+
+    <div class="container has-text-centered">
+      
+      <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">IIIF Authentication TSG Charter</h1>
+      
+      <p class="subtitle is-size-5"></p>
+
+      
+    </div>
+  </div>
+</section>
+<section id="main">
+      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
+<h2 id="introduction">
+        
+        
+          Introduction <a href="#introduction">#</a>
+        
+        
+      </h2>
+    
+<p>The IIIF Authentication API is an interaction pattern for managing access control to IIIF image resources. With the introduction of support for A/V in the IIIF Presentation API version 3 there is now a need to support authenticating resources which do not require a IIIF Image API service, as well as general updates for consistency with the new APIs. There have also been developments in the browser community that cause difficulties with the existing authentication specification. With the current specification being broken in some browsers, and soon to be obsolete in others, there is an urgent need to update the method in which the IIIF Authentication API works to remain useful in the evolving web landscape.</p>
+      <h2 id="scope">
+        
+        
+          Scope <a href="#scope">#</a>
+        
+        
+      </h2>
+    
+<p>The scope of work to be performed by the Authentication TSG will be:</p>
+<ul>
+  <li>Updating the IIIF Authentication API in line with version 3.0 of the IIIF Image and Presentation APIs</li>
+  <li>Finding and documenting a solution to the browser issues that have arisen, with an initial approach of engaging with the standards and browser communities</li>
+  <li>Determining a IIIF Authentication API pattern for access to non-Image content resources</li>
+  <li>Explore Authentication patterns for access to resources requested through JavaScript without exposing authorization credentials to the client (such as for searching annotations with credentials)</li>
+</ul>
+      <h2 id="deliverables">
+        
+        
+          Deliverables <a href="#deliverables">#</a>
+        
+        
+      </h2>
+    
+<p>The expected deliverable will be a new version of the IIIF Authentication API that meets the requirements of the scope described above.</p>
+      <h2 id="references">
+        
+        
+          References <a href="#references">#</a>
+        
+        
+      </h2>
+    
+<p>References for implementations of the third-party cookie changes:</p>
+<ul>
+  <li>Safari issue</li>
+  <li>Chrome plans</li>
+  <li>IIIF API issue: <a href="https://github.com/IIIF/api/issues/1959">https://github.com/IIIF/api/issues/1959</a></li>
+</ul>
+
+<p>Stories that support this TSG work:</p>
+<ul>
+  <li>Canvas with content that will never be “seen”</li>
+  <li>And the following issues that have been raised on the API Github repository:
+<a href="https://github.com/IIIF/api/issues?q=is%3Aissue+is%3Aopen+label%3Aauth">https://github.com/IIIF/api/issues?q=is%3Aissue+is%3Aopen+label%3Aauth</a></li>
+</ul>
+      <h2 id="roadmap">
+        
+        
+          Roadmap <a href="#roadmap">#</a>
+        
+        
+      </h2>
+    
+<ul>
+  <li>Group formation: October 2020</li>
+  <li>Delivery of new Authentication API version, given current technical /political environment:
+    <ul>
+      <li>Initial draft: June 2021</li>
+      <li>Implementable Beta: November 2021</li>
+      <li>Proposed Recommendation: June 2022</li>
+    </ul>
+  </li>
+</ul>
+
+</div></div>
+
+    </section>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+
+      <div class="navbar-brand column is-half">
+        <a class="navbar-item" href="/iiif-website/">
+          <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+          <span class="brand-title blue-text">International Image Interoperability Framework</span>
+        </a>
+        <p>International Image Interoperability Framework: A community driven image framework with well defined APIs for making the world’s image repositories interoperable and accessible</p>
+      </div>
+      <div class="column"></div>
+      
+      <div class="column menu-column">
+        <h4>About</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">How It Works</a>
+          </li>
+        
+          <li>
+            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Demos</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Tutorials</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+      <div class="column menu-column">
+        <h4>Stay Connected</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">Events & News</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Join Newsletter</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Community Groups</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Consortium</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+</body>
+</html>

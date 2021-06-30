@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset="utf-8">
+  <title>
+     IIIF Text Granularity Technical Specification Group Charter —  IIIF | International Image Interoperability Framework
+  </title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/iiif-website/assets/css/style.css">
+  <link rel="canonical" href="/iiif-website/community/groups/text-granularity/charter/" />
+  <link rel="shortcut icon" type="image/jpg" href="/iiif-website/assets/favicon.ico"/>
+</head>
+<body><script src="/iiif-website/assets/js/deleteButton.js"></script>
+
+<div class="iiif-notification message">
+  <div class="message-header">
+    <div class="container">
+      <button class="delete"></button>
+      <p class="title">This website design is in pre-beta.</p>
+      <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      
+        <a href="/iiif-website/">This is a test link</a>
+      
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="hero is-primary" style="">
+  
+  <div class="hero-head">
+    <nav id="navbar" class="navbar is-transparent is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/iiif-website/">
+        <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+        <span class="brand-title">International Image Interoperability Framework</span>
+      </a>
+      <div class="navbar-burger" data-target="navbar" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+            <a class="navbar-item" href="/iiif-website/">Home</a>
+          
+            <a class="navbar-item" href="/iiif-website/demos">Demos</a>
+          
+            <a class="navbar-item" href="/iiif-website">News & Events</a>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-involved">
+                Get Involved
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                
+              </div>
+            </div>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-started">
+                Get Started
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                
+                  <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Training</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+  </div>
+  
+
+  <div class="hero-body container">
+
+    
+
+    <div class="container has-text-centered">
+      
+      <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">IIIF Text Granularity Technical Specification Group Charter</h1>
+      
+      <p class="subtitle is-size-5"></p>
+
+      
+    </div>
+  </div>
+</section>
+<section id="main">
+      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
+<h2 id="introduction">
+        
+        
+          Introduction <a href="#introduction">#</a>
+        
+        
+      </h2>
+    
+
+<p>Many IIIF images have associated text either from OCR, text transcriptions or annotations. As the development of the <a href="/api/search/">IIIF Search API</a> matures, the desire to make use of the text in specific ways has arisen. The granularity of the text needed, however, varies depending on the use cases.</p>
+      <h3 id="giving-access-to-text-as-paragraphs-lines-and-words">
+        
+        
+          Giving access to text as paragraphs, lines and words <a href="#giving-access-to-text-as-paragraphs-lines-and-words">#</a>
+        
+        
+      </h3>
+    
+
+<p><strong>Use case:</strong> I would like to share multiple versions of the same annotation list from a Newspaper page with different specificities, so for example I might have:</p>
+
+<ul>
+  <li>a word level annotation list for harvesting by Europeana where the aggregator would like to offer word level highlighting for search results.</li>
+  <li>a line level annotation list for use in Mirador as word level annotation lists can be large for a big newspaper page and reducing the amount of JSON objects can lead to a smoother user experience.</li>
+  <li>a paragraph annotation list for OCR correction where the user wants to have a single box to correct rather than a box per line or word.</li>
+</ul>
+
+<p>I would like to be able to link to these options to allow the client to decide which ones they want to use. The source format for the text in the Newspaper page maybe ALTO and creating the serialisations above could be done on the fly.</p>
+
+<p>This group will define the terms and usage of granularity levels using the use cases defined in <a href="https://github.com/IIIF/iiif-stories/issues/">IIIF-Stories</a>. A number of relevant stories are below:</p>
+
+<ul>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/79">Access to illustrations; granularity or motivation?</a></li>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/77">Access the OCR text at a specific granularity</a></li>
+</ul>
+
+<p>Relevant github issues where this has been discussed previously:</p>
+
+<ul>
+  <li><a href="https://github.com/IIIF/iiif.io/issues/764">Granularity search parameter</a></li>
+  <li><a href="https://github.com/IIIF/iiif.io/issues/758">Annotation lists with different specificities</a></li>
+</ul>
+      <h2 id="scope">
+        
+        
+          Scope <a href="#scope">#</a>
+        
+        
+      </h2>
+    
+
+<p>This group will focus on text associated with IIIF images. Text may be OCR, transcription, or other defined text with coordinate information. The group will test static implementations describing the granularity of multiple annotation lists as a proof of concept, then make recommendations and test implementation of granularity selection in the IIIF Search API.</p>
+
+<p>If successful, the work will enable an increased use of text with IIIF, <a href="https://github.com/altoxml/schema/issues/33">eliminate the need for an ALTO API</a>, and provide a common vocabulary to refine granularities of text returned.
+Relevant use cases will be collected in <a href="https://github.com/IIIF/iiif-stories/issues/">IIIF-Stories</a> using the text-granularity label.</p>
+      <h3 id="anticipated-activities--deliverables">
+        
+        
+          Anticipated Activities / Deliverables <a href="#anticipated-activities--deliverables">#</a>
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>Defined granularity parameters</li>
+  <li>Develop example annotations lists for different granularities to be used as test fixtures</li>
+  <li>Prototype API implementations that provide access to different granularities</li>
+  <li>Provide recommendation and testing for API(s)</li>
+  <li>Recommendation of where to maintain granularity recommendations and other deliverables, including documentation and examples</li>
+</ul>
+      <h2 id="estimated-timeline">
+        
+        
+          Estimated Timeline <a href="#estimated-timeline">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>Q2 2017: Group established, work commences</li>
+  <li>Q2 2017: Gather Use Cases;</li>
+  <li>Q3 2017: Draft granularity description guidelines and demo implementations</li>
+  <li>Q4 2017: Evaluation of dynamic granularity</li>
+  <li>Q1 2018: Draft Search API recipe/extension to specify granularity &amp; demo implementations</li>
+  <li>Q2 2018: Guidelines ready to be included in relevant specifications</li>
+</ul>
+      <h2 id="communication-channels">
+        
+        
+          Communication Channels <a href="#communication-channels">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>Github Repository: <a href="https://github.com/IIIF/iiif-stories/issues/">IIIF-Stories</a></li>
+  <li>Slack: <a href="https://iiif.slack.com/messages/text-granularity/details/"># text-granularity</a></li>
+  <li>Email: <a href="https://groups.google.com/forum/#!forum/iiif-discuss">IIIF-Discuss</a>; subject line: [granularity]</li>
+  <li>Face to face: Annual Conference and Working Group meetings, plus as incidental travel allows</li>
+  <li>Calls: Initially bi-weekly, plus standing updates/feedback on Technical Call
+    <ul>
+      <li>Online: <a href="https://stanford.zoom.us/j/375412551">https://stanford.zoom.us/j/375412551</a></li>
+      <li>Phone: see <a href="https://zoom.us/zoomconference">international numbers</a> - Enter Meeting ID: 375412551, Participant ID: #</li>
+    </ul>
+  </li>
+</ul>
+      <h2 id="community-support">
+        
+        
+          Community Support <a href="#community-support">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="organizations">
+        
+        
+          Organizations <a href="#organizations">#</a>
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>ALTO Board</li>
+  <li>Bavarian State Library</li>
+  <li>Berlin State Library</li>
+  <li>Bibliothèque nationale de France</li>
+  <li>Cornell University</li>
+  <li>Digirati</li>
+  <li>Europeana</li>
+  <li>Loyola University Maryland</li>
+  <li>National Library of Wales</li>
+  <li>Oxford University, Digital Bodleian Library</li>
+  <li>Pennsylvania State University Libraries</li>
+  <li>Princeton University</li>
+  <li>Saint Louis University</li>
+  <li>University of Alberta</li>
+  <li>University of Toronto</li>
+  <li>Yale Center for British Art</li>
+</ul>
+      <h3 id="technical-editors">
+        
+        
+          Technical Editors <a href="#technical-editors">#</a>
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>Mike Appleby</li>
+  <li>Tom Crane</li>
+  <li>Rob Sanderson</li>
+  <li>Simeon Warner</li>
+</ul>
+
+</div></div>
+
+    </section>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+
+      <div class="navbar-brand column is-half">
+        <a class="navbar-item" href="/iiif-website/">
+          <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+          <span class="brand-title blue-text">International Image Interoperability Framework</span>
+        </a>
+        <p>International Image Interoperability Framework: A community driven image framework with well defined APIs for making the world’s image repositories interoperable and accessible</p>
+      </div>
+      <div class="column"></div>
+      
+      <div class="column menu-column">
+        <h4>About</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">How It Works</a>
+          </li>
+        
+          <li>
+            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Demos</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Tutorials</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+      <div class="column menu-column">
+        <h4>Stay Connected</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">Events & News</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Join Newsletter</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Community Groups</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Consortium</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+</body>
+</html>

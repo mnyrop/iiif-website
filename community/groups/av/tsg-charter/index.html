@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset="utf-8">
+  <title>
+     IIIF A/V Technical Specification Group Charter —  IIIF | International Image Interoperability Framework
+  </title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/iiif-website/assets/css/style.css">
+  <link rel="canonical" href="/iiif-website/community/groups/av/tsg-charter/" />
+  <link rel="shortcut icon" type="image/jpg" href="/iiif-website/assets/favicon.ico"/>
+</head>
+<body><script src="/iiif-website/assets/js/deleteButton.js"></script>
+
+<div class="iiif-notification message">
+  <div class="message-header">
+    <div class="container">
+      <button class="delete"></button>
+      <p class="title">This website design is in pre-beta.</p>
+      <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      
+        <a href="/iiif-website/">This is a test link</a>
+      
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="hero is-primary" style="">
+  
+  <div class="hero-head">
+    <nav id="navbar" class="navbar is-transparent is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/iiif-website/">
+        <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+        <span class="brand-title">International Image Interoperability Framework</span>
+      </a>
+      <div class="navbar-burger" data-target="navbar" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+            <a class="navbar-item" href="/iiif-website/">Home</a>
+          
+            <a class="navbar-item" href="/iiif-website/demos">Demos</a>
+          
+            <a class="navbar-item" href="/iiif-website">News & Events</a>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-involved">
+                Get Involved
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                
+              </div>
+            </div>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-started">
+                Get Started
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                
+                  <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Training</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+  </div>
+  
+
+  <div class="hero-body container">
+
+    
+
+    <div class="container has-text-centered">
+      
+      <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">IIIF A/V Technical Specification Group Charter</h1>
+      
+      <p class="subtitle is-size-5"></p>
+
+      
+    </div>
+  </div>
+</section>
+<section id="main">
+      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
+<h2 id="introduction">
+        
+        
+          Introduction <a href="#introduction">#</a>
+        
+        
+      </h2>
+    
+
+<p>While IIIF has focused primarily on Image based content, there has always been interest around the community in extending the paradigm to include Video and Audio resources, following the same successful pattern as for Images. Early experiments in this direction included the linking of audio segments to the regions of a canvas that depict a musical score and linking video of commentary about the resource. More recently, the British Library was successful in obtaining a grant to work on preserving and making accessible audio content, with explicit resourcing for advancing IIIF’s specifications in this area.</p>
+
+<p>The IIIF A/V Technical Specification Group will create technical specifications that enable interoperability of access to audio and video content following the same <a href="/api/annex/notes/design_patterns/">design principles</a> as existing IIIF specifications, allowing the integration of that content with the Presentation API. The group will assist with and steer the implementation of community infrastructure, such as reference implementations and validators, as well as transformation tools to generate the required data from existing systems and APIs.</p>
+
+<p>If successful, the work will enable the same degree of interoperability for audio and video resources as the community has already provided for image based resources. This will create greater access to our digital and digitized time-based cultural heritage.</p>
+      <h2 id="scope">
+        
+        
+          Scope <a href="#scope">#</a>
+        
+        
+      </h2>
+    
+
+<p>The scope of the group’s efforts is divided into two primary areas, access to the bitstreams of the audio and video content, and integration with and extension of the existing Presentation API to accommodate its appropriate rendering.</p>
+
+<p>Work that is initially out of scope for this group includes the creation of client-side integration tooling for existing third party APIs, such as controlling site-specific videos in the same way as more HTML5-friendly content. While useful, this would be dependent on the API version of the third party systems, over which we have no control or method of providing feedback. This is more suitable for the “shimming” process or re-hosting of the content.</p>
+
+<p>The group commits to following the requirements for the <a href="/iiif-website/community/policy/editorial/" title="IIIF Editorial Process">IIIF specification process</a>, including the production of two independent implementations of each feature specified, and to reach out to other communities for feedback and to encourage adoption.</p>
+      <h3 id="1-presentation-api-extension">
+        
+        
+          1. Presentation API Extension <a href="#1-presentation-api-extension">#</a>
+        
+        
+      </h3>
+    
+
+<p>As outlined in the <a href="https://docs.google.com/document/d/1X7b7zQGDsiEvAfvb1WboDXe360mz7Zmm0o0LT43nozk/edit">IIIF AV - Content APIs and the Presentation API</a> document, the Presentation API and its underlying model, Shared Canvas, will be updated to include the missing facilities for time-based media. In particular, the following significant changes are anticipated:</p>
+
+<ul>
+  <li>Add a duration dimension to Canvases, and make height/width non-mandatory</li>
+  <li>ViewingHints for transitions between canvases</li>
+  <li>Recast the Annotation section as a separate cookbook, and define A/V annotation patterns such as captions</li>
+  <li>Update the Annotation model to W3C standard, and adopt further community conventions</li>
+</ul>
+
+<p>Anticipated Deliverables:</p>
+
+<ul>
+  <li>Recommendations for version 3.0 of the Presentation API to enable the rendering of time-based media</li>
+  <li>Examples of and recipes for using the Presentation API 3.0 to express A/V use cases</li>
+  <li>Reference implementations of the API</li>
+  <li>Updated validation services for the new version</li>
+</ul>
+      <h3 id="2-audio-and-video-content-apis">
+        
+        
+          2. Audio and Video Content APIs <a href="#2-audio-and-video-content-apis">#</a>
+        
+        
+      </h3>
+    
+
+<p>The Audio and Video Content APIs will mirror the existing Image API in function - they provide interoperable access to temporal and spatial segmentation and transformation of the content to enable its use and reuse in multiple contexts. This has the same division as the Image API between access to the bits and a JSON-LD description of the features provided by the service. Because, unlike images, audio and video may be played back in a streaming fashion by browsers without need of server-side temporal and spatial segmentation, Audio and Video Content APIs may not be necessary for basic “level 0” use cases supported directly through the Presentation API.In work on both the Presentation and Content APIs, the interactions are to focus on web-based delivery of the content, but not to the exclusion of non-browser-based client systems.</p>
+
+<p>Anticipated Deliverables:</p>
+
+<ul>
+  <li>Specification for Audio and Video APIs that provide access to audio and video bitstreams</li>
+  <li>Reference implementations of those APIs</li>
+  <li>Examples of and recipes for using Audio and Video Content APIs to express A/V use cases</li>
+  <li>Validation services for those APIs</li>
+</ul>
+      <h2 id="development-roadmap">
+        
+        
+          Development Roadmap: <a href="#development-roadmap">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>Q2 2016: Initial workshop, group formation</li>
+  <li>Q3-4 2016: Use Case discussion and research</li>
+  <li>Q1-2 2017: Alpha draft of Presentation API 3.0 recommendations to support A/V</li>
+  <li>Q3-4 2017: Beta draft of Presentation API 3.0 recommendations to support A/V, Alpha Audio/Video Content APIs</li>
+  <li>Q1-2 2018: Alpha2 Audio/Video Content APIs</li>
+  <li>Q3 2018: Beta Audio/Video Content APIs, V3.0 Presentation API with validators, implementations</li>
+  <li>Q4 2018: V1.0 for Audio/Video Content APIs with validators, implementations</li>
+</ul>
+      <h2 id="communication-channels">
+        
+        
+          Communication Channels <a href="#communication-channels">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>Email: <a href="https://groups.google.com/forum/#!forum/iiif-discuss">IIIF-Discuss</a>, subject line: [AV]</li>
+  <li>Slack: <a href="https://iiif.slack.com/messages/av/details/">#av</a></li>
+  <li>Github: https://github.com/IIIF/iiif-av</li>
+  <li>Calls: Biweekly, Tuesday 9am PST / Noon EST: <a href="https://bluejeans.com/222002812">https://bluejeans.com/222002812</a></li>
+  <li>Face to Face: IIIF Conference and WG meetings, others as coincidental travel allows, including:
+    <ul>
+      <li>April 2016: Workshop at British Library</li>
+      <li>Feb 2017: Invited workshop at British Library</li>
+      <li>6-9 June 2017: IIIF Conference at the Vatican</li>
+      <li>Mid-October 2017: IIIF working groups meeting (TBD)</li>
+      <li>Fall 2017 British Library Mellon grant meeting (TBD)</li>
+      <li>Spring 2018 British Library Mellon grant meeting (TBD)</li>
+      <li>Fall 2018 British Library Mellon grant meeting (TBD)</li>
+    </ul>
+  </li>
+</ul>
+      <h2 id="community-support">
+        
+        
+          Community Support <a href="#community-support">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="organizations">
+        
+        
+          Organizations <a href="#organizations">#</a>
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>British Library</li>
+  <li>Cornell University</li>
+  <li>Digirati</li>
+  <li>Harvard University</li>
+  <li>Indiana University</li>
+  <li>J. Paul Getty Trust</li>
+  <li>National Library of Israel</li>
+  <li>National Library of Wales</li>
+  <li>North Carolina State University Libraries</li>
+  <li>Oxford University</li>
+  <li>Princeton University</li>
+  <li>Yale Center for British Art</li>
+</ul>
+      <h3 id="technical-editors">
+        
+        
+          Technical Editors <a href="#technical-editors">#</a>
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>Michael Appleby</li>
+  <li>Tom Crane</li>
+  <li>Rob Sanderson</li>
+  <li>Jon Stroop</li>
+  <li>Simeon Warner</li>
+</ul>
+
+</div></div>
+
+    </section>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+
+      <div class="navbar-brand column is-half">
+        <a class="navbar-item" href="/iiif-website/">
+          <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+          <span class="brand-title blue-text">International Image Interoperability Framework</span>
+        </a>
+        <p>International Image Interoperability Framework: A community driven image framework with well defined APIs for making the world’s image repositories interoperable and accessible</p>
+      </div>
+      <div class="column"></div>
+      
+      <div class="column menu-column">
+        <h4>About</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">How It Works</a>
+          </li>
+        
+          <li>
+            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Demos</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Tutorials</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+      <div class="column menu-column">
+        <h4>Stay Connected</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">Events & News</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Join Newsletter</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Community Groups</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Consortium</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+</body>
+</html>

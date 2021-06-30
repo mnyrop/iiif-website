@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset="utf-8">
+  <title>
+     IIIF Maps Technical Specification Group Charter —  IIIF | International Image Interoperability Framework
+  </title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/iiif-website/assets/css/style.css">
+  <link rel="canonical" href="/iiif-website/community/groups/maps-tsg/charter/" />
+  <link rel="shortcut icon" type="image/jpg" href="/iiif-website/assets/favicon.ico"/>
+</head>
+<body><script src="/iiif-website/assets/js/deleteButton.js"></script>
+
+<div class="iiif-notification message">
+  <div class="message-header">
+    <div class="container">
+      <button class="delete"></button>
+      <p class="title">This website design is in pre-beta.</p>
+      <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      
+        <a href="/iiif-website/">This is a test link</a>
+      
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="hero is-primary" style="">
+  
+  <div class="hero-head">
+    <nav id="navbar" class="navbar is-transparent is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/iiif-website/">
+        <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+        <span class="brand-title">International Image Interoperability Framework</span>
+      </a>
+      <div class="navbar-burger" data-target="navbar" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+            <a class="navbar-item" href="/iiif-website/">Home</a>
+          
+            <a class="navbar-item" href="/iiif-website/demos">Demos</a>
+          
+            <a class="navbar-item" href="/iiif-website">News & Events</a>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-involved">
+                Get Involved
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                
+              </div>
+            </div>
+          
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a  class="navbar-link"  href="/iiif-website/get-started">
+                Get Started
+              </a>
+              <div class="navbar-dropdown is-boxed is-active">
+                
+                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                
+                  <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                
+                  <a class="navbar-item" href="/iiif-website">Training</a>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+  </div>
+  
+
+  <div class="hero-body container">
+
+    
+
+    <div class="container has-text-centered">
+      
+      <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">IIIF Maps Technical Specification Group Charter</h1>
+      
+      <p class="subtitle is-size-5"></p>
+
+      
+    </div>
+  </div>
+</section>
+<section id="main">
+      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
+<h2 id="introduction">
+        
+        
+          Introduction <a href="#introduction">#</a>
+        
+        
+      </h2>
+    
+<p>Digitized maps and geo-located images are some of the best resources for connecting people with critical context about history and the changing face of the physical world. Given the fact that maps represent a large and important facet of digitized materials made available via IIIF, there is a growing need for better interoperability with existing tools and for connecting these assets to the broader geospatial world. The same is true of geo-located images which are being generated in various ways including via crowdsourcing and more manual methods of associating an image with a geographic location.</p>
+
+<p>During discussions in the Maps Community group it has become clear that to add Geo support to version 3.0 of the IIIF Presentation API will require extending the existing specification and this is best done as a Technical Specification Group. In an early in-person gathering of the Maps Community Group, a number of Use Cases were developed which can be split into two main themes; geolocating IIIF Content (images, video or Manifests) and specific georeferencing functionality around historical maps. Both of these themes are likely to be seperate extensions. A selection of use cases include:</p>
+
+<p>Geolocating IIIF Content</p>
+<ul>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/135">Link a IIIF resource to a point on a map</a></li>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/133">Linking a geo bounding box for a map</a></li>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/132">Geo-coding a page of an atlas</a></li>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/117">Presenting Aerial Surveys in IIIF</a></li>
+</ul>
+
+<p>Georeferencing Historical IIIF Maps</p>
+<ul>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/129">Georeferencing a IIIF Map</a></li>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/127">Masking or identifying the region of a page which contains a map</a></li>
+  <li><a href="https://github.com/IIIF/iiif-stories/issues/126">Using IIIF Maps in a GIS System</a></li>
+</ul>
+      <h2 id="scope">
+        
+        
+          Scope <a href="#scope">#</a>
+        
+        
+      </h2>
+    
+<p>It is the intention of this group to create a number of <a href="https://iiif.io/api/registry/extensions/">IIIF Extensions</a> and avoid changing the core IIIF specifications. If after a period of time and if there is wide implementation of these extensions there may be a case made to import them into the Presentation API.</p>
+
+<p>This group will initially focus on the areas mentioned above but during the course of its work it may need to discuss wider Geo and IIIF issues.</p>
+      <h2 id="deliverables">
+        
+        
+          Deliverables <a href="#deliverables">#</a>
+        
+        
+      </h2>
+    
+<p>The expected deliverables are two extensions to achieve the following objectives:</p>
+
+<ul>
+  <li>Define an interoperable method to link IIIF content to a Geo Location for the purposes of presentation and/or navigation.</li>
+  <li>Create an extension which would allow the storage and presentation of Georeferencing information for a historical map.</li>
+</ul>
+      <h2 id="roadmap">
+        
+        
+          Roadmap <a href="#roadmap">#</a>
+        
+        
+      </h2>
+    
+<ul>
+  <li>Group formation June 2020</li>
+  <li>Delivery of linking extension January 2021</li>
+  <li>Delivery of georeferencing extension June 2021</li>
+</ul>
+      <h2 id="communication-channels">
+        
+        
+          Communication Channels <a href="#communication-channels">#</a>
+        
+        
+      </h2>
+    
+<ul>
+  <li>Github Repository: maps</li>
+  <li>Slack: #maps</li>
+  <li>Email: iiif-discuss; subject line: [Maps-TSG]</li>
+  <li>Calls: monthly on off weeks to the Maps community group call</li>
+</ul>
+      <h2 id="community-support">
+        
+        
+          Community Support <a href="#community-support">#</a>
+        
+        
+      </h2>
+    
+<p>Please add your institution below to show your support to the formation of the group:</p>
+<ul>
+  <li>OCLC</li>
+  <li>Stanford University Libraries (Stace Maples &amp; Jack Reed)</li>
+  <li>Saint Louis University (Bryan Haberberger &amp; Patrick Cuba)</li>
+  <li>British Library (Gethin Rees)</li>
+  <li>Yale University (Michael Appleby)</li>
+  <li>Moravian Library (Petr Žabička)</li>
+  <li>Leiden University Libraries (Ben Companjen)</li>
+</ul>
+      <h2 id="technical-editors">
+        
+        
+          Technical Editors <a href="#technical-editors">#</a>
+        
+        
+      </h2>
+    
+<ul>
+  <li>Rob Sanderson (J Paul Getty Trust)</li>
+  <li>Michael Appleby (Yale University)</li>
+  <li>Simeon Warner (Cornell University)</li>
+  <li>Tom Crane (Digirati)</li>
+</ul>
+      <h3 id="changelog">
+        
+        
+          ChangeLog <a href="#changelog">#</a>
+        
+        
+      </h3>
+    
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2020-11-18</td>
+      <td>Initial page</td>
+    </tr>
+  </tbody>
+</table>
+
+</div></div>
+
+    </section>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+
+      <div class="navbar-brand column is-half">
+        <a class="navbar-item" href="/iiif-website/">
+          <img src="/iiif-website/assets/images/logos/logo-sm.png" alt="IIIF logo" height="28">
+          <span class="brand-title blue-text">International Image Interoperability Framework</span>
+        </a>
+        <p>International Image Interoperability Framework: A community driven image framework with well defined APIs for making the world’s image repositories interoperable and accessible</p>
+      </div>
+      <div class="column"></div>
+      
+      <div class="column menu-column">
+        <h4>About</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">How It Works</a>
+          </li>
+        
+          <li>
+            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Demos</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Tutorials</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+      <div class="column menu-column">
+        <h4>Stay Connected</h4>
+        <ul>
+        
+          <li>
+            <a href="/iiif-website">Events & News</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Join Newsletter</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Community Groups</a>
+          </li>
+        
+          <li>
+            <a href="/iiif-website">Consortium</a>
+          </li>
+        
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+</body>
+</html>
