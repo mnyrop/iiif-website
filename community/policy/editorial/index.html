@@ -65,13 +65,13 @@
               </a>
               <div class="navbar-dropdown is-boxed is-active">
                 
-                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                  <a class="navbar-item" href="/iiif-website/community/groups">Community Groups</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                  <a class="navbar-item" href="/iiif-website/community/consortium">Consortium</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                  <a class="navbar-item" href="/iiif-website/newsletter">Join Newsletter</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                  <a class="navbar-item" href="/iiif-website/community/consortium/staff/">Contact Us</a>
                 
               </div>
             </div>
@@ -82,13 +82,13 @@
               </a>
               <div class="navbar-dropdown is-boxed is-active">
                 
-                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                  <a class="navbar-item" href="/iiif-website/how-iiif-works">How IIIF Works</a>
                 
                   <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                  <a class="navbar-item" href="/iiif-website/get-started/cookbook">Cookbooks</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Training</a>
+                  <a class="navbar-item" href="/iiif-website/get-started/training">Training</a>
                 
               </div>
             </div>
@@ -115,60 +115,32 @@
   </div>
 </section>
 <section id="main">
-      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
-<p>This document describes the process by which specifications are designed and written within the IIIF community. The first part describes the expected participation of the community throughout the process, including gathering real world use cases, discussing solutions, implementing products, and the role of the <a href="/iiif-website/community/trc/" title="IIIF Technical Review Committee">Technical Review Committee (TRC)</a>. The second section describes the processes that the <a href="/iiif-website/community/editors/" title="IIIF Editorial Committee">editorial committee</a> and the editors of a given specification use to ensure that the work is of the highest quality possible. The processes are intended to be as transparent and inclusive as possible, while still making progress quickly and responsibly.</p>
+      
+      <div class='container-block is-max-widescreen'><div class='container' markdown='1'>
+  <div class="content">
+    <p>This document describes the process by which specifications are designed and written within the IIIF community. The first part describes the expected participation of the community throughout the process, including gathering real world use cases, discussing solutions, implementing products, and the role of the <a href="/iiif-website/community/trc/" title="IIIF Technical Review Committee">Technical Review Committee (TRC)</a>. The second section describes the processes that the <a href="/iiif-website/community/editors/" title="IIIF Editorial Committee">editorial committee</a> and the editors of a given specification use to ensure that the work is of the highest quality possible. The processes are intended to be as transparent and inclusive as possible, while still making progress quickly and responsibly.</p>
 
 <p>Updates to this document are tracked in the <a href="#change-log" title="Change Log">change log</a> at the bottom of the page.</p>
-      <h2 id="community-process">
-        
-        
-          1. Community Process <a href="#community-process">#</a>
-        
-        
-      </h2>
-    
-      <h3 id="proposals-and-feedback">
-        
-        
-          1.1 Proposals and Feedback <a href="#proposals-and-feedback">#</a>
-        
-        
-      </h3>
-    
+
+<h2 id="community-process">1. Community Process</h2>
+
+<h3 id="proposals-and-feedback">1.1 Proposals and Feedback</h3>
 
 <p>Community members discuss features and ideas for the specifications via <a href="https://groups.google.com/forum/#!forum/iiif-discuss" title="IIIF Email Discussion List">IIIF-Discuss</a>. IIIF holds regular <a href="/iiif-website/community/call/">community conference calls</a> as well as various <a href="/iiif-website/community/groups/">Community Group and Technical Specification Group meetings</a>, the details and agendas for which are announced on IIIF-Discuss. There is also a <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGV9QSFo8i2z1R5iIMP7B2JVhS9akHqcykWF5_y4mtWqVrBA/viewform" title="Slack Signup">Slack</a> workspace for IIIF, with channels for both general and focused discussion.</p>
 
 <p>The primary communication channel for technical discussion of the specifications is the <a href="https://github.com/IIIF/api/issues" title="IIIF issues">API issue list on Github</a>, and is especially useful for implementers who want to track the discussion around an issue of interest. <a href="/iiif-website/community/groups/framework/#iiif-technical-specification-groups">Technical Specification Groups</a> will create issues for related public specifications in Github to ensure that they are available for review, and remain open until there is a decision.</p>
 
 <p>Consensus for decision-making is sought via discussion and healthy debate. If disagreements arise, proponents of each approach should provide mock-ups, examples, and demonstrate practicality of implementation as well as conformance to accepted <a href="https://iiif.io/api/annex/notes/design_patterns/">design patterns</a>, in order to justify their approaches. These suggestions will be reviewed and discussed by the appropriate Technical Specification Group, if one exists, and by the Editorial Committee, Technical Review Committee, and the community on technical calls and via other channels as appropriate.</p>
-      <h3 id="use-cases-and-support">
-        
-        
-          1.2 Use Cases and Support <a href="#use-cases-and-support">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="use-cases-and-support">1.2 Use Cases and Support</h3>
 
 <p>New specifications and changes to existing specifications must have one or more <a href="https://github.com/IIIF/iiif-stories/issues" title="IIIF user stories and use cases">documented use cases</a>, supported by at least two institutions that either have IIIF-based technology in production or are clearly blocked from doing so, as demonstrated by the use case. In the case of breaking changes, where applicable, the documented use case must clearly demonstrate why the previous approach was flawed or insufficient.</p>
-      <h3 id="evaluation-and-testing">
-        
-        
-          1.3 Evaluation and Testing <a href="#evaluation-and-testing">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="evaluation-and-testing">1.3 Evaluation and Testing</h3>
 
 <p>In order to be considered ready for final review, new features must have two open-source server-side implementations, at least one of which should be in production. New features must also have at least one open-source client-side implementation, which may be a proof-of-concept.</p>
-      <h3 id="community-review">
-        
-        
-          1.4 Community Review <a href="#community-review">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="community-review">1.4 Community Review</h3>
 
 <p>New versions of specifications at or above 1.0, and at least the first published <a href="https://iiif.io/api/annex/notes/semver/" title="Versioning of APIs">beta version</a> of any specification, must be reviewed by the <a href="/iiif-website/community/trc/" title="IIIF Technical Review Committee">Technical Review Committee (TRC)</a> as representative of the consortium and the community with regards to technical matters. Both the agendas and the notes from TRC meetings will be openly available.</p>
 
@@ -179,56 +151,26 @@
 <p>The TRC shall ensure that there is a response to, and, where possible, resolution of any objections raised. The TRC is responsible for considering the severity and importance of any remaining objections, and, ultimately, whether to seek additional community input and continue revision, or to proceed with publication of the new version of a specification.</p>
 
 <p>Once approved by the TRC, new specifications or updates to existing specifications shall then be released by the editors.</p>
-      <h3 id="frequency-of-releases">
-        
-        
-          1.5 Frequency of Releases <a href="#frequency-of-releases">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="frequency-of-releases">1.5 Frequency of Releases</h3>
 
 <p>No specification is perfect. New use cases surface, and refinements and clarifications need to be made. As such, specifications are generally considered to be under continuous revision. The editors will decide when new releases are proposed for review based on input from the community, balanced against the need for a degree of stability and consideration of other IIIF priorities.</p>
 
 <p>New IIIF specifications, and the Image and Presentation API specifications beyond their version 2.0.0 releases, follow semantic versioning as defined in the <a href="https://iiif.io/api/annex/notes/semver/" title="Versioning of APIs">IIIF Versioning Note</a>. It is intended that minor, backwards compatible, releases will not be published more than once per year, and that major releases will not be published more than once every two years.</p>
 
 <p>Specification versions prior to 1.0 should be considered experimental, are not subject to community review, and may be updated with breaking changes at the editors’ discretion.</p>
-      <h2 id="editors-process">
-        
-        
-          2. Editorial Committee Process <a href="#editors-process">#</a>
-        
-        
-      </h2>
-    
-      <h3 id="terminology">
-        
-        
-          2.1 Terminology <a href="#terminology">#</a>
-        
-        
-      </h3>
-    
+
+<h2 id="editors-process">2. Editorial Committee Process</h2>
+
+<h3 id="terminology">2.1 Terminology</h3>
 
 <p>The key words <em>MUST</em>, <em>MUST NOT</em>, <em>SHOULD</em>, <em>SHOULD NOT</em>, <em>RECOMMENDED</em>, and <em>MAY</em> in this document are to be interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">RFC 2119</a>.</p>
-      <h3 id="22-editorial-participation">
-        
-        
-          2.2 Editorial Participation <a href="#22-editorial-participation">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="22-editorial-participation">2.2 Editorial Participation</h3>
 
 <p>Editors <em>MUST</em> identify which specifications they are working on, and are not expected to work on every specification. It <em>MUST</em> be clear in the versions of the specifications which editors were actively participating. This is necessary in order to manage the acceptance criteria for merging changes, as described below.</p>
-      <h3 id="process-for-suggesting-changes">
-        
-        
-          2.3 Process for Suggesting Changes <a href="#process-for-suggesting-changes">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="process-for-suggesting-changes">2.3 Process for Suggesting Changes</h3>
 
 <p>Editorial collaboration takes place primarily in the <a href="https://github.com/IIIF/api" title="IIIF Specifications on Github">IIIF API repository on GitHub</a>. When editors submit changes for revision, they <em>MUST</em> adhere to the following criteria:</p>
 
@@ -240,14 +182,8 @@
   <li>Changes on the branch <em>SHOULD</em> be squashed into one commit, with a reasonable commit message, and one parent commit that is the latest revision. Multiple commits are allowed when they are logical, but this should generally be avoided as it usually indicates that there are too many changes happening on one branch.</li>
   <li>When one or more editors feel that a branch is ready for final consideration, they <em>MUST</em> label the issue as “Ready for Review” and submit a pull request that references the issue.</li>
 </ul>
-      <h3 id="acceptance-criteria-for-merging-changes">
-        
-        
-          2.4 Acceptance Criteria for Merging Changes <a href="#acceptance-criteria-for-merging-changes">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="acceptance-criteria-for-merging-changes">2.4 Acceptance Criteria for Merging Changes</h3>
 
 <p>Final editorial voting <em>MUST</em> take place on a pull request. Non-normative editorial discussion, e.g. to point out changes in language and typos, <em>MAY</em> also transpire on the pull request, however, any discussion of substantive changes related to the issue <em>MUST</em> continue on the issue.  Note that this is in addition to the <a href="/iiif-website/community/trc/#process" title="TRC Process">TRC approval process</a>.</p>
 
@@ -262,14 +198,8 @@
 <p>The editor that submitted the pull request <em>MUST NOT</em> be the editor that merges it.</p>
 
 <p>In the event that an editor disagrees with a merge that has already happened, they should create a new issue that references the change in question, and explains the objection. This issue then serves as the discussion point for the objection which is subject to this same process. Reverts <em>SHOULD</em> stay in the repository history, i.e., the process of reverting involve updating the HEAD version to reflect older content, and not erasing or re-writing history.</p>
-      <h3 id="meetings">
-        
-        
-          2.5 Meetings <a href="#meetings">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="meetings">2.5 Meetings</h3>
 
 <p>All Editors <em>SHOULD</em> attend one editorial committee meeting per year, either in person or online, lasting 2-3 days. Every effort will be made to ensure the timing and location of the meeting is convenient for as many of the committee as possible, and it is acknowledged that not every editorial committee member will be able to attend.</p>
 
@@ -278,14 +208,8 @@
 <p>All Editors <em>SHOULD</em> attend as many TSG meetings for the specifications on which they are working as possible.</p>
 
 <p>The editorial committee <em>MUST</em> provide a summary of all meetings, and <em>SHOULD</em> provide a summary of other interactions at which changes and new specifications are discussed.</p>
-      <h2 id="change-log">
-        
-        
-          3. Change Log <a href="#change-log">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="change-log">3. Change Log</h2>
 
 <table>
   <thead>
@@ -314,8 +238,11 @@
   </tbody>
 </table>
 
+
+  </div>
 </div></div>
 
+      
     </section>
 <footer id="footer" class="footer">
   <div class="container">
@@ -335,19 +262,19 @@
         <ul>
         
           <li>
-            <a href="/iiif-website">How It Works</a>
+            <a href="/iiif-website/how-iiif-works">How IIIF Works</a>
           </li>
         
           <li>
-            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+            <a href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Demos</a>
+            <a href="/iiif-website/demos">Demos</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Tutorials</a>
+            <a href="https://guides.iiif.io/">Tutorials</a>
           </li>
         
         </ul>
@@ -362,15 +289,15 @@
           </li>
         
           <li>
-            <a href="/iiif-website">Join Newsletter</a>
+            <a href="/iiif-website/newsletter">Join Newsletter</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Community Groups</a>
+            <a href="/iiif-website/community/groups">Community Groups</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Consortium</a>
+            <a href="/iiif-website/community/consortium">Consortium</a>
           </li>
         
         </ul>

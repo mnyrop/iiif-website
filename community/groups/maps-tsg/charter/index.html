@@ -65,13 +65,13 @@
               </a>
               <div class="navbar-dropdown is-boxed is-active">
                 
-                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                  <a class="navbar-item" href="/iiif-website/community/groups">Community Groups</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                  <a class="navbar-item" href="/iiif-website/community/consortium">Consortium</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                  <a class="navbar-item" href="/iiif-website/newsletter">Join Newsletter</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                  <a class="navbar-item" href="/iiif-website/community/consortium/staff/">Contact Us</a>
                 
               </div>
             </div>
@@ -82,13 +82,13 @@
               </a>
               <div class="navbar-dropdown is-boxed is-active">
                 
-                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                  <a class="navbar-item" href="/iiif-website/how-iiif-works">How IIIF Works</a>
                 
                   <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                  <a class="navbar-item" href="/iiif-website/get-started/cookbook">Cookbooks</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Training</a>
+                  <a class="navbar-item" href="/iiif-website/get-started/training">Training</a>
                 
               </div>
             </div>
@@ -115,15 +115,10 @@
   </div>
 </section>
 <section id="main">
-      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
-<h2 id="introduction">
-        
-        
-          Introduction <a href="#introduction">#</a>
-        
-        
-      </h2>
-    
+      
+      <div class='container-block is-max-widescreen'><div class='container' markdown='1'>
+  <div class="content">
+    <h2 id="introduction">Introduction</h2>
 <p>Digitized maps and geo-located images are some of the best resources for connecting people with critical context about history and the changing face of the physical world. Given the fact that maps represent a large and important facet of digitized materials made available via IIIF, there is a growing need for better interoperability with existing tools and for connecting these assets to the broader geospatial world. The same is true of geo-located images which are being generated in various ways including via crowdsourcing and more manual methods of associating an image with a geographic location.</p>
 
 <p>During discussions in the Maps Community group it has become clear that to add Geo support to version 3.0 of the IIIF Presentation API will require extending the existing specification and this is best done as a Technical Specification Group. In an early in-person gathering of the Maps Community Group, a number of Use Cases were developed which can be split into two main themes; geolocating IIIF Content (images, video or Manifests) and specific georeferencing functionality around historical maps. Both of these themes are likely to be seperate extensions. A selection of use cases include:</p>
@@ -142,66 +137,36 @@
   <li><a href="https://github.com/IIIF/iiif-stories/issues/127">Masking or identifying the region of a page which contains a map</a></li>
   <li><a href="https://github.com/IIIF/iiif-stories/issues/126">Using IIIF Maps in a GIS System</a></li>
 </ul>
-      <h2 id="scope">
-        
-        
-          Scope <a href="#scope">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="scope">Scope</h2>
 <p>It is the intention of this group to create a number of <a href="https://iiif.io/api/registry/extensions/">IIIF Extensions</a> and avoid changing the core IIIF specifications. If after a period of time and if there is wide implementation of these extensions there may be a case made to import them into the Presentation API.</p>
 
 <p>This group will initially focus on the areas mentioned above but during the course of its work it may need to discuss wider Geo and IIIF issues.</p>
-      <h2 id="deliverables">
-        
-        
-          Deliverables <a href="#deliverables">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="deliverables">Deliverables</h2>
 <p>The expected deliverables are two extensions to achieve the following objectives:</p>
 
 <ul>
   <li>Define an interoperable method to link IIIF content to a Geo Location for the purposes of presentation and/or navigation.</li>
   <li>Create an extension which would allow the storage and presentation of Georeferencing information for a historical map.</li>
 </ul>
-      <h2 id="roadmap">
-        
-        
-          Roadmap <a href="#roadmap">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="roadmap">Roadmap</h2>
 <ul>
   <li>Group formation June 2020</li>
   <li>Delivery of linking extension January 2021</li>
   <li>Delivery of georeferencing extension June 2021</li>
 </ul>
-      <h2 id="communication-channels">
-        
-        
-          Communication Channels <a href="#communication-channels">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="communication-channels">Communication Channels</h2>
 <ul>
   <li>Github Repository: maps</li>
   <li>Slack: #maps</li>
   <li>Email: iiif-discuss; subject line: [Maps-TSG]</li>
   <li>Calls: monthly on off weeks to the Maps community group call</li>
 </ul>
-      <h2 id="community-support">
-        
-        
-          Community Support <a href="#community-support">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="community-support">Community Support</h2>
 <p>Please add your institution below to show your support to the formation of the group:</p>
 <ul>
   <li>OCLC</li>
@@ -212,28 +177,16 @@
   <li>Moravian Library (Petr Žabička)</li>
   <li>Leiden University Libraries (Ben Companjen)</li>
 </ul>
-      <h2 id="technical-editors">
-        
-        
-          Technical Editors <a href="#technical-editors">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="technical-editors">Technical Editors</h2>
 <ul>
   <li>Rob Sanderson (J Paul Getty Trust)</li>
   <li>Michael Appleby (Yale University)</li>
   <li>Simeon Warner (Cornell University)</li>
   <li>Tom Crane (Digirati)</li>
 </ul>
-      <h3 id="changelog">
-        
-        
-          ChangeLog <a href="#changelog">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="changelog">ChangeLog</h3>
 
 <table>
   <thead>
@@ -250,8 +203,11 @@
   </tbody>
 </table>
 
+
+  </div>
 </div></div>
 
+      
     </section>
 <footer id="footer" class="footer">
   <div class="container">
@@ -271,19 +227,19 @@
         <ul>
         
           <li>
-            <a href="/iiif-website">How It Works</a>
+            <a href="/iiif-website/how-iiif-works">How IIIF Works</a>
           </li>
         
           <li>
-            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+            <a href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Demos</a>
+            <a href="/iiif-website/demos">Demos</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Tutorials</a>
+            <a href="https://guides.iiif.io/">Tutorials</a>
           </li>
         
         </ul>
@@ -298,15 +254,15 @@
           </li>
         
           <li>
-            <a href="/iiif-website">Join Newsletter</a>
+            <a href="/iiif-website/newsletter">Join Newsletter</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Community Groups</a>
+            <a href="/iiif-website/community/groups">Community Groups</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Consortium</a>
+            <a href="/iiif-website/community/consortium">Consortium</a>
           </li>
         
         </ul>

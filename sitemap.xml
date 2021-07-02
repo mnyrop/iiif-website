@@ -58,6 +58,9 @@
 <loc>/iiif-website/event/host-your-own-IIIF-event/</loc>
 </url>
 <url>
+<loc>/iiif-website/get-started/how-iiif-works/</loc>
+</url>
+<url>
 <loc>/iiif-website/community/trc/</loc>
 </url>
 <url>
@@ -134,9 +137,6 @@
 </url>
 <url>
 <loc>/iiif-website/get-started/</loc>
-</url>
-<url>
-<loc>/iiif-website/how-iiif-works/</loc>
 </url>
 <url>
 <loc>/iiif-website/event/</loc>

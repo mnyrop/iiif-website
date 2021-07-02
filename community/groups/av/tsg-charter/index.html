@@ -65,13 +65,13 @@
               </a>
               <div class="navbar-dropdown is-boxed is-active">
                 
-                  <a class="navbar-item" href="/iiif-website">Community Groups</a>
+                  <a class="navbar-item" href="/iiif-website/community/groups">Community Groups</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Consortium</a>
+                  <a class="navbar-item" href="/iiif-website/community/consortium">Consortium</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Join Newsletter</a>
+                  <a class="navbar-item" href="/iiif-website/newsletter">Join Newsletter</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Contact Us</a>
+                  <a class="navbar-item" href="/iiif-website/community/consortium/staff/">Contact Us</a>
                 
               </div>
             </div>
@@ -82,13 +82,13 @@
               </a>
               <div class="navbar-dropdown is-boxed is-active">
                 
-                  <a class="navbar-item" href="/iiif-website">How It Works</a>
+                  <a class="navbar-item" href="/iiif-website/how-iiif-works">How IIIF Works</a>
                 
                   <a class="navbar-item" href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Cookbooks</a>
+                  <a class="navbar-item" href="/iiif-website/get-started/cookbook">Cookbooks</a>
                 
-                  <a class="navbar-item" href="/iiif-website">Training</a>
+                  <a class="navbar-item" href="/iiif-website/get-started/training">Training</a>
                 
               </div>
             </div>
@@ -115,43 +115,26 @@
   </div>
 </section>
 <section id="main">
-      <div class="container-block is-max-widescreen"><div class="container content api-content" markdown="1">
-<h2 id="introduction">
-        
-        
-          Introduction <a href="#introduction">#</a>
-        
-        
-      </h2>
-    
+      
+      <div class='container-block is-max-widescreen'><div class='container' markdown='1'>
+  <div class="content">
+    <h2 id="introduction">Introduction</h2>
 
 <p>While IIIF has focused primarily on Image based content, there has always been interest around the community in extending the paradigm to include Video and Audio resources, following the same successful pattern as for Images. Early experiments in this direction included the linking of audio segments to the regions of a canvas that depict a musical score and linking video of commentary about the resource. More recently, the British Library was successful in obtaining a grant to work on preserving and making accessible audio content, with explicit resourcing for advancing IIIF’s specifications in this area.</p>
 
 <p>The IIIF A/V Technical Specification Group will create technical specifications that enable interoperability of access to audio and video content following the same <a href="https://iiif.io/api//annex/notes/design_patterns/">design principles</a> as existing IIIF specifications, allowing the integration of that content with the Presentation API. The group will assist with and steer the implementation of community infrastructure, such as reference implementations and validators, as well as transformation tools to generate the required data from existing systems and APIs.</p>
 
 <p>If successful, the work will enable the same degree of interoperability for audio and video resources as the community has already provided for image based resources. This will create greater access to our digital and digitized time-based cultural heritage.</p>
-      <h2 id="scope">
-        
-        
-          Scope <a href="#scope">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="scope">Scope</h2>
 
 <p>The scope of the group’s efforts is divided into two primary areas, access to the bitstreams of the audio and video content, and integration with and extension of the existing Presentation API to accommodate its appropriate rendering.</p>
 
 <p>Work that is initially out of scope for this group includes the creation of client-side integration tooling for existing third party APIs, such as controlling site-specific videos in the same way as more HTML5-friendly content. While useful, this would be dependent on the API version of the third party systems, over which we have no control or method of providing feedback. This is more suitable for the “shimming” process or re-hosting of the content.</p>
 
 <p>The group commits to following the requirements for the <a href="/iiif-website/community/policy/editorial/" title="IIIF Editorial Process">IIIF specification process</a>, including the production of two independent implementations of each feature specified, and to reach out to other communities for feedback and to encourage adoption.</p>
-      <h3 id="1-presentation-api-extension">
-        
-        
-          1. Presentation API Extension <a href="#1-presentation-api-extension">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="1-presentation-api-extension">1. Presentation API Extension</h3>
 
 <p>As outlined in the <a href="https://docs.google.com/document/d/1X7b7zQGDsiEvAfvb1WboDXe360mz7Zmm0o0LT43nozk/edit">IIIF AV - Content APIs and the Presentation API</a> document, the Presentation API and its underlying model, Shared Canvas, will be updated to include the missing facilities for time-based media. In particular, the following significant changes are anticipated:</p>
 
@@ -170,14 +153,8 @@
   <li>Reference implementations of the API</li>
   <li>Updated validation services for the new version</li>
 </ul>
-      <h3 id="2-audio-and-video-content-apis">
-        
-        
-          2. Audio and Video Content APIs <a href="#2-audio-and-video-content-apis">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="2-audio-and-video-content-apis">2. Audio and Video Content APIs</h3>
 
 <p>The Audio and Video Content APIs will mirror the existing Image API in function - they provide interoperable access to temporal and spatial segmentation and transformation of the content to enable its use and reuse in multiple contexts. This has the same division as the Image API between access to the bits and a JSON-LD description of the features provided by the service. Because, unlike images, audio and video may be played back in a streaming fashion by browsers without need of server-side temporal and spatial segmentation, Audio and Video Content APIs may not be necessary for basic “level 0” use cases supported directly through the Presentation API.In work on both the Presentation and Content APIs, the interactions are to focus on web-based delivery of the content, but not to the exclusion of non-browser-based client systems.</p>
 
@@ -189,14 +166,8 @@
   <li>Examples of and recipes for using Audio and Video Content APIs to express A/V use cases</li>
   <li>Validation services for those APIs</li>
 </ul>
-      <h2 id="development-roadmap">
-        
-        
-          Development Roadmap: <a href="#development-roadmap">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="development-roadmap">Development Roadmap:</h2>
 
 <ul>
   <li>Q2 2016: Initial workshop, group formation</li>
@@ -207,14 +178,8 @@
   <li>Q3 2018: Beta Audio/Video Content APIs, V3.0 Presentation API with validators, implementations</li>
   <li>Q4 2018: V1.0 for Audio/Video Content APIs with validators, implementations</li>
 </ul>
-      <h2 id="communication-channels">
-        
-        
-          Communication Channels <a href="#communication-channels">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="communication-channels">Communication Channels</h2>
 
 <ul>
   <li>Email: <a href="https://groups.google.com/forum/#!forum/iiif-discuss">IIIF-Discuss</a>, subject line: [AV]</li>
@@ -233,22 +198,10 @@
     </ul>
   </li>
 </ul>
-      <h2 id="community-support">
-        
-        
-          Community Support <a href="#community-support">#</a>
-        
-        
-      </h2>
-    
-      <h3 id="organizations">
-        
-        
-          Organizations <a href="#organizations">#</a>
-        
-        
-      </h3>
-    
+
+<h2 id="community-support">Community Support</h2>
+
+<h3 id="organizations">Organizations</h3>
 
 <ul>
   <li>British Library</li>
@@ -264,14 +217,8 @@
   <li>Princeton University</li>
   <li>Yale Center for British Art</li>
 </ul>
-      <h3 id="technical-editors">
-        
-        
-          Technical Editors <a href="#technical-editors">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="technical-editors">Technical Editors</h3>
 
 <ul>
   <li>Michael Appleby</li>
@@ -281,8 +228,11 @@
   <li>Simeon Warner</li>
 </ul>
 
+
+  </div>
 </div></div>
 
+      
     </section>
 <footer id="footer" class="footer">
   <div class="container">
@@ -302,19 +252,19 @@
         <ul>
         
           <li>
-            <a href="/iiif-website">How It Works</a>
+            <a href="/iiif-website/how-iiif-works">How IIIF Works</a>
           </li>
         
           <li>
-            <a href="https://preview.iiif.io/api/wireframe/api">Documentation</a>
+            <a href="https://preview.iiif.io/api/wireframe/api">APIs & Documentation</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Demos</a>
+            <a href="/iiif-website/demos">Demos</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Tutorials</a>
+            <a href="https://guides.iiif.io/">Tutorials</a>
           </li>
         
         </ul>
@@ -329,15 +279,15 @@
           </li>
         
           <li>
-            <a href="/iiif-website">Join Newsletter</a>
+            <a href="/iiif-website/newsletter">Join Newsletter</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Community Groups</a>
+            <a href="/iiif-website/community/groups">Community Groups</a>
           </li>
         
           <li>
-            <a href="/iiif-website">Consortium</a>
+            <a href="/iiif-website/community/consortium">Consortium</a>
           </li>
         
         </ul>
