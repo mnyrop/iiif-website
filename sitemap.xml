@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>/iiif-website/about/</loc>
+</url>
+<url>
 <loc>/iiif-website/community/ambassadors/</loc>
 </url>
 <url>
@@ -59,6 +62,12 @@
 </url>
 <url>
 <loc>/iiif-website/get-started/how-iiif-works/</loc>
+</url>
+<url>
+<loc>/iiif-website/get-started/iiif-viewers/</loc>
+</url>
+<url>
+<loc>/iiif-website/get-started/image-servers/</loc>
 </url>
 <url>
 <loc>/iiif-website/community/trc/</loc>
@@ -179,5 +188,8 @@
 </url>
 <url>
 <loc>/iiif-website/community/groups/av/tsg-charter/</loc>
+</url>
+<url>
+<loc>/iiif-website/get-started/why-iiif/</loc>
 </url>
 </urlset>
