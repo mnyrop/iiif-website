@@ -32,10 +32,6 @@
 </div>
 
 
-
-
-
-
 <section class="hero is-primary" style="background-image: linear-gradient(to bottom, rgba(0, 25, 39, 0.68), rgba(0, 25, 39, 0.68)), url('/iiif-website/assets/images/heroes/hero-2@3x.webp');
   background-size: cover;
   background-position: bottom center;
@@ -113,7 +109,7 @@
       
       <h1 class="title is-size-2 is-size-3-mobile is-size-desktop is-size-1-widescreen">Get Started</h1>
       
-      <p class="subtitle is-size-5">There are two main ways to get started with IIIF. As an implementer or developer, you can make digital resources available on the web using IIIF. As an end user, you may be working with materials already hosted on the Web by someone else.
+      <p class="subtitle is-size-5">Whether you're an end user or a software developer, start your IIIF journey with these resources. 
 </p>
 
       
@@ -124,53 +120,56 @@
       
       <div class="container-block is-max-widescreen"><div class="container has-text-centered">
 
-    <h2 id="implement-a-custom-experience">Implement A Custom Experience</h2>
+    <h2 id="user-or-developer">User or Developer?</h2>
 
-    <script src="/iiif-website/assets/js/tabSwitch.js"></script>
+    <div class="has-text-justified">
 
-    <nav class="tabs is-fullwidth">
+      <p>There are two main ways to get started with IIIF. As an <a href="#implementers">implementer/developer</a>, you can make digital resources available on the web using IIIF. As an <a href="#end-users">end user</a>, you may be working with materials already hosted on the Web by someone else.</p>
+
+      <script src="/iiif-website/assets/js/tabSwitch.js"></script>
+
+      <nav class="tabs is-fullwidth">
   <div class="container">
     <ul>
       
-      <li class="tab is-active" onclick="openTab(event,'1-integrate-a-core-api')">
-        <h3><a>1. Integrate a Core API</a></h3>
+      <li class="tab is-active" onclick="openTab(event,'end-user')">
+        <h3><a>End User</a></h3>
       </li>
       
-      <li class="tab " onclick="openTab(event,'2-integrate-viewers')">
-        <h3><a>2. Integrate Viewers</a></h3>
-      </li>
-      
-      <li class="tab " onclick="openTab(event,'3-enable-other-features')">
-        <h3><a>3. Enable Other Features</a></h3>
+      <li class="tab " onclick="openTab(event,'developer')">
+        <h3><a>Developer</a></h3>
       </li>
       
     </ul>
   </div>
 </nav>
 
-    <div class="container">
+      <div class="container">
   
-  <div id="1-integrate-a-core-api" class="content-tab">
-    <p>Image and Presentation are the core APIs you can  install first. Choose to retrieve images with the Image API or the image’s metadata with the Presentation API.</p>
+  <div id="end-user" class="content-tab">
+    <p>Whether you're a researcher, an educator, or just someone exploring the possibilities, IIIF makes your life easier when it comes to working with digital collections.</p>
   </div>
   
-  <div id="2-integrate-viewers" class="content-tab" style="display:none;">
-    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-  </div>
-  
-  <div id="3-enable-other-features" class="content-tab" style="display:none;">
-    <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <div id="developer" class="content-tab" style="display:none;">
+    <p>As an implementer/developer, you can make digital resources available on the web using IIIF.</p>
   </div>
   
 </div>
 
-    <p><a class="button is-primary is-normal" href="/iiif-website">View All Docs</a></p>
+      <p><a class="button is-primary is-normal" href="/iiif-website/get-started/#end-users">Go to User Resources</a></p>
+
+      <p><a class="button is-primary is-normal" href="/iiif-website/get-started/#implementers">Go to Developer Resources</a></p>
+
+    </div>
 
   </div></div>
 
 <div class="container-block is-max-widescreen"><div class="container has-text-centered">
 
-    <h2 id="end-users">End Users</h2>
+    <p><a name="end-users"></a></p>
+    <h2 id="end-users-explore-the-rich-world-of-iiif-content">End Users: Explore the Rich World of IIIF Content</h2>
+
+    <p>Whether you’re a researcher, an educator, or just someone exploring the possibilities, IIIF makes your life easier when it comes to working with digital collections.</p>
 
     <div class="block columns is-multiline">
   
@@ -216,8 +215,26 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" alt="" />
         
 
-        <h3 class="title ">Learn how it works</h3>
-        <p class="has-text-left subtitle margin-unset">Access our open training materials to learn the basics of how resources are made available via IIIF.</p>
+        <h3 class="title ">Learn the basics of IIIF</h3>
+        <p class="has-text-left subtitle margin-unset">Read our plain language description of IIIF technology.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="/iiif-website/get-started/how-iiif-works">Learn More &gt;</a>
+          </p>
+        </footer>
+        
+      </div>
+    </div>
+  
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" alt="" />
+        
+
+        <h3 class="title ">Learn the details of how it works</h3>
+        <p class="has-text-left subtitle margin-unset">Access our open training materials to go hands-on and learn how resources are made available via IIIF.</p>
         
         <footer>
           <p class="has-text-left">
@@ -234,7 +251,56 @@
 
 <div class="container-block is-max-widescreen"><div class="container has-text-centered">
 
-    <h2 id="implementers">Implementers</h2>
+    <p><a name="implementers"></a></p>
+    <h2 id="developers-implement-a-custom-experience">Developers: Implement A Custom Experience</h2>
+
+    <p>You don’t have to be a sofware developer or coder to be curious about how IIIF tools work under the hood – there’s a variety of resources ready to solve your problems and show you how it all works.</p>
+
+    <script src="/iiif-website/assets/js/tabSwitch.js"></script>
+
+    <nav class="tabs is-fullwidth">
+  <div class="container">
+    <ul>
+      
+      <li class="tab is-active" onclick="openTab(event,'1-explore-the-core-apis')">
+        <h3><a>1. Explore the Core APIs</a></h3>
+      </li>
+      
+      <li class="tab " onclick="openTab(event,'2-integrate-viewers')">
+        <h3><a>2. Integrate Viewers</a></h3>
+      </li>
+      
+      <li class="tab " onclick="openTab(event,'3-enable-other-features')">
+        <h3><a>3. Enable Other Features</a></h3>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="container">
+  
+  <div id="1-explore-the-core-apis" class="content-tab">
+    <p>Image and Presentation are the core APIs most institutions start with. Choose to retrieve images with the Image API or the image’s metadata with the Presentation API.</p>
+  </div>
+  
+  <div id="2-integrate-viewers" class="content-tab" style="display:none;">
+    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+  </div>
+  
+  <div id="3-enable-other-features" class="content-tab" style="display:none;">
+    <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+  
+</div>
+
+    <p><a class="button is-primary is-normal" href="https://marii.info/iiif-api/api/">View All Docs</a></p>
+
+  </div></div>
+
+<div class="container-block is-max-widescreen"><div class="container has-text-centered">
+
+    <h2 id="more-for-implementers">More for Implementers</h2>
 
     <div class="block columns is-multiline">
   
@@ -244,12 +310,12 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" alt="" />
         
 
-        <h3 class="title ">Learn about image viewers</h3>
+        <h3 class="title ">Learn about IIIF viewers</h3>
         <p class="has-text-left subtitle margin-unset">There are several popular viewers, each with different capabilities.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn More &gt;</a>
+            <a href="/iiif-website/get-started/iiif-viewers/">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -267,7 +333,7 @@
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn More &gt;</a>
+            <a href="/iiif-website/get-started/image-servers/">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -281,11 +347,11 @@
         
 
         <h3 class="title ">Learn about IIIF tools</h3>
-        <p class="has-text-left subtitle margin-unset">Review the community-maintained “Awesome IIIF” list and see what’s available to you.</p>
+        <p class="has-text-left subtitle margin-unset">Review the community-maintained “Awesome IIIF” list and see what’s available to you. (External link)</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn More &gt;</a>
+            <a href="https://github.com/IIIF/awesome-iiif/">Learn More &gt;</a>
           </p>
         </footer>
         
@@ -298,12 +364,30 @@
           <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" alt="" />
         
 
-        <h3 class="title ">Test an implementation</h3>
-        <p class="has-text-left subtitle margin-unset">Try out the IIIF validators for the Image API or the Presentation API.</p>
+        <h3 class="title ">Test an Image API implementation</h3>
+        <p class="has-text-left subtitle margin-unset">Try out the IIIF validator for the Image API.</p>
         
         <footer>
           <p class="has-text-left">
-            <a href="/iiif-website">Learn More &gt;</a>
+            <a href="https://marii.info/iiif-api/api//image/validator/">Learn More &gt;</a>
+          </p>
+        </footer>
+        
+      </div>
+    </div>
+  
+    <div class="column is-one-third same-height-column">
+      <div class="box hover-box iiif-card">
+        
+          <img class="iiif-icon" src="/iiif-website/assets/images/defaults/just-a-square.png" alt="" />
+        
+
+        <h3 class="title ">Test a Presentation API implementation</h3>
+        <p class="has-text-left subtitle margin-unset">Try out the IIIF validators for the Presentation API.</p>
+        
+        <footer>
+          <p class="has-text-left">
+            <a href="https://marii.info/iiif-api/api//presentation/validator/service/">Learn More &gt;</a>
           </p>
         </footer>
         
